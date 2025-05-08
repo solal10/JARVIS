@@ -25,10 +25,8 @@ jobs:
       - name: Lint
         run: pnpm lint
         working-directory: frontend
-      - name: Build & Export static site
-        run: |
-          pnpm build          # crée .next + out grâce à output:'export'
-          pnpm export         # idempotent (ne fera rien si out existe déjà)
+      - name: Build static site
+        run: pnpm build       # crée .next + out grâce à output:'export' dans next.config.ts
         working-directory: frontend
       - name: List build output directories
         run: ls -la frontend
