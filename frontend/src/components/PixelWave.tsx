@@ -141,9 +141,9 @@ export default function PixelWave({
         // This ensures particles start moving in an arc rather than straight lines
         const downwardBias = 0.3 + Math.random() * 0.3; // Subtle downward component
         
-        let vx = Math.cos(angle) * initialSpeed;
+        const vx = Math.cos(angle) * initialSpeed;
         // Add downward bias to vertical velocity
-        let vy = Math.sin(angle) * initialSpeed + downwardBias;
+        const vy = Math.sin(angle) * initialSpeed + downwardBias;
         
         // Randomize pixel size
         const size = minPixelSize + Math.random() * (maxPixelSize - minPixelSize);
@@ -191,8 +191,8 @@ export default function PixelWave({
         const initialSpeed = 0.3 + Math.random() * 0.4;
         const downwardBias = 0.2 + Math.random() * 0.3;
         
-        let vx = Math.cos(angle) * initialSpeed * 0.5;
-        let vy = Math.sin(angle) * initialSpeed + downwardBias;
+        const vx = Math.cos(angle) * initialSpeed * 0.5;
+        const vy = Math.sin(angle) * initialSpeed + downwardBias;
         
         // Randomize pixel size
         const size = minPixelSize + Math.random() * (maxPixelSize - minPixelSize);
@@ -234,8 +234,8 @@ export default function PixelWave({
         
         for (let i = 0; i < actualPixelsToAdd; i++) {
           // Calculate velocity based on direction - add slight wobble
-          let vx = (Math.random() - 0.5) * 0.3; // Slight horizontal movement for natural wobble
-          let vy = 0.6 + Math.random() * 0.6; // Moderate downward movement
+          const vx = (Math.random() - 0.5) * 0.3; // Slight horizontal movement for natural wobble
+          const vy = 0.6 + Math.random() * 0.6; // Moderate downward movement
           
           // Randomize pixel size
           const size = minPixelSize + Math.random() * (maxPixelSize - minPixelSize);

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -32,10 +33,10 @@ export default function RootLayout({
           <div className="container mx-auto px-6 flex justify-between items-center">
             <div className="text-2xl font-bold text-white">SARL JARVIS</div>
             <nav className="hidden md:flex space-x-8">
-              <a href="/" className="font-medium text-white hover:text-jarvisGold transition-colors">Accueil</a>
-              <a href="/services" className="font-medium text-white hover:text-jarvisGold transition-colors">Services</a>
-              <a href="/a-propos" className="font-medium text-white hover:text-jarvisGold transition-colors">À propos</a>
-              <a href="/contact" className="font-medium text-white hover:text-jarvisGold transition-colors">Contact</a>
+              <Link href="/" className="font-medium text-white hover:text-jarvisGold transition-colors">Accueil</Link>
+              <Link href="/services" className="font-medium text-white hover:text-jarvisGold transition-colors">Services</Link>
+              <Link href="/a-propos" className="font-medium text-white hover:text-jarvisGold transition-colors">À propos</Link>
+              <Link href="/contact" className="font-medium text-white hover:text-jarvisGold transition-colors">Contact</Link>
             </nav>
             <button className="md:hidden text-white hover:text-jarvisGold transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,22 +55,22 @@ export default function RootLayout({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <h3 className="text-xl font-bold mb-4 text-jarvisGold">SARL JARVIS</h3>
-                <p className="mb-4">Solutions IT sur-mesure à Monaco et à l'international.</p>
-                <p>© {new Date().getFullYear()} SARL JARVIS. Tous droits réservés.</p>
+                <p className="mb-4">Solutions IT sur-mesure &agrave; Monaco et &agrave; l&apos;international.</p>
+                <p>&copy; {new Date().getFullYear()} SARL JARVIS. Tous droits r&eacute;serv&eacute;s.</p>
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-4 text-jarvisGold">Contact</h3>
-                <p className="mb-2">Monaco, Principauté de Monaco</p>
+                <p className="mb-2">Monaco, Principaut&eacute; de Monaco</p>
                 <p className="mb-2">Email: contact@jarvis-monaco.com</p>
-                <p>Tél: +377 99 99 99 99</p>
+                <p>T&eacute;l: +377 99 99 99 99</p>
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-4 text-jarvisGold">Liens rapides</h3>
                 <ul className="space-y-2">
-                  <li><a href="/" className="hover:text-jarvisGold transition-colors">Accueil</a></li>
-                  <li><a href="/services" className="hover:text-jarvisGold transition-colors">Services</a></li>
-                  <li><a href="/a-propos" className="hover:text-jarvisGold transition-colors">À propos</a></li>
-                  <li><a href="/contact" className="hover:text-jarvisGold transition-colors">Contact</a></li>
+                  <li><Link href="/" className="hover:text-jarvisGold transition-colors">Accueil</Link></li>
+                  <li><Link href="/services" className="hover:text-jarvisGold transition-colors">Services</Link></li>
+                  <li><Link href="/a-propos" className="hover:text-jarvisGold transition-colors">À propos</Link></li>
+                  <li><Link href="/contact" className="hover:text-jarvisGold transition-colors">Contact</Link></li>
                 </ul>
               </div>
             </div>

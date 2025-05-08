@@ -94,8 +94,9 @@ export default function CubeWaveIntro({
           // Calculate position in diagonal wave
           const bottomLeftX = 0;
           const bottomLeftY = canvas.height;
-          const topRightX = canvas.width;
-          const topRightY = 0;
+          // These variables are used for reference but not directly in calculations
+          // const topRightX = canvas.width;
+          // const topRightY = 0;
           const cubeX = col * cubeSize + cubeSize / 2;
           const cubeY = row * cubeSize + cubeSize / 2;
           
@@ -247,7 +248,7 @@ export default function CubeWaveIntro({
         cancelAnimationFrame(animationFrameId.current);
       }
     };
-  }, [cubeSize, duration, colors, borderWidth, onComplete]);
+  }, [cubeSize, duration, colors, borderWidth, onComplete, animationDuration]);
 
   return (
     <canvas

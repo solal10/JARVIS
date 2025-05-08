@@ -9,10 +9,30 @@ import TeamSection from './TeamSection';
 import FAQTeaser from './FAQTeaser';
 
 interface HomeSequenceProps {
-  heroContent: any;
-  servicesItems: any[];
-  teamMembers: any[];
-  faqItems: any[];
+  heroContent: {
+    h1: string;
+    p: string;
+    buttonPrimary: {
+      text: string;
+      href: string;
+      color?: string;
+      style: 'solid' | 'outline';
+    };
+  };
+  servicesItems: {
+    title: string;
+    description: string;
+    icon: string;
+  }[];
+  teamMembers: {
+    name: string;
+    role: string;
+    image: string;
+  }[];
+  faqItems: {
+    q: string;
+    a: string;
+  }[];
 }
 
 export default function HomeSequence({ 
@@ -40,34 +60,6 @@ export default function HomeSequence({
     setSequenceStep('intro');
     setContentOpacity(0);
   }, []);
-  
-  // Function to animate content fade-in
-  const animateContentFadeIn = () => {
-    // Starting opacity
-    let opacity = 0;
-    // Target opacity
-    const targetOpacity = 1;
-    // Duration of fade-in (in ms)
-    const fadeInDuration = 1000;
-    // Interval between opacity updates (in ms)
-    const interval = 16; // ~60fps
-    // Opacity increment per interval
-    const increment = (targetOpacity / fadeInDuration) * interval;
-    
-    // Start the animation interval
-    const fadeInInterval = setInterval(() => {
-      opacity += increment;
-      
-      if (opacity >= targetOpacity) {
-        // Animation complete
-        opacity = targetOpacity;
-        clearInterval(fadeInInterval);
-      }
-      
-      // Update opacity state
-      setContentOpacity(opacity);
-    }, interval);
-  };
   
   return (
     <>

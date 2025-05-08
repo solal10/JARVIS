@@ -44,16 +44,7 @@ export default function Home() {
     { image: "/images/team3.jpg", name: "Équipe Dev", role: "Développement" }
   ];
 
-  // NavBar content
-  const navBarContent = {
-    logo: { text: "SARL JARVIS", href: "/" },
-    links: [
-      { text: "Accueil", href: "/" },
-      { text: "Services", href: "/services" },
-      { text: "À propos", href: "/a-propos" },
-      { text: "Contact", href: "/contact" }
-    ]
-  };
+  // NavBar content is now handled directly in the layout.tsx file
 
   // FAQ teaser content
   const faqItems = [

@@ -1,5 +1,4 @@
 import React from 'react';
-import WaveDecoration from './WaveDecoration';
 
 interface HeroProps {
   content: {
