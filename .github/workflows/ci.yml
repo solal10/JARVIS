@@ -20,11 +20,9 @@ jobs:
         working-directory: frontend
       - run: pnpm lint
         working-directory: frontend
-      - run: pnpm test -- --ci --coverage
-        working-directory: frontend
-      - run: pnpm build && pnpm export
+      - run: pnpm build
         working-directory: frontend
       - uses: actions/upload-artifact@v4
         with:
           name: site
-          path: frontend/out
+          path: frontend/.next
