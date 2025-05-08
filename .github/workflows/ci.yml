@@ -19,18 +19,14 @@ jobs:
           node-version: '20'
           cache: 'pnpm'
           cache-dependency-path: 'frontend/pnpm-lock.yaml'
-      - run: pnpm install --no-frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
         working-directory: frontend
-      - run: pnpm lint
+      - name: Lint
+        run: pnpm lint
         working-directory: frontend
-      - run: pnpm build
+      - name: Build
+        run: pnpm build
         working-directory: frontend
       - name: List build output directories
         run: ls -la frontend
-      - name: Check if .next directory exists
-        run: ls -la frontend/.next || echo ".next directory not found"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: site
-          path: frontend/.next
-          if-no-files-found: warn
