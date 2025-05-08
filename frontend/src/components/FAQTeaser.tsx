@@ -11,14 +11,14 @@ interface FAQTeaserProps {
 
 export default function FAQTeaser({ faqs }: FAQTeaserProps) {
   return (
-    <section className="py-16 px-6">
+    <section className="py-16 px-6 text-monacoBlue">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-3xl font-bold text-center mb-12 text-monacoBlue">Questions fréquentes</h2>
         <div className="space-y-6">
           {faqs.map((faq, index) => (
             <div key={index} className="bg-white shadow-md rounded-lg p-6">
               <h3 className="text-xl font-semibold mb-3 text-monacoBlue">{faq.q}</h3>
-              <p className="text-gray-700">{faq.a}</p>
+              <p className="text-monacoBlue text-opacity-80">{faq.a}</p>
             </div>
           ))}
         </div>

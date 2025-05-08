@@ -7,6 +7,7 @@ interface HeroProps {
     buttonPrimary: {
       text: string;
       href: string;
+      color?: string;
       style: 'solid' | 'outline';
     };
   };
@@ -24,7 +25,7 @@ export default function Hero({ content }: HeroProps) {
         </p>
         <a
           href={content.buttonPrimary.href}
-          className="inline-block bg-jarvisGold hover:bg-opacity-90 text-monacoBlue font-bold py-3 px-8 rounded-md transition-all duration-300"
+          className={`inline-block ${content.buttonPrimary.color ? `bg-${content.buttonPrimary.color}` : 'bg-jarvisGold'} hover:bg-opacity-90 text-monacoBlue font-bold py-3 px-8 rounded-md transition-all duration-300`}
         >
           {content.buttonPrimary.text}
         </a>

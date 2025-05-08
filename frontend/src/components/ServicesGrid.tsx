@@ -39,15 +39,15 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
   return (
     <section className="py-16 px-6">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((item, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-lg shadow-lg p-8 text-center transition-transform hover:scale-105"
+              className="bg-white rounded-lg shadow-lg p-8 text-center text-monacoBlue transition-transform hover:scale-105"
             >
               <IconComponent icon={item.icon} />
               <h3 className="text-xl font-bold mb-3 text-monacoBlue">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
+              <p className="text-monacoBlue text-opacity-80">{item.description}</p>
             </div>
           ))}
         </div>

@@ -13,7 +13,7 @@ interface AboutTeaserProps {
 
 export default function AboutTeaser({ image, text, link }: AboutTeaserProps) {
   return (
-    <section className="py-16 px-6 bg-gray-50">
+    <section className="py-16 px-6 bg-gray-50 text-monacoBlue">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 relative">
@@ -25,7 +25,7 @@ export default function AboutTeaser({ image, text, link }: AboutTeaserProps) {
             </div>
           </div>
           <div className="md:w-1/2">
-            <p className="text-xl mb-6 text-gray-700">{text}</p>
+            <p className="text-xl mb-6 text-monacoBlue">{text}</p>
             <Link 
               href={link.href}
               className="inline-flex items-center text-monacoBlue font-semibold hover:text-jarvisGold transition-colors"
