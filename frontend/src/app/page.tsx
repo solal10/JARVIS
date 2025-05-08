@@ -1,11 +1,7 @@
-import Hero from "../components/Hero";
-import ServicesGrid from "../components/ServicesGrid";
-import TeamSection from "../components/TeamSection";
-import FAQTeaser from "../components/FAQTeaser";
-import PixelWave from "../components/PixelWave";
+import HomeSequence from "../components/HomeSequence";
 
 export const metadata = {
-  title: "SARL JARVIS – Solutions IT sur‑mesure",
+  title: "SARL JARVIS – Solutions IT sur-mesure",
   description: "Solutions logicielles & installations IT sur‑mesure à Monaco et à l'international",
 };
 
@@ -76,18 +72,13 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-transparent min-h-screen">
-      <PixelWave 
-        colors={['#C9A13D', '#0053A4', '#ff4d4d', '#32cd32']} 
-        pixelSize={4} 
-        speed={1.4} 
-        fade={0.08} 
-        mouseTracking={true} 
+    <div className="bg-black min-h-screen">
+      <HomeSequence
+        heroContent={heroContent}
+        servicesItems={servicesItems}
+        teamMembers={teamMembers}
+        faqItems={faqItems}
       />
-      <Hero content={heroContent} />
-      <ServicesGrid items={servicesItems} />
-      <TeamSection members={teamMembers} />
-      <FAQTeaser faqs={faqItems} />
     </div>
   );
 }

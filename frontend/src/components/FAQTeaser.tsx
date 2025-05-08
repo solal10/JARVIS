@@ -20,7 +20,7 @@ export default function FAQTeaser({ faqs }: FAQTeaserProps) {
 
   return (
     <section className="py-24 px-6 bg-monacoBlue/95 text-white">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-4xl py-12">
         <h2 className="text-3xl font-bold text-center mb-12 text-white">Questions fréquentes</h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
