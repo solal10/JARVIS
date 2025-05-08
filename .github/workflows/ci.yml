@@ -25,7 +25,12 @@ jobs:
         working-directory: frontend
       - run: pnpm build
         working-directory: frontend
+      - name: List build output directories
+        run: ls -la frontend
+      - name: Check if .next directory exists
+        run: ls -la frontend/.next || echo ".next directory not found"
       - uses: actions/upload-artifact@v4
         with:
           name: site
           path: frontend/.next
+          if-no-files-found: warn
