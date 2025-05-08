@@ -13,9 +13,9 @@ interface AboutTeaserProps {
 
 export default function AboutTeaser({ image, text, link }: AboutTeaserProps) {
   return (
-    <section className="py-16 px-6 bg-gray-50 text-monacoBlue">
+    <section className="py-20 px-6 bg-white text-monacoBlue">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="md:w-1/2 relative">
             {/* We'll use a placeholder div for now since the image doesn't exist yet */}
             <div className="w-full h-80 bg-gray-300 rounded-lg relative overflow-hidden">

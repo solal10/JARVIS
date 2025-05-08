@@ -26,18 +26,18 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
       >
-        <header className="bg-white shadow-sm py-4">
+        <header className="bg-monacoBlue/85 backdrop-blur-sm shadow-lg py-4 sticky top-0 z-50">
           <div className="container mx-auto px-6 flex justify-between items-center">
-            <div className="text-2xl font-bold text-monacoBlue">SARL JARVIS</div>
+            <div className="text-2xl font-bold text-white">SARL JARVIS</div>
             <nav className="hidden md:flex space-x-8">
-              <a href="/" className="font-medium hover:text-jarvisGold transition-colors">Accueil</a>
-              <a href="/services" className="font-medium hover:text-jarvisGold transition-colors">Services</a>
-              <a href="/a-propos" className="font-medium hover:text-jarvisGold transition-colors">À propos</a>
-              <a href="/contact" className="font-medium hover:text-jarvisGold transition-colors">Contact</a>
+              <a href="/" className="font-medium text-white hover:text-jarvisGold transition-colors">Accueil</a>
+              <a href="/services" className="font-medium text-white hover:text-jarvisGold transition-colors">Services</a>
+              <a href="/a-propos" className="font-medium text-white hover:text-jarvisGold transition-colors">À propos</a>
+              <a href="/contact" className="font-medium text-white hover:text-jarvisGold transition-colors">Contact</a>
             </nav>
-            <button className="md:hidden">
+            <button className="md:hidden text-white hover:text-jarvisGold transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>

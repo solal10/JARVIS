@@ -1,7 +1,8 @@
 import Hero from "../components/Hero";
 import ServicesGrid from "../components/ServicesGrid";
-import AboutTeaser from "../components/AboutTeaser";
+import TeamSection from "../components/TeamSection";
 import FAQTeaser from "../components/FAQTeaser";
+import PixelWave from "../components/PixelWave";
 
 export const metadata = {
   title: "SARL JARVIS – Solutions IT sur‑mesure",
@@ -40,14 +41,22 @@ export default function Home() {
     }
   ];
 
-  // About teaser content
-  const aboutContent = {
-    image: "/images/team.jpg",
-    text: "Fondée en 2024 à Monaco, SARL JARVIS réunit des experts IT pour accompagner votre transformation numérique.",
-    link: { 
-      text: "En savoir plus", 
-      href: "/a-propos" 
-    }
+  // Team section content
+  const teamMembers = [
+    { image: "/images/team1.jpg", name: "Thomas Benichou", role: "Gérant associé" },
+    { image: "/images/team2.jpg", name: "Sacha Benichou", role: "Gérant associé" },
+    { image: "/images/team3.jpg", name: "Équipe Dev", role: "Développement" }
+  ];
+
+  // NavBar content
+  const navBarContent = {
+    logo: { text: "SARL JARVIS", href: "/" },
+    links: [
+      { text: "Accueil", href: "/" },
+      { text: "Services", href: "/services" },
+      { text: "À propos", href: "/a-propos" },
+      { text: "Contact", href: "/contact" }
+    ]
   };
 
   // FAQ teaser content
@@ -67,11 +76,18 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <div className="bg-transparent min-h-screen">
+      <PixelWave 
+        colors={['#C9A13D', '#0053A4', '#ff4d4d', '#32cd32']} 
+        pixelSize={4} 
+        speed={1.4} 
+        fade={0.08} 
+        mouseTracking={true} 
+      />
       <Hero content={heroContent} />
       <ServicesGrid items={servicesItems} />
-      <AboutTeaser {...aboutContent} />
+      <TeamSection members={teamMembers} />
       <FAQTeaser faqs={faqItems} />
-    </>
+    </div>
   );
 }

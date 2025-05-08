@@ -1,4 +1,5 @@
 import React from 'react';
+import WaveDecoration from './WaveDecoration';
 
 interface HeroProps {
   content: {
@@ -15,8 +16,8 @@ interface HeroProps {
 
 export default function Hero({ content }: HeroProps) {
   return (
-    <section className="w-full bg-monacoBlue text-white py-24 px-6">
-      <div className="container mx-auto text-center max-w-4xl">
+    <section className="w-full bg-transparent text-white py-28 px-6 md:py-32 lg:py-36 relative">
+      <div className="container mx-auto text-center max-w-4xl py-10">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
           {content.h1}
         </h1>
@@ -30,6 +31,7 @@ export default function Hero({ content }: HeroProps) {
           {content.buttonPrimary.text}
         </a>
       </div>
+
     </section>
   );
 }
