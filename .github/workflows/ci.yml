@@ -1,0 +1,30 @@
+name: CI
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - run: npm i -g pnpm@8
+      - run: pnpm install --frozen-lockfile
+        working-directory: frontend
+      - run: pnpm lint
+        working-directory: frontend
+      - run: pnpm test -- --ci --coverage
+        working-directory: frontend
+      - run: pnpm build && pnpm export
+        working-directory: frontend
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: frontend/out
