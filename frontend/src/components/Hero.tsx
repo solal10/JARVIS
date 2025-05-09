@@ -25,7 +25,7 @@ export default function Hero({ content }: HeroProps) {
         </p>
         <a
           href={content.buttonPrimary.href}
-          className={`inline-block ${content.buttonPrimary.color ? `bg-${content.buttonPrimary.color}` : 'bg-jarvisGold'} hover:bg-opacity-90 text-monacoBlue font-bold py-3 px-8 rounded-md transition-all duration-300`}
+          className="inline-block bg-white hover:bg-jarvisGold text-black font-bold py-4 px-10 rounded-md transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(201,161,61,0.6)] text-lg"
         >
           {content.buttonPrimary.text}
         </a>

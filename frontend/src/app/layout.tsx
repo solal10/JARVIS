@@ -31,7 +31,7 @@ export default function RootLayout({
       >
         <header className="bg-monacoBlue/85 backdrop-blur-sm shadow-lg py-4 sticky top-0 z-50">
           <div className="container mx-auto px-6 flex justify-between items-center">
-            <div className="text-2xl font-bold text-white">SARL JARVIS</div>
+            <Link href="/" className="text-2xl font-bold text-white hover:text-jarvisGold transition-colors">SARL JARVIS</Link>
             <nav className="hidden md:flex space-x-8">
               <Link href="/" className="font-medium text-white hover:text-jarvisGold transition-colors">Accueil</Link>
               <Link href="/services" className="font-medium text-white hover:text-jarvisGold transition-colors">Services</Link>

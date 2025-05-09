@@ -27,7 +27,7 @@ export default function FAQTeaser({ faqs }: FAQTeaserProps) {
             <div key={index} className="bg-monacoBlue shadow-md rounded-lg overflow-hidden border border-jarvisGold/40">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full text-left p-5 flex justify-between items-center focus:outline-none hover:bg-monacoBlue/70 transition-colors duration-200"
+                className="w-full text-left p-5 flex justify-between items-center focus:outline-none hover:bg-jarvisGold/20 transition-all duration-300 border-l-4 border-transparent hover:border-jarvisGold"
               >
                 <h3 className="text-xl font-semibold text-white">{faq.q}</h3>
                 <svg
@@ -51,7 +51,7 @@ export default function FAQTeaser({ faqs }: FAQTeaserProps) {
         <div className="text-center mt-10">
           <a 
             href="/faq" 
-            className="inline-flex items-center text-white font-semibold hover:text-jarvisGold transition-colors"
+            className="inline-flex items-center bg-white hover:bg-jarvisGold text-black font-bold py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(201,161,61,0.6)]"
           >
             Voir toutes les questions
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">

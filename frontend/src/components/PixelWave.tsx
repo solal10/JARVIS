@@ -87,11 +87,11 @@ export default function PixelWave({
           
           // Respond to all movements, but with fewer particles
           if (distance > 0) { // No threshold - respond to all movements
-            // Lower chance of creating particles based on distance
-            const createChance = Math.min(0.4, 0.2 + (distance / 100));
+            // Modérée chance de créer des particules basée sur la distance
+            const createChance = Math.min(0.3, 0.15 + (distance / 150));
             
             if (Math.random() < createChance) {
-              // Minimal particles - just 1 for most movements
+              // Minimal particles - just 1 for all movements
               const particleCount = 1; // Fixed at 1 particle to reduce total count
               
               // For very small movements, just create a single particle at current position
@@ -100,11 +100,11 @@ export default function PixelWave({
               } else {
                 // For larger movements, create very few particles along the path
                 // Increase step size for fewer particles overall
-                const steps = Math.max(1, Math.floor(distance / 30));
+                const steps = Math.max(1, Math.floor(distance / 40));
                 
-                // Only place particles at a few points along the path
+                // Only place particles at some points along the path
                 for (let i = 0; i < steps; i++) {
-                  // Skip most steps
+                  // Skip some steps
                   if (i % 2 === 0) { // Only use every other step point
                     const ratio = i / steps;
                     const x = prevMousePosition.current.x + dx * ratio;
@@ -122,8 +122,8 @@ export default function PixelWave({
     
     const handleMouseClick = (e: MouseEvent) => {
       if (mouseTracking) {
-        // Create a more dramatic breaking effect on click, but with fewer particles
-        createBreakingEffect(e.clientX, e.clientY, 8);
+        // Create a dramatic breaking effect on click
+        createBreakingEffect(e.clientX, e.clientY, 10);
       }
     };
     
@@ -176,8 +176,14 @@ export default function PixelWave({
     };
     
     const createExplosionEffect = (centerX: number, centerY: number, particleCount: number) => {
-      // Further reduce the number of particles created
-      const actualParticleCount = Math.max(2, Math.floor(particleCount / 4));
+      // Modérément réduire le nombre de particules créées
+      const actualParticleCount = Math.max(2, Math.floor(particleCount / 2));
+      
+      // Limit total number of particles
+      if (particles.current.length > 120) {
+        // Remove oldest particles if we exceed the limit
+        particles.current = particles.current.slice(-100);
+      }
       
       for (let i = 0; i < actualParticleCount; i++) {
         // Create particles in a smaller radius around the mouse

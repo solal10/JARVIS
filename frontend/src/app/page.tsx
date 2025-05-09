@@ -13,7 +13,6 @@ export default function Home() {
     buttonPrimary: {
       text: "Demander un devis",
       href: "#contact",
-      color: "jarvisGold",
       style: "solid" as "solid" | "outline",
     },
   };

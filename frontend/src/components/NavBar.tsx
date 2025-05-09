@@ -35,7 +35,7 @@ export default function NavBar({ logo, links }: NavBarProps) {
           </nav>
           
           {/* Mobile Navigation Button */}
-          <button className="md:hidden">
+          <button className="md:hidden p-2 rounded-md bg-white hover:bg-jarvisGold text-monacoBlue transition-all duration-300 transform hover:scale-105 shadow-[0_0_10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_15px_rgba(201,161,61,0.5)]">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
