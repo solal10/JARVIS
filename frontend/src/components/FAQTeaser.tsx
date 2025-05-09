@@ -41,9 +41,9 @@ export default function FAQTeaser({ faqs }: FAQTeaserProps) {
                 </svg>
               </button>
               <div 
-                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-40' : 'max-h-0'}`}
+                className={`overflow-hidden transition-all duration-500 ${openIndex === index ? 'max-h-96' : 'max-h-0'}`}
               >
-                <p className="p-5 pt-0 text-white text-opacity-90">{faq.a}</p>
+                <p className="p-5 pt-0 text-white text-opacity-90 leading-relaxed">{faq.a}</p>
               </div>
             </div>
           ))}

@@ -20,7 +20,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features,
       viewport={{ once: true }}
       whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)' }}
     >
-      {/* Cube Icon with animation */}
+      {/* Service Icon with animation */}
       <motion.div 
         className="mb-6 flex justify-center"
         initial={{ scale: 0.8, opacity: 0.5 }}
@@ -28,22 +28,31 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features,
         transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
         viewport={{ once: true }}
       >
-        <div className="w-20 h-20 relative">
+        <div className="w-24 h-24 relative flex items-center justify-center">
           <motion.div 
-            className="absolute inset-0 bg-jarvisGold/20 rounded-md"
-            animate={{ rotate: [45, 40, 45] }}
+            className="absolute inset-0 bg-jarvisGold/20 rounded-full"
+            animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           ></motion.div>
-          <motion.div 
-            className="absolute inset-2 bg-jarvisGold/30 rounded-md"
-            animate={{ rotate: [12, 17, 12] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          ></motion.div>
-          <motion.div 
-            className="absolute inset-4 bg-jarvisGold/40 rounded-md"
-            animate={{ rotate: [0, 5, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          ></motion.div>
+          
+          {/* Service-specific icon */}
+          {title.includes("Développement") && (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-jarvisGold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          )}
+          
+          {title.includes("Intégration") && (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-jarvisGold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+          )}
+          
+          {title.includes("Maintenance") && (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-jarvisGold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          )}
         </div>
       </motion.div>
       
@@ -145,7 +154,7 @@ export default function ServiceCards() {
   ];
 
   return (
-    <section className="py-16 px-6 relative">
+    <section className="py-12 px-6 relative">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-10 -left-10 w-40 h-40 bg-monacoBlue/5 rounded-full blur-3xl"></div>
@@ -154,19 +163,13 @@ export default function ServiceCards() {
       
       <div className="container mx-auto relative z-10">
         {/* Section heading */}
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-white mb-4">Nos expertises</h2>
           <p className="text-white/70 max-w-2xl mx-auto">Des solutions complètes, du développement logiciel à l&apos;installation matérielle, avec un support continu pour garantir la pérennité de vos systèmes.</p>
-        </motion.div>
+        </div>
         
         {/* Service cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <ServiceCard 
               key={index}

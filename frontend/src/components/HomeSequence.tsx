@@ -62,7 +62,7 @@ export default function HomeSequence({
   }, []);
   
   return (
-    <>
+    <div className="relative">
       {/* Black background - lowest z-index */}
       <div className="fixed inset-0 w-full h-full -z-50 bg-black"></div>
       
@@ -84,26 +84,31 @@ export default function HomeSequence({
         className="transition-opacity duration-1000 ease-in-out relative z-0"
         style={{ opacity: contentOpacity }}
       >
-        {/* Interactive Pixel Wave Effect */}
-        <PixelWave 
-          colors={['#C9A13D', '#0053A4', '#ff4d4d', '#32cd32']} 
-          pixelSize={20} 
-          minPixelSize={10}
-          maxPixelSize={30}
-          speed={1.1} 
-          fade={0.15} 
-          direction="down"
-          borderWidth={2}
-          explosionRadius={150}
-          mouseTracking={true} 
-        />
+        {/* Interactive Pixel Wave Effect - position absolute instead of fixed */}
+        <div className="absolute inset-0 h-full w-full -z-10">
+          <PixelWave 
+            colors={['#C9A13D', '#0053A4', '#ff4d4d', '#32cd32']} 
+            pixelSize={20} 
+            minPixelSize={10}
+            maxPixelSize={30}
+            speed={1.1} 
+            fade={0.15} 
+            direction="down"
+            borderWidth={2}
+            explosionRadius={150}
+            mouseTracking={true} 
+          />
+        </div>
         
         {/* Content Sections */}
         <Hero content={heroContent} />
         <ServicesGrid items={servicesItems} />
         <TeamSection members={teamMembers} />
         <FAQTeaser faqs={faqItems} />
+        
+        {/* Space for footer */}
+        <div className="h-40"></div>
       </div>
-    </>
+    </div>
   );
 }

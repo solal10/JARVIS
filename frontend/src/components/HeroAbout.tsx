@@ -2,10 +2,11 @@
 
 import React, { useEffect, useRef } from 'react';
 
-export default function HeroServices() {
+export default function HeroAbout() {
   // Reference for the background canvas
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
+  // Animation for subtle background effect
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -70,15 +71,13 @@ export default function HeroServices() {
         style={{ pointerEvents: 'none' }}
       />
       
-      {/* No decorative elements */}
-      
       {/* Content */}
       <div className="container mx-auto text-center relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-          Nos services
+          À-propos de la SARL JARVIS
         </h1>
         <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto">
-          Développement logiciel · Installation matériel · Support global
+          Notre histoire, notre équipe, notre vision
         </p>
       </div>
     </section>
