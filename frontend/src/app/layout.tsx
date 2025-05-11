@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import StickyContactBtn from "@/components/StickyContactBtn";
+import EffectControls from "@/components/EffectControls";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -36,6 +38,7 @@ export default function RootLayout({
               <Link href="/" className="font-medium text-white hover:text-jarvisGold transition-colors">Accueil</Link>
               <Link href="/services" className="font-medium text-white hover:text-jarvisGold transition-colors">Services</Link>
               <Link href="/a-propos" className="font-medium text-white hover:text-jarvisGold transition-colors">À propos</Link>
+              <Link href="/faq" className="font-medium text-white hover:text-jarvisGold transition-colors">FAQ</Link>
               <Link href="/contact" className="font-medium text-white hover:text-jarvisGold transition-colors">Contact</Link>
             </nav>
             <button className="md:hidden text-white hover:text-jarvisGold transition-colors">
@@ -48,6 +51,8 @@ export default function RootLayout({
 
         <main className="flex-grow">
           {children}
+          <StickyContactBtn />
+          <EffectControls />
         </main>
 
         <footer className="bg-black text-white py-12 relative z-50 border-t border-monacoBlue/20">
@@ -70,6 +75,7 @@ export default function RootLayout({
                   <li><Link href="/" className="hover:text-jarvisGold transition-colors">Accueil</Link></li>
                   <li><Link href="/services" className="hover:text-jarvisGold transition-colors">Services</Link></li>
                   <li><Link href="/a-propos" className="hover:text-jarvisGold transition-colors">À propos</Link></li>
+                  <li><Link href="/faq" className="hover:text-jarvisGold transition-colors">FAQ</Link></li>
                   <li><Link href="/contact" className="hover:text-jarvisGold transition-colors">Contact</Link></li>
                 </ul>
               </div>

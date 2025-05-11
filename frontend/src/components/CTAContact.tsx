@@ -4,9 +4,21 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export default function CTAContact() {
+interface CTAContactProps {
+  title?: string;
+  buttonLabel?: string;
+  buttonUrl?: string;
+  className?: string;
+}
+
+export default function CTAContact({
+  title = "Parlons de votre projet",
+  buttonLabel = "Nous contacter",
+  buttonUrl = "/contact",
+  className = ""
+}: CTAContactProps) {
   return (
-    <section className="py-20 md:py-24 text-white relative overflow-hidden">
+    <section className={`py-20 md:py-24 text-white relative overflow-hidden ${className}`}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div 
@@ -37,7 +49,7 @@ export default function CTAContact() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Parlons de votre projet
+              {title}
             </motion.h2>
             
             <motion.p 
@@ -57,10 +69,10 @@ export default function CTAContact() {
               viewport={{ once: true }}
             >
               <Link 
-                href="/contact" 
-                className="inline-block px-10 py-5 bg-white hover:bg-jarvisGold text-black font-bold rounded-md transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(201,161,61,0.6)] text-lg"
+                href={buttonUrl} 
+                className="inline-flex items-center bg-white hover:bg-jarvisGold text-black font-bold py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(201,161,61,0.6)]"
               >
-                Demander un devis
+                {buttonLabel}
               </Link>
             </motion.div>
             

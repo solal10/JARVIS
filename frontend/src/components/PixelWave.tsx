@@ -50,16 +50,39 @@ export default function PixelWave({
   }>>([]);
 
   useEffect(() => {
+    // Event listener for toggling effects
+    const handleTogglePixelWave = (event: CustomEvent<{ enabled: boolean }>) => {
+      console.log('PixelWave received event:', event.detail);
+      setIsEnabled(event.detail.enabled);
+    };
+
+    window.addEventListener('togglePixelWave', handleTogglePixelWave as EventListener);
+
+    return () => {
+      window.removeEventListener('togglePixelWave', handleTogglePixelWave as EventListener);
+    };
+  }, []);
+
+  // Log when isEnabled changes
+  useEffect(() => {
+    console.log('PixelWave isEnabled:', isEnabled);
+  }, [isEnabled]);
+
+  useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     
-    // If animation is disabled, clear the canvas and don't set up event listeners
+    // If animation is disabled, clear everything
     if (!isEnabled) {
       ctx.fillStyle = '#000000';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+      particles.current = [];
       return;
     }
 
@@ -380,25 +403,11 @@ export default function PixelWave({
     };
   }, [colors, pixelSize, speed, fade, mouseTracking, direction, borderWidth, minPixelSize, maxPixelSize, explosionRadius, isEnabled]);
 
-  const toggleAnimation = () => {
-    setIsEnabled(!isEnabled);
-  };
-
   return (
-    <>
-      {/* Background is now handled by HomeSequence */}
-      <canvas
-        ref={canvasRef}
-        className="fixed inset-0 w-full h-full"
-        style={{ pointerEvents: 'none' }}
-      />
-      <button 
-        onClick={toggleAnimation}
-        className="fixed bottom-4 right-4 z-50 bg-monacoBlue/80 hover:bg-monacoBlue text-white font-bold py-2 px-4 rounded-full shadow-lg border border-jarvisGold/40 transition-all duration-300 backdrop-blur-sm"
-        aria-label={isEnabled ? 'Disable animation' : 'Enable animation'}
-      >
-        {isEnabled ? 'Disable Effect' : 'Enable Effect'}
-      </button>
-    </>
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 w-full h-full"
+      style={{ pointerEvents: 'none' }}
+    />
   );
 }
