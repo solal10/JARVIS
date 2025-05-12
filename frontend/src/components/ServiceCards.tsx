@@ -15,18 +15,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features,
     <motion.div 
       className="bg-monacoBlue/80 backdrop-blur-sm border border-jarvisGold/40 rounded-lg p-6 shadow-xl h-full flex flex-col"
       initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
-      viewport={{ once: true }}
       whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)' }}
     >
       {/* Service Icon with animation */}
       <motion.div 
         className="mb-6 flex justify-center"
         initial={{ scale: 0.8, opacity: 0.5 }}
-        whileInView={{ scale: 1, opacity: 1 }}
+        animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
-        viewport={{ once: true }}
       >
         <div className="w-24 h-24 relative flex items-center justify-center">
           <motion.div 
@@ -60,9 +58,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features,
       <motion.h3 
         className="text-xl font-bold mb-3 text-white text-center"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
-        viewport={{ once: true }}
       >
         {title}
       </motion.h3>
@@ -71,9 +68,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features,
       <motion.p 
         className="text-white/80 mb-4 text-center"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
-        viewport={{ once: true }}
       >
         {description}
       </motion.p>
@@ -82,9 +78,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features,
       <motion.ul 
         className="mt-4 space-y-2 text-white/70 flex-grow"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: index * 0.2 + 0.6 }}
-        viewport={{ once: true }}
       >
         {features.map((feature, i) => (
           <li key={i} className="flex items-start">
@@ -98,9 +93,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features,
       <motion.div 
         className="mt-6 pt-4 border-t border-jarvisGold/20 text-center"
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: index * 0.2 + 0.7 }}
-        viewport={{ once: true }}
       >
         <a 
           href="#contact" 
