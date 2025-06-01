@@ -20,16 +20,16 @@ export default function JarvisModel() {
               <ul className="space-y-4 text-gray-300 list-none pl-0">
                 <li className="flex items-start">
                   <span className="text-jarvisGold mr-3">•</span>
-                  <span>Pour l'investisseur, cela signifie un capital initial 100 % garanti, préservé tant que les résultats ne sont pas au rendez-vous.</span>
+                  <span>Pour l&apos;investisseur, cela signifie un capital initial 100 % garanti, préservé tant que les résultats ne sont pas au rendez-vous.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-jarvisGold mr-3">•</span>
-                  <span>Pour l'entrepreneur, c'est la promesse d'un financement progressif, débloqué uniquement au franchissement de chaque jalon validé, pour avancer pas à pas en toute sérénité.</span>
+                  <span>Pour l&apos;entrepreneur, c&apos;est la promesse d&apos;un financement progressif, débloqué uniquement au franchissement de chaque jalon validé, pour avancer pas à pas en toute sérénité.</span>
                 </li>
               </ul>
 
               <p className="text-gray-300 mt-8 leading-relaxed">
-                À chaque phase clé — de la validation du prototype à la première traction utilisateur — notre équipe apporte son expertise (technique, marketing, business) et ouvre l'accès à des ressources nouvelles. Quand votre projet prouve sa viabilité, nous créons ensemble une structure dédiée où investisseurs et porteurs de projets deviennent associés, partageant équitablement le succès et les perspectives de croissance future.
+                À chaque phase clé — de la validation du prototype à la première traction utilisateur — notre équipe apporte son expertise (technique, marketing, business) et ouvre l&apos;accès à des ressources nouvelles. Quand votre projet prouve sa viabilité, nous créons ensemble une structure dédiée où investisseurs et porteurs de projets deviennent associés, partageant équitablement le succès et les perspectives de croissance future.
               </p>
 
               <blockquote className="border-l-4 border-jarvisGold pl-6 my-8 italic text-xl text-white/90">
