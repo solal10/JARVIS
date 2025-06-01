@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface Project {
   name: string;
@@ -52,10 +53,12 @@ export default function ProjectsShowcase() {
                 className="block group"
               >
                 <div className="relative h-48 w-full overflow-hidden">
-                  <img 
-                    src={project.imagePath} 
+                  <Image
+                    src={project.imagePath}
                     alt={project.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
                 <div className="p-6">

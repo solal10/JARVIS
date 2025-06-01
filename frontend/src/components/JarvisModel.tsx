@@ -10,7 +10,7 @@ export default function JarvisModel() {
           <div className="space-y-12">
             <div className="prose prose-invert prose-jarvis max-w-none">
               <p className="text-lg text-gray-300 leading-relaxed">
-                Que vous soyez investisseur à la recherche d'opportunités à la fois sûres et performantes, ou start-up en quête de ressources pour passer de la simple idée au lancement concret, notre modèle économique hybride a été pensé pour vous réunir autour d'un même objectif : faire éclore l'innovation sans jamais compromettre votre capital.
+                Que vous soyez investisseur à la recherche d&apos;opportunités à la fois sûres et performantes, ou start-up en quête de ressources pour passer de la simple idée au lancement concret, notre modèle économique hybride a été pensé pour vous réunir autour d&apos;un même objectif : faire éclore l&apos;innovation sans jamais compromettre votre capital.
               </p>
 
               <p className="text-lg font-medium text-white mt-8 mb-6">
@@ -33,11 +33,11 @@ export default function JarvisModel() {
               </p>
 
               <blockquote className="border-l-4 border-jarvisGold pl-6 my-8 italic text-xl text-white/90">
-                « Ici, votre capital reste inviolable ; seul le succès mérite d'être récompensé. »
+                « Ici, votre capital reste inviolable ; seul le succès mérite d&apos;être récompensé. »
               </blockquote>
 
               <p className="text-gray-300 leading-relaxed">
-                Rejoignez un dispositif hybride où sécurité et agilité se conjuguent pour nourrir vos ambitions, qu'elles soient financières ou entrepreneuriales. Prêts à écrire la prochaine page de votre réussite ? Parlons-en dès aujourd'hui.
+                Rejoignez un dispositif hybride où sécurité et agilité se conjuguent pour nourrir vos ambitions, qu&apos;elles soient financières ou entrepreneuriales. Prêts à écrire la prochaine page de votre réussite ? Parlons-en dès aujourd&apos;hui.
               </p>
 
               <div className="mt-12 text-center">

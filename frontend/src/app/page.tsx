@@ -1,5 +1,4 @@
 import HomeSequence from "../components/HomeSequence";
-import ProjectsShowcase from "../components/ProjectsShowcase";
 
 export const metadata = {
   title: "SARL JARVIS – Solutions IT sur-mesure",
