@@ -1,4 +1,5 @@
 import HomeSequence from "../components/HomeSequence";
+import ProjectsShowcase from "../components/ProjectsShowcase";
 
 export const metadata = {
   title: "SARL JARVIS – Solutions IT sur-mesure",
@@ -8,11 +9,11 @@ export const metadata = {
 export default function Home() {
   // Hero content
   const heroContent = {
-    h1: "Solutions logicielles & installations IT sur‑mesure",
-    p: "SARL JARVIS conçoit, développe et intègre vos systèmes informatiques, à Monaco et à l'international.",
+    h1: "Secrets d'une infrastructure d'exception",
+    p: "Jarvis déploie sa maîtrise technologique pour créer, dans l'ombre, la performance sur-mesure qui fera toute la différence.",
     buttonPrimary: {
       text: "Demander un devis",
-      href: "#contact",
+      href: "/contact",
       style: "solid" as "solid" | "outline",
     },
   };
@@ -22,25 +23,49 @@ export default function Home() {
     { 
       title: "Développement logiciel", 
       icon: "code", 
-      description: "Applications web & mobiles sur‑mesure." 
+      description: "Applications web & mobiles sur‑mesure avec architecture cloud scalable." 
     },
     { 
-      title: "Installation matériel", 
-      icon: "device", 
-      description: "Caméras, TV, ordinateurs avec logiciels pré‑configurés." 
-    },
-    { 
-      title: "Support & maintenance", 
+      title: "Support & Maintenance", 
       icon: "support", 
-      description: "Contrats de maintenance et monitoring 24/7." 
+      description: "Support technique 24/7 et maintenance évolutive de vos systèmes." 
+    },
+    { 
+      title: "Solutions Web-marketing", 
+      icon: "marketing", 
+      description: "Stratégie digitale, SEO, et accompagnement marketing personnalisé." 
+    },
+    { 
+      title: "Offre Jarvis Start-ups", 
+      icon: "startup", 
+      description: "Financement hybride et accompagnement stratégique pour start-ups.",
+      highlight: true
     }
   ];
 
   // Team section content
   const teamMembers = [
-    { image: "/images/team1.jpg", name: "Thomas Benichou", role: "Gérant associé" },
-    { image: "/images/team2.jpg", name: "Sacha Benichou", role: "Gérant associé" },
-    { image: "/images/team3.jpg", name: "Équipe Dev", role: "Développement" }
+    { 
+      image: "/images/team1.jpg", 
+      name: "Thomas Benichou", 
+      role: "Gérant associé",
+      quote: "Toujours à fond, j'allie créativité et stratégie pour envoyer vos start-ups vers de nouveaux records",
+      bio: "Spécialiste de la gestion de start-ups et du développement stratégique, Thomas pilote la croissance de l'entreprise en identifiant de nouvelles opportunités et en optimisant les processus internes. Il accompagne les porteurs de projet de la phase d'idéation jusqu'au déploiement opérationnel, garantissant agilité et performance à chaque étape."
+    },
+    { 
+      image: "/images/team2.jpg", 
+      name: "Sacha Benichou", 
+      role: "Gérant associé",
+      quote: "La finance, c'est mon terrain de jeu : je transforme vos bilans en moteur de croissance",
+      bio: "Expert en gestion financière, Sacha élabore des plans de financement sur-mesure et supervise la trésorerie pour assurer la stabilité et la rentabilité de nos opérations. Son sens aigu de l'analyse et sa maîtrise des outils financiers permettent d'anticiper les risques et de saisir les leviers de croissance."
+    },
+    { 
+      image: "/images/team3.jpg", 
+      name: "Équipe Dev", 
+      role: "Développement",
+      quote: "On code en mode hackathon permanent pour donner vie à vos idées les plus folles",
+      bio: "Solal, Directeur du développement, coordonne notre équipe technique pour transformer vos idées en solutions digitales robustes. Fort de plusieurs années d'expérience en architecture logicielle, il veille à la qualité du code, à la scalabilité des plateformes et à l'innovation continue."
+    }
   ];
 
   // NavBar content is now handled directly in the layout.tsx file
@@ -77,6 +102,7 @@ export default function Home() {
         teamMembers={teamMembers}
         faqItems={faqItems}
       />
+     
       
       {/* Footer separator */}
       <div className="w-full h-1 bg-gradient-to-r from-transparent via-monacoBlue/30 to-transparent"></div>

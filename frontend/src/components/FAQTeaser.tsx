@@ -27,7 +27,7 @@ export default function FAQTeaser({ faqs }: FAQTeaserProps) {
             <div key={index} className="bg-monacoBlue shadow-md rounded-lg overflow-hidden border border-jarvisGold/40">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full text-left p-5 flex justify-between items-center focus:outline-none hover:bg-jarvisGold/20 transition-all duration-300 border-l-4 border-transparent hover:border-jarvisGold"
+                className="w-full text-left p-5 flex justify-between items-center focus:outline-none hover:bg-jarvisGold/20 transition-all duration-300 border-l-4 border-transparent hover:border-jarvisGold cursor-pointer group"
               >
                 <h3 className="text-xl font-semibold text-white">{faq.q}</h3>
                 <svg

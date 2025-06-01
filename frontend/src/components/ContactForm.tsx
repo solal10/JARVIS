@@ -6,8 +6,8 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    msg: ''
+    subject: '',
+    message: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,7 +30,7 @@ export default function ContactForm() {
       if (!response.ok) throw new Error('Failed to send message');
       
       setSubmitStatus('success');
-      setFormData({ name: '', email: '', phone: '', msg: '' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch {
       setSubmitStatus('error');
     } finally {
@@ -78,25 +78,26 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-white mb-2">Téléphone</label>
+            <label htmlFor="subject" className="block text-white mb-2">Sujet *</label>
             <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              value={formData.subject}
               onChange={handleChange}
               className="w-full px-4 py-3 rounded-md bg-monacoBlue/70 text-white border border-jarvisGold/40 focus:border-jarvisGold focus:ring-1 focus:ring-jarvisGold focus:outline-none transition-colors placeholder:text-white/50"
-              placeholder="+377 99 99 99 99"
+              placeholder="Sujet de votre message"
             />
           </div>
 
           <div>
-            <label htmlFor="msg" className="block text-white mb-2">Votre message *</label>
+            <label htmlFor="message" className="block text-white mb-2">Votre message *</label>
             <textarea
-              id="msg"
-              name="msg"
+              id="message"
+              name="message"
               required
-              value={formData.msg}
+              value={formData.message}
               onChange={handleChange}
               rows={6}
               className="w-full px-4 py-3 rounded-md bg-monacoBlue/70 text-white border border-jarvisGold/40 focus:border-jarvisGold focus:ring-1 focus:ring-jarvisGold focus:outline-none transition-colors placeholder:text-white/50 resize-none"

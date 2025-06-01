@@ -8,6 +8,7 @@ interface TeamMember {
   image: string;
   name: string;
   role: string;
+  quote?: string;
   bio?: string;
   social?: {
     linkedin?: string;
@@ -21,15 +22,13 @@ interface TeamSectionProps {
 }
 
 export default function TeamSection({ members }: TeamSectionProps) {
-  // Enrichir les membres avec des bios par défaut s'ils n'en ont pas
+  // Enrichir les membres avec les réseaux sociaux par défaut s'ils n'en ont pas
   const enrichedMembers = members.map(member => {
-    if (!member.bio) {
+    if (!member.social) {
       return {
         ...member,
-        bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.",
         social: {
           linkedin: "#",
-          twitter: "#",
           email: "contact@jarvis-monaco.com"
         }
       };
@@ -103,7 +102,12 @@ export default function TeamSection({ members }: TeamSectionProps) {
               >
                 <h3 className="text-2xl font-bold mb-1 text-white">{member.name}</h3>
                 <p className="text-jarvisGold font-medium mb-4">{member.role}</p>
-                <p className="text-white/70 text-sm mb-6 line-clamp-4 hover:line-clamp-none transition-all duration-300">
+                {member.quote && (
+                  <p className="text-white/90 text-lg italic mb-4 font-light">
+                    « {member.quote} »
+                  </p>
+                )}
+                <p className="text-white/70 text-sm mb-6 leading-relaxed">
                   {member.bio}
                 </p>
                 
