@@ -8,6 +8,7 @@ interface ServiceItem {
   icon: string;
   description: string;
   features?: string[];
+  highlight?: boolean;
 }
 
 interface ServicesGridProps {
@@ -22,16 +23,23 @@ const IconComponent = ({ icon }: { icon: string }) => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       );
-    case 'device':
-      return (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-jarvisGold mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      );
     case 'support':
       return (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-jarvisGold mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+      );
+    case 'marketing':
+      return (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-jarvisGold mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+        </svg>
+      );
+    case 'startup':
+      return (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mb-4 text-jarvisGold mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       );
     default:
@@ -49,22 +57,11 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
           return {
             ...item,
             features: [
-              "Applications web responsive",
+              "Applications web & mobiles sur-mesure",
               "Interfaces utilisateur modernes",
-              "Intégration API et services tiers",
-              "Développement mobile natif et hybride",
-              "Solutions sur-mesure adaptées à vos besoins"
-            ]
-          };
-        case 'device':
-          return {
-            ...item,
-            features: [
-              "Caméras de surveillance HD",
-              "Écrans et affichage dynamique",
-              "Configuration réseau sécurisée",
-              "Postes de travail optimisés",
-              "Solutions IoT et domotique"
+              "Architecture cloud scalable",
+              "Intégration API & services tiers",
+              "Sécurité & performance optimales"
             ]
           };
         case 'support':
@@ -72,11 +69,34 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
             ...item,
             features: [
               "Support technique 24/7",
-              "Monitoring proactif des systèmes",
-              "Mises à jour de sécurité régulières",
-              "Sauvegardes automatisées",
-              "Évolutions fonctionnelles sur demande"
+              "Monitoring proactif",
+              "Maintenance évolutive",
+              "Sauvegardes sécurisées",
+              "Documentation technique"
             ]
+          };
+        case 'marketing':
+          return {
+            ...item,
+            features: [
+              "Stratégie digitale",
+              "SEO & référencement",
+              "Analytics & reporting",
+              "Campagnes marketing",
+              "Formation & accompagnement"
+            ]
+          };
+        case 'startup':
+          return {
+            ...item,
+            features: [
+              "Développement à coût réduit",
+              "Participation au capital",
+              "Accompagnement stratégique",
+              "Réseau d'investisseurs",
+              "Support privilégié"
+            ],
+            highlight: true
           };
         default:
           return {
@@ -100,7 +120,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
         >
           Nos services
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {enrichedItems.map((item, index) => (
             <motion.div 
               key={index} 
