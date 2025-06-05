@@ -25,6 +25,7 @@ interface HomeSequenceProps {
     description: string;
     icon: string;
     highlight?: boolean;
+    route: string;
   }[];
   teamMembers: {
     name: string;

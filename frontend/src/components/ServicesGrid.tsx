@@ -9,6 +9,7 @@ interface ServiceItem {
   description: string;
   features?: string[];
   highlight?: boolean;
+  route: string;
 }
 
 interface ServicesGridProps {
@@ -195,13 +196,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
                 viewport={{ once: true }}
               >
                 <a 
-                  href={`/services/${item.title
-                    .normalize('NFD')
-                    .replace(/\p{Diacritic}/gu, '')
-                    .toLowerCase()
-                    .replace(/[^a-z0-9]+/g, '-')
-                    .replace(/(^-|-$)/g, '')
-                  }`}
+                  href={item.route}
                   className="inline-flex items-center bg-white hover:bg-jarvisGold text-black font-bold py-2 px-4 rounded-md transition-all duration-300 transform hover:scale-105 shadow-[0_0_10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_15px_rgba(201,161,61,0.5)]"
                 >
                   En savoir plus

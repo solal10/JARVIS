@@ -5,23 +5,28 @@ import BaseHero from '@/components/BaseHero';
 
 export default function SupportService() {
   return (
-    <div>
-      <BaseHero
-        title="Support & Maintenance"
-        subtitle="Support technique 24/7 et maintenance évolutive de vos systèmes."
-      />
-      <section className="py-24 px-6 bg-transparent text-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="prose prose-invert max-w-none">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
+    <section className="py-24 px-6 bg-transparent text-white">
+      <div className="max-w-screen-md mx-auto">
+        <h1 className="text-4xl font-bold mb-8 text-left text-jarvisGold">Support & Maintenance</h1>
+        <h2 className="text-xl font-semibold mb-6 text-left text-white/90">Support technique 24/7 et maintenance évolutive de vos systèmes</h2>
+        <div className="prose prose-invert max-w-none text-lg">
+          <h3>Un accompagnement technique de tous les instants</h3>
+          <p>
+            Notre équipe assure la surveillance, la maintenance et le support de vos infrastructures informatiques pour garantir leur disponibilité et leur performance.
+          </p>
+          <ul>
+            <li>Support technique 24/7</li>
+            <li>Monitoring proactif</li>
+            <li>Maintenance évolutive</li>
+            <li>Sauvegardes sécurisées</li>
+            <li>Documentation technique</li>
+          </ul>
+          <h3>Réactivité & expertise</h3>
+          <p>
+            Nous proposons plusieurs niveaux de contrats de maintenance, dont une option premium avec support 24/7. Ce service inclut une surveillance proactive de vos systèmes, des interventions d'urgence, et un temps de réponse garanti de moins de 30 minutes.
+          </p>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 } 

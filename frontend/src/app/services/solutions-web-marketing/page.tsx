@@ -5,23 +5,28 @@ import BaseHero from '@/components/BaseHero';
 
 export default function MarketingService() {
   return (
-    <div>
-      <BaseHero
-        title="Solutions Web-marketing"
-        subtitle="Stratégie digitale, SEO, et accompagnement marketing personnalisé."
-      />
-      <section className="py-24 px-6 bg-transparent text-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="prose prose-invert max-w-none">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
+    <section className="py-24 px-6 bg-transparent text-white">
+      <div className="max-w-screen-md mx-auto">
+        <h1 className="text-4xl font-bold mb-8 text-left text-jarvisGold">Solutions Web-marketing</h1>
+        <h2 className="text-xl font-semibold mb-6 text-left text-white/90">Stratégie digitale, SEO, et accompagnement marketing personnalisé</h2>
+        <div className="prose prose-invert max-w-none text-lg">
+          <h3>Développez votre visibilité et votre impact</h3>
+          <p>
+            Nous vous accompagnons dans la définition et la mise en œuvre de votre stratégie digitale, du référencement naturel à l'analyse de performance, en passant par la formation de vos équipes.
+          </p>
+          <ul>
+            <li>Stratégie digitale</li>
+            <li>SEO & référencement</li>
+            <li>Analytics & reporting</li>
+            <li>Campagnes marketing</li>
+            <li>Formation & accompagnement</li>
+          </ul>
+          <h3>Un accompagnement sur-mesure</h3>
+          <p>
+            Notre équipe adapte ses recommandations à vos objectifs et à votre secteur d'activité, pour maximiser votre retour sur investissement et accélérer votre croissance digitale.
+          </p>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 } 

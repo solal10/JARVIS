@@ -22,23 +22,27 @@ export default function Home() {
     { 
       title: "Développement logiciel", 
       icon: "code", 
-      description: "Applications web & mobiles sur‑mesure avec architecture cloud scalable." 
+      description: "Applications web & mobiles sur‑mesure avec architecture cloud scalable.",
+      route: "/services/developpement-logiciel"
     },
     { 
       title: "Support & Maintenance", 
       icon: "support", 
-      description: "Support technique 24/7 et maintenance évolutive de vos systèmes." 
+      description: "Support technique 24/7 et maintenance évolutive de vos systèmes.",
+      route: "/services/support-maintenance"
     },
     { 
       title: "Solutions Web-marketing", 
       icon: "marketing", 
-      description: "Stratégie digitale, SEO, et accompagnement marketing personnalisé." 
+      description: "Stratégie digitale, SEO, et accompagnement marketing personnalisé.",
+      route: "/services/solutions-web-marketing"
     },
     { 
       title: "Offre Jarvis Start-ups", 
       icon: "startup", 
       description: "Financement hybride et accompagnement stratégique pour start-ups.",
-      highlight: true
+      highlight: true,
+      route: "/services/offre-jarvis-start-ups"
     }
   ];
 

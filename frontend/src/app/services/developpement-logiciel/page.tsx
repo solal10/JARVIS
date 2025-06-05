@@ -3,25 +3,30 @@
 import React from 'react';
 import BaseHero from '@/components/BaseHero';
 
-export default function DevelopmentService() {
+export default function DeveloppementService() {
   return (
-    <div>
-      <BaseHero
-        title="Développement logiciel"
-        subtitle="Applications web & mobiles sur‑mesure avec architecture cloud scalable."
-      />
-      <section className="py-24 px-6 bg-transparent text-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="prose prose-invert max-w-none">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
+    <section className="py-24 px-6 bg-transparent text-white">
+      <div className="max-w-screen-md mx-auto">
+        <h1 className="text-4xl font-bold mb-8 text-left text-jarvisGold">Développement logiciel</h1>
+        <h2 className="text-xl font-semibold mb-6 text-left text-white/90">Applications web & mobiles sur‑mesure avec architecture cloud scalable</h2>
+        <div className="prose prose-invert max-w-none text-lg">
+          <h3>Des solutions sur-mesure pour vos besoins</h3>
+          <p>
+            Nous concevons et développons des applications web et mobiles adaptées à vos enjeux métiers, en utilisant les technologies les plus modernes pour garantir performance, sécurité et évolutivité.
+          </p>
+          <ul>
+            <li>Applications web & mobiles sur-mesure</li>
+            <li>Interfaces utilisateur modernes</li>
+            <li>Architecture cloud scalable</li>
+            <li>Intégration API & services tiers</li>
+            <li>Sécurité & performance optimales</li>
+          </ul>
+          <h3>Notre approche</h3>
+          <p>
+            Nous privilégions une démarche agile, avec des livraisons progressives et un accompagnement personnalisé à chaque étape du projet. Notre équipe technique veille à la qualité du code, à la scalabilité des plateformes et à l'innovation continue.
+          </p>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 } 
