@@ -31,8 +31,8 @@ const projects: Project[] = [
 
 export default function ProjectsShowcase() {
   return (
-    <section className="py-24 px-6 bg-monacoBlue">
-      <div className="container mx-auto">
+    <section className="py-24 bg-monacoBlue">
+      <div className="max-w-screen-xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-6 text-white">Nos Projets</h2>
           <p className="text-xl text-gray-300">
@@ -40,7 +40,7 @@ export default function ProjectsShowcase() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 w-full">
           {projects.map((project) => (
             <div
               key={project.name}

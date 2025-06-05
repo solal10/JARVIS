@@ -7,7 +7,6 @@ import Hero from './Hero';
 import ServicesGrid from './ServicesGrid';
 import TeamSection from './TeamSection';
 import FAQTeaser from './FAQTeaser';
-import JarvisModel from './JarvisModel';
 import ProjectsShowcase from './ProjectsShowcase';
 
 interface HomeSequenceProps {
@@ -106,7 +105,6 @@ export default function HomeSequence({
         {/* Content Sections */}
         <Hero content={heroContent} />
         <ServicesGrid items={servicesItems} />
-        <JarvisModel />
         <ProjectsShowcase />
         <TeamSection members={teamMembers} />
         <FAQTeaser faqs={faqItems} />

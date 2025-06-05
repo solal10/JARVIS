@@ -37,8 +37,8 @@ export default function TeamSection({ members }: TeamSectionProps) {
   });
 
   return (
-    <section className="py-24 px-6 bg-transparent text-white">
-      <div className="container mx-auto py-12">
+    <section className="py-24 bg-transparent text-white">
+      <div className="max-w-screen-xl mx-auto px-6 py-12">
         <motion.h2 
           className="text-3xl font-bold text-center mb-12 text-white"
           initial={{ opacity: 0, y: -20 }}
@@ -48,7 +48,7 @@ export default function TeamSection({ members }: TeamSectionProps) {
         >
           Notre équipe
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 w-full">
           {enrichedMembers.map((member, index) => (
             <motion.div 
               key={index}

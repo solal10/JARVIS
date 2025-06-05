@@ -109,8 +109,8 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
   });
 
   return (
-    <section className="py-24 px-6 bg-transparent text-white">
-      <div className="container mx-auto py-12">
+    <section className="py-24 bg-transparent text-white">
+      <div className="max-w-screen-xl mx-auto px-6 py-12">
         <motion.h2 
           className="text-3xl font-bold text-center mb-12 text-white"
           initial={{ opacity: 0, y: -20 }}
@@ -120,7 +120,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
         >
           Nos services
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
           {enrichedItems.map((item, index) => (
             <motion.div 
               key={index} 
@@ -195,7 +195,13 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
                 viewport={{ once: true }}
               >
                 <a 
-                  href="/services" 
+                  href={`/services/${item.title
+                    .normalize('NFD')
+                    .replace(/\p{Diacritic}/gu, '')
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/(^-|-$)/g, '')
+                  }`}
                   className="inline-flex items-center bg-white hover:bg-jarvisGold text-black font-bold py-2 px-4 rounded-md transition-all duration-300 transform hover:scale-105 shadow-[0_0_10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_15px_rgba(201,161,61,0.5)]"
                 >
                   En savoir plus
