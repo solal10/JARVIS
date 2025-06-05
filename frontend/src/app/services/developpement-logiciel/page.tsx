@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import BaseHero from '@/components/BaseHero';
 
 export default function DeveloppementService() {
   return (
@@ -23,7 +22,7 @@ export default function DeveloppementService() {
           </ul>
           <h3>Notre approche</h3>
           <p>
-            Nous privilégions une démarche agile, avec des livraisons progressives et un accompagnement personnalisé à chaque étape du projet. Notre équipe technique veille à la qualité du code, à la scalabilité des plateformes et à l'innovation continue.
+            Nous privilégions une démarche agile, avec des livraisons progressives et un accompagnement personnalisé à chaque étape du projet. Notre équipe technique veille à la qualité du code, à la scalabilité des plateformes et à l&apos;innovation continue.
           </p>
         </div>
       </div>

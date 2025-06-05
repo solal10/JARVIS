@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import BaseHero from '@/components/BaseHero';
 
 export default function SupportService() {
   return (
@@ -23,7 +22,7 @@ export default function SupportService() {
           </ul>
           <h3>Réactivité & expertise</h3>
           <p>
-            Nous proposons plusieurs niveaux de contrats de maintenance, dont une option premium avec support 24/7. Ce service inclut une surveillance proactive de vos systèmes, des interventions d'urgence, et un temps de réponse garanti de moins de 30 minutes.
+            Nous proposons plusieurs niveaux de contrats de maintenance, dont une option premium avec support 24/7. Ce service inclut une surveillance proactive de vos systèmes, des interventions d&apos;urgence, et un temps de réponse garanti de moins de 30 minutes.
           </p>
         </div>
       </div>
