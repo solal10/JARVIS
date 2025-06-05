@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import BaseHero from '@/components/BaseHero';
 
 export default function MarketingService() {
   return (
@@ -12,7 +11,7 @@ export default function MarketingService() {
         <div className="prose prose-invert max-w-none text-lg">
           <h3>Développez votre visibilité et votre impact</h3>
           <p>
-            Nous vous accompagnons dans la définition et la mise en œuvre de votre stratégie digitale, du référencement naturel à l'analyse de performance, en passant par la formation de vos équipes.
+            Nous vous accompagnons dans la définition et la mise en œuvre de votre stratégie digitale, du référencement naturel à l&apos;analyse de performance, en passant par la formation de vos équipes.
           </p>
           <ul>
             <li>Stratégie digitale</li>
@@ -23,7 +22,7 @@ export default function MarketingService() {
           </ul>
           <h3>Un accompagnement sur-mesure</h3>
           <p>
-            Notre équipe adapte ses recommandations à vos objectifs et à votre secteur d'activité, pour maximiser votre retour sur investissement et accélérer votre croissance digitale.
+            Notre équipe adapte ses recommandations à vos objectifs et à votre secteur d&apos;activité, pour maximiser votre retour sur investissement et accélérer votre croissance digitale.
           </p>
         </div>
       </div>
