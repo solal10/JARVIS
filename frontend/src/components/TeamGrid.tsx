@@ -18,7 +18,7 @@ interface TeamGridProps {
 export default function TeamGrid({ members }: TeamGridProps) {
   // Utiliser les membres fournis ou des membres par défaut
   const teamMembers = members || [
-    { photo: "/img/thomas.jpg", name: "Thomas Benichou", role: "Co-gérant · CTO" },
+    { photo: "/img/thomas.jpg", name: "Thomas Benichou", role: "Associé · CTO" },
     { photo: "/img/sacha.jpg", name: "Sacha Benichou", role: "Co-gérant · COO" },
     { photo: "/img/team.jpg", name: "Équipe Dev", role: "Ingénieurs & créatifs" }
   ];

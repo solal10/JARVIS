@@ -12,6 +12,7 @@
     "@headlessui/react": "^2.2.2",
     "@heroicons/react": "^2.2.0",
     "@types/nodemailer": "^6.4.17",
+    "dotenv": "^16.5.0",
     "framer-motion": "^12.10.4",
     "next": "15.3.2",
     "nodemailer": "^7.0.3",

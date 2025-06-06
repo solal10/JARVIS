@@ -54,8 +54,8 @@ export default function RootLayout({
         </main>
 
         <footer className="bg-black text-white py-12 relative z-50 border-t border-monacoBlue/20">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-5xl mx-auto px-4 md:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-x-24">
               <div>
                 <h3 className="text-xl font-bold mb-4 text-jarvisGold">SARL JARVIS</h3>
                 <p className="mb-4">Solutions IT sur-mesure &agrave; Monaco et &agrave; l&apos;international.</p>

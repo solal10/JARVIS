@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 interface ServiceItem {
   title: string;
@@ -195,7 +196,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
                 transition={{ duration: 0.3, delay: index * 0.1 + 0.6 }}
                 viewport={{ once: true }}
               >
-                <a 
+                <Link 
                   href={item.route}
                   className="inline-flex items-center bg-white hover:bg-jarvisGold text-black font-bold py-2 px-4 rounded-md transition-all duration-300 transform hover:scale-105 shadow-[0_0_10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_15px_rgba(201,161,61,0.5)]"
                 >
@@ -203,7 +204,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
               </motion.div>
             </motion.div>
           ))}

@@ -38,7 +38,7 @@ export default function Home() {
       route: "/services/solutions-web-marketing"
     },
     { 
-      title: "Offre Jarvis Start-ups", 
+      title: "Offre Jarvis Start-ups & Investisseurs", 
       icon: "startup", 
       description: "Financement hybride et accompagnement stratégique pour start-ups.",
       highlight: true,
@@ -51,7 +51,7 @@ export default function Home() {
     { 
       image: "/images/team1.jpg", 
       name: "Thomas Benichou", 
-      role: "Gérant associé",
+      role: "Associé",
       quote: "Toujours à fond, j'allie créativité et stratégie pour envoyer vos start-ups vers de nouveaux records",
       bio: "Spécialiste de la gestion de start-ups et du développement stratégique, Thomas pilote la croissance de l'entreprise en identifiant de nouvelles opportunités et en optimisant les processus internes. Il accompagne les porteurs de projet de la phase d'idéation jusqu'au déploiement opérationnel, garantissant agilité et performance à chaque étape."
     },

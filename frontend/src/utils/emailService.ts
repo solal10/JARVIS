@@ -1,4 +1,9 @@
 import nodemailer from 'nodemailer';
+import { config } from 'dotenv';
+import { readFileSync } from 'fs';
+
+// Charger les variables d'environnement depuis /etc/jarvis/.env
+config({ path: '/etc/jarvis/.env' });
 
 interface EmailData {
   name: string;

@@ -52,7 +52,7 @@ export default function TeamSection({ members }: TeamSectionProps) {
           {enrichedMembers.map((member, index) => (
             <motion.div 
               key={index}
-              className="bg-monacoBlue/85 rounded-lg shadow-xl border border-jarvisGold/40 p-8 backdrop-blur-sm relative overflow-hidden group"
+              className="bg-monacoBlue/85 rounded-lg shadow-xl border border-jarvisGold/40 p-8 backdrop-blur-sm relative overflow-hidden group flex flex-col justify-between min-h-[600px]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -94,7 +94,7 @@ export default function TeamSection({ members }: TeamSectionProps) {
               
               {/* Informations */}
               <motion.div 
-                className="text-center relative z-10"
+                className="text-center relative z-10 flex flex-col flex-1"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.2 + 0.3 }}
@@ -107,7 +107,7 @@ export default function TeamSection({ members }: TeamSectionProps) {
                     « {member.quote} »
                   </p>
                 )}
-                <p className="text-white/70 text-sm mb-6 leading-relaxed">
+                <p className="text-white/70 text-sm mb-6 leading-relaxed flex-1">
                   {member.bio}
                 </p>
                 
@@ -124,13 +124,6 @@ export default function TeamSection({ members }: TeamSectionProps) {
                     <a href={member.social.twitter} className="text-white/70 hover:text-jarvisGold transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                      </svg>
-                    </a>
-                  )}
-                  {member.social?.email && (
-                    <a href={`mailto:${member.social.email}`} className="text-white/70 hover:text-jarvisGold transition-colors">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
                       </svg>
                     </a>
                   )}
