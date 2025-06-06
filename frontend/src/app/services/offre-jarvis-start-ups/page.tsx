@@ -9,7 +9,7 @@ export default function StartupService() {
         <h1 className="text-4xl font-bold mb-8 text-left text-jarvisGold">Notre Offre Jarvis Start-ups</h1>
         <div className="prose prose-invert max-w-none text-lg">
           <p>
-            Chez JARVIS, nous avons conçu une offre inédite qui met en relation deux écosystèmes : d'un côté, des investisseurs à la recherche d'opportunités sécurisées dans la tech et les start-ups, et de l'autre, des jeunes pousses souhaitant bénéficier à la fois d'un accompagnement opérationnel et d'un levier de financement soutenu. Notre modèle économique hybride garantit une promesse de capital pour nos investisseurs tout en offrant aux start-ups un accès privilégié à des fonds et à notre expertise.
+            Chez JARVIS, nous avons conçu une offre inédite qui met en relation deux écosystèmes : d&rsquo;un côté, des investisseurs à la recherche d&rsquo;opportunités sécurisées dans la tech et les start-ups, et de l&rsquo;autre, des jeunes pousses souhaitant bénéficier à la fois d&rsquo;un accompagnement opérationnel et d&rsquo;un levier de financement soutenu. Notre modèle économique hybride garantit une promesse de capital pour nos investisseurs tout en offrant aux start-ups un accès privilégié à des fonds et à notre expertise.
           </p>
 
           <h3 className="text-2xl font-bold mt-12 mb-6 text-jarvisGold">1. Pour les investisseurs : sécurité et accès à la croissance tech</h3>
