@@ -26,24 +26,27 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased bg-black flex flex-col min-h-screen`}
       >
-        <header className="bg-monacoBlue/85 backdrop-blur-sm shadow-lg py-4 sticky top-0 z-50">
-          <div className="container mx-auto px-6 flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold text-white hover:text-jarvisGold transition-colors">SARL JARVIS</Link>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="font-medium text-white hover:text-jarvisGold transition-colors">Accueil</Link>
-              <Link href="/services/developpement-logiciel" className="font-medium text-white hover:text-jarvisGold transition-colors">Développement</Link>
-              <Link href="/services/support-maintenance" className="font-medium text-white hover:text-jarvisGold transition-colors">Support</Link>
-              <Link href="/services/solutions-web-marketing" className="font-medium text-white hover:text-jarvisGold transition-colors">Marketing</Link>
-              <Link href="/services/offre-jarvis-start-ups" className="font-medium text-white hover:text-jarvisGold transition-colors">Startup</Link>
-              <Link href="/a-propos" className="font-medium text-white hover:text-jarvisGold transition-colors">À propos</Link>
-              <Link href="/faq" className="font-medium text-white hover:text-jarvisGold transition-colors">FAQ</Link>
-              <Link href="/contact" className="font-medium text-white hover:text-jarvisGold transition-colors">Contact</Link>
-            </nav>
-            <button className="md:hidden text-white hover:text-jarvisGold transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
+        <header className="sticky top-0 z-50">
+          <div className="backdrop-blur-md shadow-lg bg-black/70">
+            <div className="container mx-auto px-6 flex justify-between items-center py-4">
+              <Link href="/" className="text-2xl font-bold text-white hover:text-jarvisGold transition-colors">SARL JARVIS</Link>
+              <nav className="hidden md:flex space-x-8">
+                <Link href="/" className="font-medium text-white hover:text-jarvisGold transition-colors">Accueil</Link>
+                <Link href="/services/developpement-logiciel" className="font-medium text-white hover:text-jarvisGold transition-colors">Développement</Link>
+                <Link href="/services/support-maintenance" className="font-medium text-white hover:text-jarvisGold transition-colors">Support</Link>
+                <Link href="/services/solutions-web-marketing" className="font-medium text-white hover:text-jarvisGold transition-colors">Marketing</Link>
+                <Link href="/services/offre-jarvis-start-ups" className="font-medium text-white hover:text-jarvisGold transition-colors">Startup</Link>
+                <Link href="/a-propos" className="font-medium text-white hover:text-jarvisGold transition-colors">À propos</Link>
+                <Link href="/faq" className="font-medium text-white hover:text-jarvisGold transition-colors">FAQ</Link>
+                <Link href="/contact" className="font-medium text-white hover:text-jarvisGold transition-colors">Contact</Link>
+              </nav>
+              <button className="md:hidden text-white hover:text-jarvisGold transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+            <div className="w-full h-1 bg-gradient-to-r from-transparent via-jarvisGold/30 to-transparent"></div>
           </div>
         </header>
 
@@ -53,9 +56,9 @@ export default function RootLayout({
           <EffectControls />
         </main>
 
-        <footer className="bg-black text-white py-12 relative z-50 border-t border-monacoBlue/20">
+        <footer className="backdrop-blur-md text-white py-12 relative z-50 border-t border-monacoBlue/20">
           <div className="max-w-5xl mx-auto px-4 md:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-x-24">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-x-48">
               <div>
                 <h3 className="text-xl font-bold mb-4 text-jarvisGold">SARL JARVIS</h3>
                 <p className="mb-4">Solutions IT sur-mesure &agrave; Monaco et &agrave; l&apos;international.</p>

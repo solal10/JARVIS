@@ -31,7 +31,7 @@ const projects: Project[] = [
 
 export default function ProjectsShowcase() {
   return (
-    <section className="py-24 bg-monacoBlue">
+    <section className="py-24">
       <div className="max-w-screen-xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-6 text-white">Nos Projets</h2>

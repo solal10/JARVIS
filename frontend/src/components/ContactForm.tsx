@@ -58,7 +58,7 @@ export default function ContactForm() {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md bg-monacoBlue/70 text-white border border-jarvisGold/40 focus:border-jarvisGold focus:ring-1 focus:ring-jarvisGold focus:outline-none transition-colors placeholder:text-white/50"
+              className="w-full px-4 py-3 rounded-md bg-black/40 text-white border border-jarvisGold/40 focus:border-jarvisGold focus:ring-1 focus:ring-jarvisGold focus:outline-none transition-colors placeholder:text-white/50"
               placeholder="Votre nom"
             />
           </div>
@@ -72,7 +72,7 @@ export default function ContactForm() {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md bg-monacoBlue/70 text-white border border-jarvisGold/40 focus:border-jarvisGold focus:ring-1 focus:ring-jarvisGold focus:outline-none transition-colors placeholder:text-white/50"
+              className="w-full px-4 py-3 rounded-md bg-black/40 text-white border border-jarvisGold/40 focus:border-jarvisGold focus:ring-1 focus:ring-jarvisGold focus:outline-none transition-colors placeholder:text-white/50"
               placeholder="votre@email.com"
             />
           </div>
@@ -86,7 +86,7 @@ export default function ContactForm() {
               required
               value={formData.subject}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-md bg-monacoBlue/70 text-white border border-jarvisGold/40 focus:border-jarvisGold focus:ring-1 focus:ring-jarvisGold focus:outline-none transition-colors placeholder:text-white/50"
+              className="w-full px-4 py-3 rounded-md bg-black/40 text-white border border-jarvisGold/40 focus:border-jarvisGold focus:ring-1 focus:ring-jarvisGold focus:outline-none transition-colors placeholder:text-white/50"
               placeholder="Sujet de votre message"
             />
           </div>
@@ -100,7 +100,7 @@ export default function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               rows={6}
-              className="w-full px-4 py-3 rounded-md bg-monacoBlue/70 text-white border border-jarvisGold/40 focus:border-jarvisGold focus:ring-1 focus:ring-jarvisGold focus:outline-none transition-colors placeholder:text-white/50 resize-none"
+              className="w-full px-4 py-3 rounded-md bg-black/40 text-white border border-jarvisGold/40 focus:border-jarvisGold focus:ring-1 focus:ring-jarvisGold focus:outline-none transition-colors placeholder:text-white/50 resize-none"
               placeholder="Décrivez votre projet..."
             />
           </div>

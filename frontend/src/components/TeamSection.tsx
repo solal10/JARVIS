@@ -52,7 +52,7 @@ export default function TeamSection({ members }: TeamSectionProps) {
           {enrichedMembers.map((member, index) => (
             <motion.div 
               key={index}
-              className="bg-monacoBlue/85 rounded-lg shadow-xl border border-jarvisGold/40 p-8 backdrop-blur-sm relative overflow-hidden group flex flex-col justify-between min-h-[600px]"
+              className="bg-black/40 rounded-lg shadow-xl border border-jarvisGold/40 p-8 backdrop-blur-sm relative overflow-hidden group flex flex-col justify-between min-h-[600px]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}

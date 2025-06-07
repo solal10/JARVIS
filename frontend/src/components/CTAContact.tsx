@@ -35,7 +35,7 @@ export default function CTAContact({
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          className="max-w-4xl mx-auto bg-monacoBlue/70 backdrop-blur-sm p-10 md:p-12 rounded-xl border border-jarvisGold/50 shadow-2xl"
+          className="max-w-4xl mx-auto backdrop-blur-sm p-10 md:p-12 rounded-xl border border-jarvisGold/50 shadow-2xl"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}

@@ -126,12 +126,12 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
           {enrichedItems.map((item, index) => (
             <motion.div 
               key={index} 
-              className="bg-monacoBlue/85 rounded-lg shadow-xl p-8 border border-jarvisGold/40 flex flex-col h-full backdrop-blur-sm overflow-hidden relative group"
+              className="backdrop-blur-sm border border-jarvisGold/40 rounded-lg p-6 shadow-xl h-full flex flex-col overflow-hidden relative group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1)' }}
             >
               {/* Élément décoratif */}
               <div className="absolute -top-10 -right-10 w-20 h-20 bg-jarvisGold/10 rounded-full blur-xl group-hover:bg-jarvisGold/20 transition-all duration-500"></div>

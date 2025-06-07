@@ -18,9 +18,9 @@ interface TeamGridProps {
 export default function TeamGrid({ members }: TeamGridProps) {
   // Utiliser les membres fournis ou des membres par défaut
   const teamMembers = members || [
-    { photo: "/img/thomas.jpg", name: "Thomas Benichou", role: "Associé · CTO" },
-    { photo: "/img/sacha.jpg", name: "Sacha Benichou", role: "Co-gérant · COO" },
-    { photo: "/img/team.jpg", name: "Équipe Dev", role: "Ingénieurs & créatifs" }
+    { photo: "/img/thomas.jpg", name: "Thomas Benichou", role: "Associé" },
+    { photo: "/img/sacha.jpg", name: "Sacha Benichou", role: "Gérant associé" },
+    { photo: "/img/solal.jpg", name: "Solal Ohana", role: "Directeur Technique" }
   ];
 
   return (
@@ -40,12 +40,12 @@ export default function TeamGrid({ members }: TeamGridProps) {
           {teamMembers.map((member, index) => (
             <motion.div 
               key={index}
-              className="bg-monacoBlue/80 rounded-lg shadow-xl border border-jarvisGold/40 p-8 backdrop-blur-sm relative overflow-hidden group"
+              className="backdrop-blur-sm border border-jarvisGold/40 rounded-lg p-6 shadow-xl h-full flex flex-col relative overflow-hidden group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1)' }}
             >
               {/* Éléments décoratifs */}
               <div className="absolute -top-10 -right-10 w-32 h-32 bg-jarvisGold/5 rounded-full blur-xl group-hover:bg-jarvisGold/10 transition-all duration-500"></div>

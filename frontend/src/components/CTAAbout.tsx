@@ -23,7 +23,7 @@ export default function CTAAbout() {
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          className="max-w-4xl mx-auto bg-monacoBlue/90 backdrop-blur-md p-10 md:p-12 rounded-xl border-2 border-jarvisGold shadow-2xl shadow-jarvisGold/30 text-center"
+          className="backdrop-blur-sm border border-jarvisGold/40 rounded-lg p-6 shadow-xl h-full flex flex-col max-w-4xl mx-auto text-center"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -36,7 +36,7 @@ export default function CTAAbout() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <span className="text-jarvisGold">Vous partagez</span> notre vision ?
+            <span className="">Vous partagez</span> notre vision ?
           </motion.h2>
           
           <motion.p

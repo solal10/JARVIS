@@ -64,10 +64,10 @@ export default function Home() {
     },
     { 
       image: "/images/team3.jpg", 
-      name: "Équipe Dev", 
-      role: "Développement",
-      quote: "On code en mode hackathon permanent pour donner vie à vos idées les plus folles",
-      bio: "Solal, Directeur du développement, coordonne notre équipe technique pour transformer vos idées en solutions digitales robustes. Fort de plusieurs années d'expérience en architecture logicielle, il veille à la qualité du code, à la scalabilité des plateformes et à l'innovation continue."
+      name: "Solal Ohana", 
+      role: "Directeur Technique",
+      quote: "L'innovation technique est au cœur de chaque solution que nous créons",
+      bio: "En tant que Directeur Technique, Solal dirige l'ensemble des développements logiciels et l'architecture technique de nos solutions. Son expertise en développement full-stack et sa vision stratégique permettent de concevoir des systèmes robustes, évolutifs et performants qui répondent aux besoins les plus exigeants de nos clients."
     }
   ];
 

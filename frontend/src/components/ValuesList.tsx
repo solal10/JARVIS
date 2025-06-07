@@ -46,14 +46,14 @@ export default function ValuesList({ items }: ValuesListProps) {
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col md:flex-row items-center md:items-start gap-6 bg-monacoBlue/30 backdrop-blur-sm p-6 rounded-lg border-l-4 border-jarvisGold"
+                className="flex flex-col md:flex-row items-center md:items-start gap-6 backdrop-blur-sm p-6 rounded-lg border-l-4 border-jarvisGold"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ x: 5 }}
               >
-                <div className="flex-shrink-0 bg-monacoBlue/60 p-4 rounded-full">
+                <div className="flex-shrink-0 p-4 rounded-full">
                   <CubeIcon />
                 </div>
                 <div>
