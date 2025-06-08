@@ -57,7 +57,9 @@ export default function FAQsAccordion() {
       <div className="container mx-auto max-w-4xl py-12">
         <div className="space-y-4">
           {faqItems.map((faq, index) => (
-            <div key={index} className="backdrop-blur-sm border border-jarvisGold/40 rounded-lg p-6 shadow-xl h-full flex flex-col transition-all duration-300">
+            <div key={index} className="backdrop-blur-sm border border-jarvisGold/40 rounded-lg p-6 shadow-xl h-full flex flex-col transition-all duration-300 overflow-hidden relative">
+              <div className="absolute top-2 right-2 w-12 h-12 bg-jarvisGold/10 rounded-full blur-lg"></div>
+              <div className="absolute bottom-2 left-2 w-16 h-16 bg-monacoBlue/30 rounded-full blur-lg"></div>
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full text-left p-5 flex justify-between items-center focus:outline-none hover:bg-jarvisGold/20 transition-all duration-300 border-l-4 border-transparent hover:border-jarvisGold"

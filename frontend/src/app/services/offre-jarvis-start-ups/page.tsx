@@ -128,16 +128,16 @@ export default function StartupService() {
       </div>
 
       <div className="relative z-10">
-        <section className="py-24 px-6 bg-transparent text-white">
-          <div className="max-w-screen-md mx-auto">
+    <section className="py-24 px-6 bg-transparent text-white">
+      <div className="max-w-screen-md mx-auto">
             {/* Hero Section */}
             <div className="w-full pt-24 pb-16 px-6 text-center mb-32">
               <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-white">Notre Offre Jarvis Start-ups</h1>
               <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-white/80">Investisseurs & Start-ups, un modèle hybride gagnant</h2>
               <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
                 Chez JARVIS, nous avons conçu une offre inédite qui met en relation deux écosystèmes : d&apos;un côté, des investisseurs à la recherche d&apos;opportunités sécurisées dans la tech et les start-ups, et de l&apos;autre, des jeunes pousses souhaitant bénéficier à la fois d&apos;un accompagnement opérationnel et d&apos;un levier de financement soutenu. Notre modèle économique hybride garantit une promesse de capital pour nos investisseurs tout en offrant aux start-ups un accès privilégié à des fonds et à notre expertise.
-              </p>
-            </div>
+          </p>
+        </div>
             {/* Main Content */}
             <div className="space-y-16">
               {sections.map((section, idx) => (
@@ -150,8 +150,8 @@ export default function StartupService() {
                   viewport={{ once: true }}
                   whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1)' }}
                 >
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-jarvisGold/10 rounded-full blur-2xl group-hover:bg-jarvisGold/20 group-hover:blur-3xl transition-all duration-500"></div>
-                  <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-monacoBlue/30 rounded-full blur-xl group-hover:bg-monacoBlue/50 group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="absolute top-2 right-2 w-12 h-12 bg-jarvisGold/10 rounded-full blur-lg group-hover:bg-jarvisGold/20 transition-all duration-500"></div>
+                  <div className="absolute bottom-2 left-2 w-16 h-16 bg-monacoBlue/30 rounded-full blur-lg group-hover:bg-monacoBlue/40 transition-all duration-500"></div>
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-jarvisGold text-black flex items-center justify-center text-2xl font-bold shadow-md mt-1">
                     {section.number}
                   </div>

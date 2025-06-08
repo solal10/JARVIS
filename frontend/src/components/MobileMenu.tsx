@@ -11,7 +11,11 @@ interface MobileMenuProps {
 
 const links = [
   { href: '/', text: 'Accueil' },
-  { href: '/services', text: 'Services' },
+  { href: '/services/developpement-logiciel', text: 'Développement' },
+  { href: '/services/audit-conseil-ia', text: 'Audit IA' },
+  { href: '/services/offre-jarvis-start-ups', text: 'Startup' },
+  { href: '/services/solutions-web-marketing', text: 'Marketing' },
+  { href: '/services/support-maintenance', text: 'Support' },
   { href: '/a-propos', text: 'À propos' },
   { href: '/faq', text: 'FAQ' },
   { href: '/contact', text: 'Contact' }
@@ -34,7 +38,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed right-0 top-0 h-full w-64 bg-monacoBlue z-50 shadow-xl"
+            className="fixed right-0 top-0 h-full w-64 bg-black/90 backdrop-blur-md z-50 shadow-xl"
           >
             <div className="flex flex-col p-6">
               <button

@@ -34,20 +34,20 @@ export default function FAQPage() {
       <div className="relative z-10">
         <main className="space-y-24 py-12">
           <section className="container mx-auto px-6">
-            <HeroFAQ />
+        <HeroFAQ />
           </section>
 
           <section className="container mx-auto px-6">
-            <FAQsAccordion />
+        <FAQsAccordion />
           </section>
 
           <section className="container mx-auto px-6">
-            <CTAContact 
-              title="Vous avez encore des questions ?"
-              buttonLabel="Nous contacter"
-              buttonUrl="/contact"
-              className="py-16"
-            />
+        <CTAContact 
+          title="Vous avez encore des questions ?"
+          buttonLabel="Nous contacter"
+          buttonUrl="/contact"
+          className="py-16"
+        />
           </section>
         </main>
       </div>

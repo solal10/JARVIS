@@ -119,13 +119,13 @@ export default function ContactForm() {
         )}
 
         <div className="flex justify-center">
-          <button
-            type="submit"
-            disabled={isSubmitting}
+        <button
+          type="submit"
+          disabled={isSubmitting}
             className="bg-white hover:bg-jarvisGold text-black font-bold py-4 px-10 rounded-md transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(201,161,61,0.6)] text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none mx-auto"
-          >
-            {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
-          </button>
+        >
+          {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+        </button>
         </div>
       </form>
     </section>

@@ -61,11 +61,11 @@ export default function AboutPage() {
         {/* Page content */}
         <main className="space-y-24 py-12">
           <section className="container mx-auto px-6">
-            <HeroAbout />
+          <HeroAbout />
           </section>
 
           <section className="container mx-auto px-6">
-            <CompanyStory />
+          <CompanyStory />
           </section>
 
           <section className="container mx-auto px-6">
@@ -73,11 +73,11 @@ export default function AboutPage() {
           </section>
 
           <section className="container mx-auto px-6">
-            <ValuesList />
+          <ValuesList />
           </section>
 
           <section className="container mx-auto px-6">
-            <CTAAbout />
+          <CTAAbout />
           </section>
         </main>
         

@@ -70,11 +70,11 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
           return {
             ...item,
             features: [
-              "Support technique 24/7",
-              "Monitoring proactif",
-              "Maintenance évolutive",
-              "Sauvegardes sécurisées",
-              "Documentation technique"
+              "Audit et évaluation de l'IA",
+              "Agents IA et chatbots",
+              "Automatisation des processus",
+              "Formation et accompagnement",
+              "Solutions IA sur-mesure"
             ]
           };
         case 'marketing':
@@ -134,8 +134,8 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
               whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1)' }}
             >
               {/* Élément décoratif */}
-              <div className="absolute -top-10 -right-10 w-20 h-20 bg-jarvisGold/10 rounded-full blur-xl group-hover:bg-jarvisGold/20 transition-all duration-500"></div>
-              <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-monacoBlue/30 rounded-full blur-xl group-hover:bg-monacoBlue/40 transition-all duration-500"></div>
+              <div className="absolute top-2 right-2 w-12 h-12 bg-jarvisGold/10 rounded-full blur-lg group-hover:bg-jarvisGold/20 transition-all duration-500"></div>
+              <div className="absolute bottom-2 left-2 w-16 h-16 bg-monacoBlue/30 rounded-full blur-lg group-hover:bg-monacoBlue/40 transition-all duration-500"></div>
               
               {/* Icône avec animation */}
               <motion.div 

@@ -26,10 +26,10 @@ export default function Home() {
       route: "/services/developpement-logiciel"
     },
     { 
-      title: "Support & Maintenance", 
+      title: "Audit et Conseil IA", 
       icon: "support", 
-      description: "Support technique 24/7 et maintenance évolutive de vos systèmes.",
-      route: "/services/support-maintenance"
+      description: "Solutions d'intelligence artificielle et d'automatisation sur-mesure.",
+      route: "/services/audit-conseil-ia"
     },
     { 
       title: "Solutions Web-marketing", 

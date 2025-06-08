@@ -125,8 +125,8 @@ export default function MarketingService() {
                   viewport={{ once: true }}
                   whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1)' }}
                 >
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-jarvisGold/10 rounded-full blur-2xl group-hover:bg-jarvisGold/20 group-hover:blur-3xl transition-all duration-500"></div>
-                  <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-monacoBlue/30 rounded-full blur-xl group-hover:bg-monacoBlue/50 group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="absolute top-2 right-2 w-12 h-12 bg-jarvisGold/10 rounded-full blur-lg group-hover:bg-jarvisGold/20 transition-all duration-500"></div>
+                  <div className="absolute bottom-2 left-2 w-16 h-16 bg-monacoBlue/30 rounded-full blur-lg group-hover:bg-monacoBlue/40 transition-all duration-500"></div>
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-jarvisGold text-black flex items-center justify-center text-2xl font-bold shadow-md mt-1">
                     {section.number}
                   </div>

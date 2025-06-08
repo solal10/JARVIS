@@ -10,12 +10,12 @@ export default function CTAAbout() {
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div 
-          className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-monacoBlue/10 blur-3xl"
+          className="absolute top-2 right-2 w-16 h-16 rounded-full bg-monacoBlue/10 blur-lg"
           animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.7, 0.5] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute -left-20 -top-20 w-80 h-80 rounded-full bg-jarvisGold/10 blur-3xl"
+          className="absolute bottom-2 left-2 w-12 h-12 rounded-full bg-jarvisGold/10 blur-lg"
           animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.6, 0.5] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />

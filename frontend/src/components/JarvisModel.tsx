@@ -8,7 +8,9 @@ export default function JarvisModel() {
           <h2 className="text-3xl font-bold mb-12 text-white text-center">Le Modèle Jarvis</h2>
           
           <div className="space-y-12">
-            <div className="backdrop-blur-sm border border-jarvisGold/40 rounded-lg p-6 shadow-xl h-full flex flex-col prose prose-invert prose-jarvis max-w-none">
+            <div className="backdrop-blur-sm border border-jarvisGold/40 rounded-lg p-6 shadow-xl h-full flex flex-col prose prose-invert prose-jarvis max-w-none overflow-hidden relative">
+              <div className="absolute top-2 right-2 w-12 h-12 bg-jarvisGold/10 rounded-full blur-lg"></div>
+              <div className="absolute bottom-2 left-2 w-16 h-16 bg-monacoBlue/30 rounded-full blur-lg"></div>
               <p className="text-lg text-gray-300 leading-relaxed">
                 Que vous soyez investisseur à la recherche d&apos;opportunités à la fois sûres et performantes, ou start-up en quête de ressources pour passer de la simple idée au lancement concret, notre modèle économique hybride a été pensé pour vous réunir autour d&apos;un même objectif : faire éclore l&apos;innovation sans jamais compromettre votre capital.
               </p>
