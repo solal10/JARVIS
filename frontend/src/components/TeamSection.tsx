@@ -82,7 +82,8 @@ export default function TeamSection({ members }: TeamSectionProps) {
                       src={member.image} 
                       alt={member.name}
                       fill
-                      className="object-cover"
+                      className={`object-cover ${member.image.includes('team1') || member.name.includes('Thomas') ? 'object-top' : 'object-center'}`}
+                      style={member.image.includes('team1') || member.name.includes('Thomas') ? { objectPosition: '50% 20%' } : {}}
                     />
                   ) : (
                     <div className="w-full h-full bg-monacoBlue/50 flex items-center justify-center">

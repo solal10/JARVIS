@@ -9,9 +9,10 @@ export default function ContactInfo() {
         <h2 className="text-2xl md:text-3xl font-bold mb-6 text-jarvisGold">Siège social</h2>
         <div className="space-y-2 text-lg">
           <p className="font-semibold">SARL JARVIS</p>
-          <p>2, rue du Gabian – c/o IBC</p>
+          <p>2 Rue Du Gabian</p>
           <p>98000 Monaco</p>
-          <p>Tél. : +377 99 99 99 99</p>
+          <p>Tél. : +33.6.66.38.05.14</p>
+          <p>Tél. : +33.6.67.63.87.29</p>
           <p>
             E-mail :{' '}
             <a 

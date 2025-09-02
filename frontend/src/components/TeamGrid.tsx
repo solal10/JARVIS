@@ -70,7 +70,8 @@ export default function TeamGrid({ members }: TeamGridProps) {
                       src={member.photo} 
                       alt={member.name}
                       fill
-                      className="object-cover"
+                      className={`object-cover ${member.photo.includes('thomas') || member.photo.includes('team1') ? 'object-top' : 'object-center'}`}
+                      style={member.photo.includes('thomas') || member.photo.includes('team1') ? { objectPosition: '50% 20%' } : {}}
                     />
                   ) : (
                     <div className="w-full h-full bg-monacoBlue/50 flex items-center justify-center">

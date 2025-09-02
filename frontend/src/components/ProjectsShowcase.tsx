@@ -10,22 +10,22 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: 'MyWer',
-    description: 'Application d\'inventaire intelligente',
-    imagePath: 'https://placehold.co/600x400/0053A4/FFFFFF?text=MyWer',
-    url: '#',
+    name: 'Brikka',
+    description: 'Plateforme intelligente qui transforme la gestion immobilière en une expérience fluide et performante. Grâce à l\'IA, elle simplifie le suivi des biens, locataires et loyers.',
+    imagePath: '/images/brikka.png',
+    url: 'https://brikka.app',
   },
   {
-    name: 'TrakIA',
-    description: 'Gestion de véhicules connectés',
-    imagePath: 'https://placehold.co/600x400/0053A4/FFFFFF?text=TrakIA',
-    url: '#',
+    name: 'AVA',
+    description: 'Coach santé intelligent qui analyse vos données de bien-être grâce à l\'IA. AVA s\'adapte à vos habitudes pour offrir des recommandations personnalisées et proactives.',
+    imagePath: '/images/Ava.png',
+    url: 'https://myava.health',
   },
   {
-    name: 'HookReplay',
-    description: 'Webhook Replay as a service',
-    imagePath: 'https://placehold.co/600x400/0053A4/FFFFFF?text=HookReplay',
-    url: '#',
+    name: 'Villa Azaï Tù',
+    description: 'Jarvis signe l\'univers digital, orchestre les installations techniques et valorise la commercialisation de cette villa d\'exception sur les plus belles plateformes internationales.',
+    imagePath: '/images/villa_azai_tu.png',
+    url: 'https://villaazaitu.com/la-villa/',
   },
 ];
 
@@ -58,7 +58,9 @@ export default function ProjectsShowcase() {
                     alt={project.name}
                     width={400}
                     height={300}
-                    className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110"
+                    className={`w-full h-full rounded-lg transition-transform duration-300 group-hover:scale-110 ${
+                      project.name === 'Villa Azaï Tù' ? 'object-contain bg-black scale-150' : 'object-cover'
+                    }`}
                   />
                 </div>
                 <div className="p-6">

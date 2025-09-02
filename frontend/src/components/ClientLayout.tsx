@@ -62,9 +62,10 @@ export default function ClientLayout({
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4 text-jarvisGold">Contact</h3>
-              <p className="mb-2">Monaco, Principaut&eacute; de Monaco</p>
+              <p className="mb-2">2 Rue Du Gabian, 98000 Monaco</p>
               <p className="mb-2">Email: contact@jarvis-monaco.com</p>
-              <p>T&eacute;l: +377 99 99 99 99</p>
+              <p className="mb-2">T&eacute;l: +33.6.66.38.05.14</p>
+              <p>T&eacute;l: +33.6.67.63.87.29</p>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4 text-jarvisGold">Liens rapides</h3>
