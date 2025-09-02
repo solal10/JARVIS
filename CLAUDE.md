@@ -6,6 +6,11 @@ This file configures Claude Code for the JARVIS project.
 - **Frontend**: Next.js application in `/frontend` directory
 - **Tech Stack**: Next.js, React, TypeScript, Tailwind CSS, Framer Motion
 
+## Requirements
+- **Node.js**: >=22.0.0 (LTS)
+- **npm**: >=10.9.0
+- **yarn**: >=1.22.0
+
 ## Development Commands
 ```bash
 cd frontend
