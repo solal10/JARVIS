@@ -7,12 +7,30 @@ import ClientLayout from "@/components/ClientLayout";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "SARL JARVIS – Solutions IT sur‑mesure",
+  metadataBase: new URL('https://jarvis-mc.com'),
+  title: {
+    default: "SARL JARVIS – Solutions IT sur‑mesure",
+    template: "%s | JARVIS"
+  },
   description: "Solutions logicielles & installations IT sur‑mesure à Monaco et à l'international",
   keywords: ["JARVIS", "Monaco", "IT", "développement logiciel", "installation matériel", "support"],
+  openGraph: {
+    title: "SARL JARVIS – Solutions IT sur‑mesure",
+    description: "Solutions logicielles & installations IT sur‑mesure à Monaco et à l'international",
+    url: "https://jarvis-mc.com",
+    siteName: "JARVIS",
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SARL JARVIS – Solutions IT sur‑mesure",
+    description: "Solutions logicielles & installations IT sur‑mesure à Monaco et à l'international",
+  },
 };
 
 export default function RootLayout({
@@ -34,6 +52,50 @@ export default function RootLayout({
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-KFJWHM5G');
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "SARL JARVIS",
+              "url": "https://jarvis-mc.com",
+              "logo": "https://jarvis-mc.com/favicon.ico",
+              "description": "Solutions logicielles & installations IT sur‑mesure à Monaco et à l'international",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2 Rue Du Gabian",
+                "addressLocality": "Monaco",
+                "postalCode": "98000",
+                "addressCountry": "MC"
+              },
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+33666380514",
+                  "contactType": "customer service",
+                  "availableLanguage": ["French", "English"]
+                },
+                {
+                  "@type": "ContactPoint",
+                  "email": "info@jarvis.mc",
+                  "contactType": "customer service",
+                  "availableLanguage": ["French", "English"]
+                }
+              ],
+              "sameAs": [
+                "https://www.linkedin.com/company/sarl-jarvis"
+              ],
+              "areaServed": ["Monaco", "France", "Europe"],
+              "serviceType": [
+                "Software Development",
+                "AI Consulting",
+                "Web Marketing",
+                "Technical Support"
+              ]
+            })
           }}
         />
       </head>
