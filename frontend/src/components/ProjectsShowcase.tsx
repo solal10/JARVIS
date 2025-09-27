@@ -55,7 +55,7 @@ export default function ProjectsShowcase() {
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src={project.imagePath}
-                    alt={project.name}
+                    alt={`Capture d'écran du projet ${project.name} - ${project.description.split('.')[0]}`}
                     width={400}
                     height={300}
                     className={`w-full h-full rounded-lg transition-transform duration-300 group-hover:scale-110 ${

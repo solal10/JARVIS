@@ -68,7 +68,7 @@ export default function TeamGrid({ members }: TeamGridProps) {
                   {member.photo ? (
                     <Image 
                       src={member.photo} 
-                      alt={member.name}
+                      alt={`Photo de ${member.name}, ${member.role} chez SARL JARVIS`}
                       fill
                       className={`object-cover ${member.photo.includes('thomas') || member.photo.includes('team1') ? 'object-top' : 'object-center'}`}
                       style={member.photo.includes('thomas') || member.photo.includes('team1') ? { objectPosition: '50% 20%' } : {}}

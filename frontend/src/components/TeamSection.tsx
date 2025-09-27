@@ -80,7 +80,7 @@ export default function TeamSection({ members }: TeamSectionProps) {
                   {member.image ? (
                     <Image
                       src={member.image}
-                      alt={member.name}
+                      alt={`Photo de ${member.name}, ${member.role} chez SARL JARVIS`}
                       fill
                       className={`object-cover ${member.image.includes('team1') || member.name.includes('Thomas') ? 'object-top' : 'object-center'}`}
                       style={member.image.includes('team1') || member.name.includes('Thomas') ? { objectPosition: '50% 20%' } : {}}

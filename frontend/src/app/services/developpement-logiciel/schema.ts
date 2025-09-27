@@ -1,0 +1,1 @@
+export const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Développement Logiciel","description":"Développement applications web, mobiles sur-mesure à Monaco","provider":{"@type":"Organization","name":"SARL JARVIS"},"areaServed":["Monaco","Côte d'Azur"],"serviceType":"Software Development"};

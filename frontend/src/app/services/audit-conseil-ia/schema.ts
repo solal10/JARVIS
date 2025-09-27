@@ -1,0 +1,1 @@
+export const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Audit et Conseil IA","description":"Solutions IA sur-mesure à Monaco : audit, agents IA, chatbots","provider":{"@type":"Organization","name":"SARL JARVIS"},"areaServed":["Monaco","Côte d'Azur"],"serviceType":"AI Consulting"};

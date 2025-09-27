@@ -8,6 +8,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  preload: true, // Preload font for better performance
 });
 
 export const metadata: Metadata = {
@@ -16,11 +17,11 @@ export const metadata: Metadata = {
     default: "SARL JARVIS – Solutions IT sur‑mesure",
     template: "%s | JARVIS"
   },
-  description: "Solutions logicielles & installations IT sur‑mesure à Monaco et à l'international",
-  keywords: ["JARVIS", "Monaco", "IT", "développement logiciel", "installation matériel", "support"],
+  description: "Solutions IT sur-mesure à Monaco et Côte d'Azur : développement logiciel, audit IA, SEO, support 24/7. Expertise Nice, Cannes, Antibes.",
+  keywords: ["JARVIS", "Monaco", "Côte d'Azur", "Nice", "Cannes", "IT", "développement logiciel", "audit IA", "SEO", "support"],
   openGraph: {
     title: "SARL JARVIS – Solutions IT sur‑mesure",
-    description: "Solutions logicielles & installations IT sur‑mesure à Monaco et à l'international",
+    description: "Solutions IT sur-mesure à Monaco et Côte d'Azur : développement, IA, SEO, support 24/7",
     url: "https://jarvis-mc.com",
     siteName: "JARVIS",
     locale: "fr_FR",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "SARL JARVIS – Solutions IT sur‑mesure",
-    description: "Solutions logicielles & installations IT sur‑mesure à Monaco et à l'international",
+    description: "Solutions IT sur-mesure à Monaco et Côte d'Azur : développement, IA, SEO, support 24/7",
   },
 };
 
@@ -41,6 +42,8 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
+        {/* Google Search Console Verification - À remplacer par votre code */}
+        <meta name="google-site-verification" content="REMPLACER_PAR_VOTRE_CODE_GOOGLE_SEARCH_CONSOLE" />
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -88,7 +91,7 @@ export default function RootLayout({
               "sameAs": [
                 "https://www.linkedin.com/company/sarl-jarvis"
               ],
-              "areaServed": ["Monaco", "France", "Europe"],
+              "areaServed": ["Monaco", "Côte d'Azur", "Nice", "Cannes", "Antibes", "France", "Europe"],
               "serviceType": [
                 "Software Development",
                 "AI Consulting",

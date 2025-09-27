@@ -1,0 +1,1 @@
+export const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Support & Maintenance","description":"Support technique 24/7 et maintenance IT","provider":{"@type":"Organization","name":"SARL JARVIS"},"areaServed":["Monaco","Côte d'Azur"],"serviceType":"Technical Support"};

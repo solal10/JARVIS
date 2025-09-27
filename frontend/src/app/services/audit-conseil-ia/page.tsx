@@ -1,8 +1,9 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import PixelWave from '@/components/PixelWave';
+import { serviceSchema } from './schema';
+import { motion } from 'framer-motion';
 
 const sections = [
   {
@@ -97,7 +98,13 @@ const sections = [
 
 export default function AIConsultingService() {
   return (
-    <div className="relative min-h-screen">
+    <>
+      {/* Schema.org JSON-LD pour SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <div className="relative min-h-screen">
       {/* PixelWave background animation */}
       <div className="fixed inset-0 z-0 opacity-80">
         <PixelWave
@@ -156,5 +163,6 @@ export default function AIConsultingService() {
         </section>
       </div>
     </div>
+    </>
   );
 } 

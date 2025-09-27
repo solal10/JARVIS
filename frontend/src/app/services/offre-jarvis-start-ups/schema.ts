@@ -1,0 +1,1 @@
+export const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Offre Jarvis Start-ups","description":"Financement hybride et accompagnement start-ups","provider":{"@type":"Organization","name":"SARL JARVIS"},"areaServed":["Monaco","Côte d'Azur"],"serviceType":"Business Consulting"};

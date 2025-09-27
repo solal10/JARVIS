@@ -4,6 +4,7 @@ import FAQsAccordion from '@/components/FAQsAccordion';
 import CTAContact from '@/components/CTAContact';
 import PixelWave from '@/components/PixelWave';
 import { Metadata } from 'next';
+import { faqSchema } from './faq-schema';
 
 export const metadata: Metadata = {
   title: 'FAQ — SARL JARVIS',
@@ -12,7 +13,12 @@ export const metadata: Metadata = {
 
 export default function FAQPage() {
   return (
-    <div className="relative min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="relative min-h-screen">
       {/* PixelWave background animation */}
       <div className="fixed inset-0 z-0 opacity-80">
         <PixelWave
@@ -52,5 +58,6 @@ export default function FAQPage() {
         </main>
       </div>
     </div>
+    </>
   );
 }

@@ -1,0 +1,1 @@
+export const serviceSchema = {"@context":"https://schema.org","@type":"Service","name":"Solutions Web-Marketing","description":"Stratégie digitale, SEO et marketing personnalisé","provider":{"@type":"Organization","name":"SARL JARVIS"},"areaServed":["Monaco","Côte d'Azur"],"serviceType":"Digital Marketing"};

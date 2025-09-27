@@ -1,8 +1,9 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import PixelWave from '@/components/PixelWave';
+import { motion } from 'framer-motion';
+import { serviceSchema } from './schema';
 
 const sections = [
   {
@@ -83,7 +84,12 @@ const sections = [
 
 export default function MarketingService() {
   return (
-    <div className="relative min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <div className="relative min-h-screen">
       {/* PixelWave background animation */}
       <div className="fixed inset-0 z-0 opacity-80">
         <PixelWave
@@ -141,5 +147,6 @@ export default function MarketingService() {
         </section>
       </div>
     </div>
+    </>
   );
 } 

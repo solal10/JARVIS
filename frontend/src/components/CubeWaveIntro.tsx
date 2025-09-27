@@ -24,10 +24,17 @@ export default function CubeWaveIntro({
   const colorMapRef = useRef<Map<string, string>>(new Map());
   const hasCompletedRef = useRef<boolean>(false);
   const hasCalledOnCompleteRef = useRef<boolean>(false);
+  const lastFrameTime = useRef(0);
+  const frameThrottle = 33; // ~30fps for smooth animation
+  const animationStartedRef = useRef<boolean>(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    // Prevent double animation for single pass experience
+    if (animationStartedRef.current) return;
+    animationStartedRef.current = true;
 
     const handleResize = () => {
       canvas.width = window.innerWidth;
@@ -58,7 +65,14 @@ export default function CubeWaveIntro({
     // Animation function
     const animate = (timestamp: number) => {
       if (!canvas) return;
-      
+
+      // Throttle to reduce CPU usage for TBT optimization
+      if (timestamp - lastFrameTime.current < frameThrottle) {
+        animationFrameId.current = requestAnimationFrame(animate);
+        return;
+      }
+      lastFrameTime.current = timestamp;
+
       // Get rendering context
       const ctx = canvas.getContext('2d');
       if (!ctx) return;
@@ -200,15 +214,8 @@ export default function CubeWaveIntro({
       
       ctx.fill();
       
-      // Add glow effect
-      ctx.shadowColor = borderColor;
-      ctx.shadowBlur = 10;
-      ctx.shadowOffsetX = 0;
-      ctx.shadowOffsetY = 0;
+      // Simple stroke without glow for TBT optimization
       ctx.stroke();
-      
-      // Reset shadow
-      ctx.shadowBlur = 0;
     };
     
     // Helper function to draw a placed (black) cube
@@ -247,6 +254,8 @@ export default function CubeWaveIntro({
       if (animationFrameId.current) {
         cancelAnimationFrame(animationFrameId.current);
       }
+      // Reset for potential re-mount
+      animationStartedRef.current = false;
     };
   }, [cubeSize, duration, colors, borderWidth, onComplete, animationDuration]);
 

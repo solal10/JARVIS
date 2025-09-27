@@ -33,6 +33,8 @@ export default function PixelWave({
   const mousePosition = useRef({ x: -100, y: -100 });
   const prevMousePosition = useRef({ x: -100, y: -100 });
   const animationFrameId = useRef<number | null>(null);
+  const lastFrameTime = useRef(0);
+  const frameThrottle = 40; // ~25fps for better TBT performance
   const [isEnabled, setIsEnabled] = React.useState(initialEnabled);
   const particles = useRef<Array<{ 
     x: number; 
@@ -110,11 +112,11 @@ export default function PixelWave({
           
           // Respond to all movements, but with fewer particles
           if (distance > 0) { // No threshold - respond to all movements
-            // Modérée chance de créer des particules basée sur la distance
-            const createChance = Math.min(0.3, 0.15 + (distance / 150));
-            
+            // Moderate chance de créer des particules basée sur la distance
+            const createChance = Math.min(0.4, 0.2 + (distance / 200));
+
             if (Math.random() < createChance) {
-              // Minimal particles - just 1 for all movements
+              // Ultra minimal particles - just 1 for all movements
               const particleCount = 1; // Fixed at 1 particle to reduce total count
               
               // For very small movements, just create a single particle at current position
@@ -199,13 +201,13 @@ export default function PixelWave({
     };
     
     const createExplosionEffect = (centerX: number, centerY: number, particleCount: number) => {
-      // Modérément réduire le nombre de particules créées
-      const actualParticleCount = Math.max(2, Math.floor(particleCount / 2));
-      
-      // Limit total number of particles
-      if (particles.current.length > 120) {
+      // Drastically reduce particles for TBT optimization
+      const actualParticleCount = Math.max(1, Math.floor(particleCount / 4));
+
+      // Ultra-conservative particle limit for TBT optimization
+      if (particles.current.length > 15) {
         // Remove oldest particles if we exceed the limit
-        particles.current = particles.current.slice(-100);
+        particles.current = particles.current.slice(-10);
       }
       
       for (let i = 0; i < actualParticleCount; i++) {
@@ -250,16 +252,16 @@ export default function PixelWave({
     // Function to generate random pixels for the falling effect
     const generateRandomPixels = () => {
       if (canvas) {
-        // Generate extremely few pixels at the top of the screen
-        const pixelsToAdd = Math.floor(canvas.width / (pixelSize * 160)); // Reduced by 87.5%
-        
-        // Only add pixels very rarely
-        if (Math.random() < 0.85) {
-          return; // 85% chance to skip adding background pixels
+        // Generate minimal pixels at the top of the screen
+        const pixelsToAdd = Math.floor(canvas.width / (pixelSize * 320)); // Reduced even more
+
+        // Only add pixels ultra rarely to reduce TBT
+        if (Math.random() < 0.998) {
+          return; // 99.8% chance to skip adding background pixels
         }
-        
-        // Further limit to just 1-2 pixels at a time
-        const actualPixelsToAdd = Math.min(pixelsToAdd, 2);
+
+        // Limit to just 1 pixel at a time
+        const actualPixelsToAdd = Math.min(pixelsToAdd, 1);
         
         for (let i = 0; i < actualPixelsToAdd; i++) {
           // Calculate velocity based on direction - add slight wobble
@@ -292,25 +294,36 @@ export default function PixelWave({
       }
     };
 
-    const draw = () => {
+    const draw = (currentTime: number = 0) => {
       if (!canvas || !ctx) return;
+
+      // Throttle to reduce CPU usage for TBT optimization
+      if (currentTime - lastFrameTime.current < frameThrottle) {
+        animationFrameId.current = requestAnimationFrame(draw);
+        return;
+      }
+      lastFrameTime.current = currentTime;
       
       // Apply fade effect instead of clearing
       ctx.fillStyle = `rgba(0, 0, 0, ${fade})`;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
-      // Generate random pixels for the falling effect
-      if (Math.random() < 0.1 * speed) {
+      // Further particle reduction for final TBT optimization
+      if (Math.random() < 0.01 * speed) { // Minimal generation for better TBT
         generateRandomPixels();
       }
       
-      // Sort particles by zIndex to create layering effect
-      particles.current.sort((a, b) => a.zIndex - b.zIndex);
+      // Reduce sorting frequency dramatically to minimize blocking
+      if (particles.current.length > 50 && Math.random() < 0.01) {
+        particles.current.sort((a, b) => a.zIndex - b.zIndex);
+      }
       
-      // Update and draw particles
-      particles.current = particles.current.filter(particle => {
-        // Reduce life of particle very slowly
-        particle.life -= 0.005 * speed;
+      // Optimized particle update - use for loop instead of filter for better performance
+      let activeParticles = [];
+      for (let i = 0; i < particles.current.length; i++) {
+        const particle = particles.current[i];
+        // Slightly faster particle death to reduce total count
+        particle.life -= 0.008 * speed;
         
         // Apply gravity to all particles from click effect
         if (particle.gravity) {
@@ -376,8 +389,9 @@ export default function PixelWave({
         // Restore the context to its original state
         ctx.restore();
         
-        return true;
-      });
+        activeParticles.push(particle);
+      }
+      particles.current = activeParticles;
 
       animationFrameId.current = requestAnimationFrame(draw);
     };

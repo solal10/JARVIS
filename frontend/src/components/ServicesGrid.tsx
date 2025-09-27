@@ -129,7 +129,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
               className="backdrop-blur-sm border border-jarvisGold/40 rounded-lg p-6 shadow-xl h-full flex flex-col overflow-hidden relative group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
               viewport={{ once: true }}
               whileHover={{ y: -5, boxShadow: '0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1)' }}
             >
@@ -142,7 +142,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
                 className="mb-6 relative z-10"
                 initial={{ scale: 0.8 }}
                 whileInView={{ scale: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
+                transition={{ duration: 0.2, delay: index * 0.02 + 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ rotate: [0, -5, 5, -5, 0] }}
               >
@@ -157,7 +157,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
                 className="text-2xl font-bold mb-3 text-white relative z-10"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.1 + 0.3 }}
+                transition={{ duration: 0.15, delay: index * 0.01 + 0.08 }}
                 viewport={{ once: true }}
               >
                 {item.title}
@@ -166,7 +166,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
                 className="text-white text-opacity-80 mb-6 relative z-10"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.1 + 0.4 }}
+                transition={{ duration: 0.2, delay: index * 0.02 + 0.2 }}
                 viewport={{ once: true }}
               >
                 {item.description}
@@ -177,7 +177,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
                 className="mt-auto space-y-2 text-white/70 text-sm relative z-10"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.1 + 0.5 }}
+                transition={{ duration: 0.2, delay: index * 0.02 + 0.25 }}
                 viewport={{ once: true }}
               >
                 {item.features?.map((feature, i) => (
@@ -193,7 +193,7 @@ export default function ServicesGrid({ items }: ServicesGridProps) {
                 className="mt-6 pt-4 border-t border-jarvisGold/20 text-center relative z-10"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.3, delay: index * 0.1 + 0.6 }}
+                transition={{ duration: 0.2, delay: index * 0.02 + 0.3 }}
                 viewport={{ once: true }}
               >
                 <Link 
