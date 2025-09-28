@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from 'react';
+import Hero from './Hero';
 import CubeWaveIntro from './CubeWaveIntro';
 import PixelWave from './PixelWave';
-import Hero from './Hero';
 import ServicesGrid from './ServicesGrid';
 import TeamSection from './TeamSection';
 import FAQTeaser from './FAQTeaser';
@@ -38,30 +38,74 @@ interface HomeSequenceProps {
   }[];
 }
 
-export default function HomeSequence({ 
-  heroContent, 
-  servicesItems, 
-  teamMembers, 
-  faqItems 
+export default function HomeSequence({
+  heroContent,
+  servicesItems,
+  teamMembers,
+  faqItems
 }: HomeSequenceProps) {
   // Initialize sequence state
   const [sequenceStep, setSequenceStep] = useState<'intro' | 'content'>('intro');
-  const [contentOpacity, setContentOpacity] = useState(0);
+  const [components, setComponents] = useState<{
+    CubeWaveIntro?: React.ComponentType<any>;
+    PixelWave?: React.ComponentType<any>;
+    ServicesGrid?: React.ComponentType<any>;
+    TeamSection?: React.ComponentType<any>;
+    FAQTeaser?: React.ComponentType<any>;
+    ProjectsShowcase?: React.ComponentType<any>;
+  }>({});
+  const [componentsLoaded, setComponentsLoaded] = useState(false);
   
   // Handle the completion of the cube wave animation
   const handleIntroComplete = useCallback(() => {
-    // Immediately start fading in content
-    setContentOpacity(1);
-    
-    // Switch to content immediately
+    // Fade out intro animation
     setSequenceStep('content');
   }, []);
 
-  // Handle sequence timing
+
+  // Load components et start content early for LCP
   useEffect(() => {
     // Start with intro
     setSequenceStep('intro');
-    setContentOpacity(0);
+
+    // Load intro component
+    const loadIntro = async () => {
+      const CubeWaveIntroModule = await import('./CubeWaveIntro');
+      setComponents(prev => ({
+        ...prev,
+        CubeWaveIntro: CubeWaveIntroModule.default
+      }));
+    };
+
+    loadIntro();
+
+    // Load content components immediately for better LCP
+    setTimeout(async () => {
+      const [
+        PixelWaveModule,
+        ServicesGridModule,
+        TeamSectionModule,
+        FAQTeaserModule,
+        ProjectsShowcaseModule
+      ] = await Promise.all([
+        import('./PixelWave'),
+        import('./ServicesGrid'),
+        import('./TeamSection'),
+        import('./FAQTeaser'),
+        import('./ProjectsShowcase')
+      ]);
+
+      setComponents(prev => ({
+        ...prev,
+        PixelWave: PixelWaveModule.default,
+        ServicesGrid: ServicesGridModule.default,
+        TeamSection: TeamSectionModule.default,
+        FAQTeaser: FAQTeaserModule.default,
+        ProjectsShowcase: ProjectsShowcaseModule.default
+      }));
+
+      setComponentsLoaded(true);
+    }, 0); // Immédiat
   }, []);
   
   return (
@@ -69,50 +113,65 @@ export default function HomeSequence({
       {/* Black background - lowest z-index */}
       <div className="fixed inset-0 w-full h-full -z-50 bg-black"></div>
       
-      {/* Intro animation - always visible during intro step */}
-      {sequenceStep === 'intro' && (
-        <div className="relative z-10">
-          <CubeWaveIntro 
-            duration={3.5} 
-            onComplete={handleIntroComplete} 
-            colors={['#C9A13D', '#0053A4', '#ff4d4d', '#32cd32']} 
-            cubeSize={40} 
-            borderWidth={2} 
-          />
-        </div>
-      )}
-      
-      {/* Content - fades in after intro */}
-      <div 
-        className="transition-opacity duration-1000 ease-in-out relative z-0"
-        style={{ opacity: contentOpacity }}
-      >
-        {/* Interactive Pixel Wave Effect - position absolute instead of fixed */}
+      {/* Content - always visible for LCP */}
+      <div className="relative z-0">
+        {/* Interactive Pixel Wave Effect - lazy loaded */}
         <div className="absolute inset-0 h-full w-full -z-10">
-          <PixelWave 
-            colors={['#C9A13D', '#0053A4', '#ff4d4d', '#32cd32']} 
-            pixelSize={20} 
-            minPixelSize={10}
-            maxPixelSize={30}
-            speed={1.1} 
-            fade={0.15} 
-            direction="down"
-            borderWidth={2}
-            explosionRadius={150}
-            mouseTracking={true} 
-          />
+          {components.PixelWave && (
+            <components.PixelWave
+              colors={['#C9A13D', '#0053A4', '#ff4d4d', '#32cd32']}
+              pixelSize={20}
+              minPixelSize={10}
+              maxPixelSize={30}
+              speed={1.1}
+              fade={0.15}
+              direction="down"
+              borderWidth={2}
+              explosionRadius={150}
+              mouseTracking={true}
+            />
+          )}
         </div>
-        
-        {/* Content Sections */}
-        <Hero content={heroContent} />
-        <ServicesGrid items={servicesItems} />
-        <ProjectsShowcase />
-        <TeamSection members={teamMembers} />
-        <FAQTeaser faqs={faqItems} />
-        
+
+        {/* Content Sections - Hero prioritized for LCP */}
+        <div className="relative">
+          <Hero content={heroContent} />
+        </div>
+
+        {/* Autres composants - lazy loaded */}
+        {componentsLoaded && (
+          <>
+            {components.ServicesGrid && (
+              <components.ServicesGrid items={servicesItems} />
+            )}
+            {components.ProjectsShowcase && (
+              <components.ProjectsShowcase />
+            )}
+            {components.TeamSection && (
+              <components.TeamSection members={teamMembers} />
+            )}
+            {components.FAQTeaser && (
+              <components.FAQTeaser faqs={faqItems} />
+            )}
+          </>
+        )}
+
         {/* Space for footer */}
         <div className="h-40"></div>
       </div>
+
+      {/* Intro animation - overlay on top for performance */}
+      {sequenceStep === 'intro' && components.CubeWaveIntro && (
+        <div className="fixed inset-0 z-50 pointer-events-none">
+          <components.CubeWaveIntro
+            duration={2.5}
+            onComplete={handleIntroComplete}
+            colors={['#C9A13D', '#0053A4', '#ff4d4d', '#32cd32']}
+            cubeSize={40}
+            borderWidth={2}
+          />
+        </div>
+      )}
     </div>
   );
 }

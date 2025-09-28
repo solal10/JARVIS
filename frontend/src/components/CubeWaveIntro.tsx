@@ -11,7 +11,7 @@ interface CubeWaveIntroProps {
 }
 
 export default function CubeWaveIntro({
-  duration = 12, // Dramatically increased duration for extremely slow animation
+  duration = 2.5, // Default duration
   onComplete,
   colors = ['#C9A13D', '#0053A4', '#ff4d4d', '#32cd32'], // jarvisGold, monacoBlue, red, green
   cubeSize = 40,
