@@ -34,8 +34,9 @@ export default function PixelWave({
   const prevMousePosition = useRef({ x: -100, y: -100 });
   const animationFrameId = useRef<number | null>(null);
   const lastFrameTime = useRef(0);
-  const frameThrottle = 40; // ~25fps for better TBT performance
+  const frameThrottle = 33; // ~30fps for aggressive TBT optimization
   const [isEnabled, setIsEnabled] = React.useState(initialEnabled);
+  const isInitialized = useRef(false);
   const particles = useRef<Array<{ 
     x: number; 
     y: number; 
@@ -54,7 +55,6 @@ export default function PixelWave({
   useEffect(() => {
     // Event listener for toggling effects
     const handleTogglePixelWave = (event: CustomEvent<{ enabled: boolean }>) => {
-      console.log('PixelWave received event:', event.detail);
       setIsEnabled(event.detail.enabled);
     };
 
@@ -65,17 +65,23 @@ export default function PixelWave({
     };
   }, []);
 
-  // Log when isEnabled changes
-  useEffect(() => {
-    console.log('PixelWave isEnabled:', isEnabled);
-  }, [isEnabled]);
 
   useEffect(() => {
+    // Prevent double initialization
+    if (isInitialized.current) return;
+    isInitialized.current = true;
+
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas) {
+      isInitialized.current = false;
+      return;
+    }
 
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!ctx) {
+      isInitialized.current = false;
+      return;
+    }
     
     // If animation is disabled, clear everything
     if (!isEnabled) {
@@ -117,7 +123,7 @@ export default function PixelWave({
 
             if (Math.random() < createChance) {
               // Ultra minimal particles - just 1 for all movements
-              const particleCount = 1; // Fixed at 1 particle to reduce total count
+              const particleCount = 4; // Encore plus de particules
               
               // For very small movements, just create a single particle at current position
               if (distance < 5) {
@@ -125,7 +131,7 @@ export default function PixelWave({
               } else {
                 // For larger movements, create very few particles along the path
                 // Increase step size for fewer particles overall
-                const steps = Math.max(1, Math.floor(distance / 40));
+                const steps = Math.max(1, Math.floor(distance / 20)); // Maximum de particules sur le trajet
                 
                 // Only place particles at some points along the path
                 for (let i = 0; i < steps; i++) {
@@ -182,7 +188,7 @@ export default function PixelWave({
         const y = centerY + Math.sin(angle) * distance;
         
         // Add gravity effect that will take over gradually
-        const gravityEffect = 0.05 + Math.random() * 0.05; // Gentler gravity for smoother arcs
+        const gravityEffect = 0.08 + Math.random() * 0.08; // Plus de gravité pour chute plus rapide
         
         particles.current.push({
           x,
@@ -202,12 +208,12 @@ export default function PixelWave({
     
     const createExplosionEffect = (centerX: number, centerY: number, particleCount: number) => {
       // Drastically reduce particles for TBT optimization
-      const actualParticleCount = Math.max(1, Math.floor(particleCount / 4));
+      const actualParticleCount = Math.max(1, Math.floor(particleCount / 2)); // Moins de réduction
 
-      // Ultra-conservative particle limit for TBT optimization
-      if (particles.current.length > 15) {
+      // Very aggressive particle limit for TBT
+      if (particles.current.length > 20) {
         // Remove oldest particles if we exceed the limit
-        particles.current = particles.current.slice(-10);
+        particles.current = particles.current.slice(-15);
       }
       
       for (let i = 0; i < actualParticleCount; i++) {
@@ -232,13 +238,13 @@ export default function PixelWave({
         const zIndex = Math.floor(Math.random() * 10);
         
         // Add gentle gravity for natural arcs
-        const gravityEffect = 0.03 + Math.random() * 0.03;
+        const gravityEffect = 0.06 + Math.random() * 0.06; // Plus de gravité
         
         particles.current.push({
           x,
           y,
           color: colors[Math.floor(Math.random() * colors.length)],
-          life: 1.5 + Math.random() * 0.5,
+          life: 2.0 + Math.random() * 1.0, // Longer life for better visibility
           vx, 
           vy,
           size,
@@ -255,18 +261,18 @@ export default function PixelWave({
         // Generate minimal pixels at the top of the screen
         const pixelsToAdd = Math.floor(canvas.width / (pixelSize * 320)); // Reduced even more
 
-        // Only add pixels ultra rarely to reduce TBT
-        if (Math.random() < 0.998) {
-          return; // 99.8% chance to skip adding background pixels
+        // Generate particles very consistently for more visible animation
+        if (Math.random() < 0.1) {
+          return; // Only 10% chance to skip, much more consistent generation
         }
 
-        // Limit to just 1 pixel at a time
-        const actualPixelsToAdd = Math.min(pixelsToAdd, 1);
+        // Generate more particles for better animation continuity
+        const actualPixelsToAdd = Math.min(pixelsToAdd, 2);
         
         for (let i = 0; i < actualPixelsToAdd; i++) {
           // Calculate velocity based on direction - add slight wobble
-          const vx = (Math.random() - 0.5) * 0.3; // Slight horizontal movement for natural wobble
-          const vy = 0.6 + Math.random() * 0.6; // Moderate downward movement
+          const vx = (Math.random() - 0.5) * 0.8; // More horizontal movement for more visible effect
+          const vy = 0.4 + Math.random() * 0.8; // Varied downward movement
           
           // Randomize pixel size
           const size = minPixelSize + Math.random() * (maxPixelSize - minPixelSize);
@@ -275,7 +281,7 @@ export default function PixelWave({
           const zIndex = Math.floor(Math.random() * 10);
           
           // Add gentle gravity for natural acceleration
-          const gravityEffect = 0.01 + Math.random() * 0.02;
+          const gravityEffect = 0.04 + Math.random() * 0.04; // Plus de gravité
           
           // Mostly focus on downward direction
           particles.current.push({
@@ -295,105 +301,113 @@ export default function PixelWave({
     };
 
     const draw = (currentTime: number = 0) => {
-      if (!canvas || !ctx) return;
+      try {
+        if (!canvas || !ctx) {
+          // Always continue animation even if canvas not ready
+          if (isEnabled) {
+            animationFrameId.current = requestAnimationFrame(draw);
+          }
+          return;
+        }
 
-      // Throttle to reduce CPU usage for TBT optimization
-      if (currentTime - lastFrameTime.current < frameThrottle) {
-        animationFrameId.current = requestAnimationFrame(draw);
-        return;
-      }
-      lastFrameTime.current = currentTime;
+        // Apply throttling for better TBT performance
+        if (currentTime - lastFrameTime.current < frameThrottle) {
+          if (isEnabled) {
+            animationFrameId.current = requestAnimationFrame(draw);
+          }
+          return;
+        }
+        lastFrameTime.current = currentTime;
+
+        // Apply fade effect instead of clearing
+        ctx.fillStyle = `rgba(0, 0, 0, ${fade})`;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Generate particles with aggressive TBT optimization
+        if (Math.floor(currentTime / 100) % 2 === 0) { // Generate every ~200ms for better TBT
+          try {
+            generateRandomPixels();
+          } catch (err) {
+            console.error('Error in generateRandomPixels:', err);
+          }
+        }
       
-      // Apply fade effect instead of clearing
-      ctx.fillStyle = `rgba(0, 0, 0, ${fade})`;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Skip sorting to prevent freezes - visual layering is not critical
       
-      // Further particle reduction for final TBT optimization
-      if (Math.random() < 0.01 * speed) { // Minimal generation for better TBT
-        generateRandomPixels();
-      }
-      
-      // Reduce sorting frequency dramatically to minimize blocking
-      if (particles.current.length > 50 && Math.random() < 0.01) {
-        particles.current.sort((a, b) => a.zIndex - b.zIndex);
-      }
-      
-      // Optimized particle update - use for loop instead of filter for better performance
+      // SAFE particle update - time-sliced processing for TBT
       let activeParticles = [];
+      const startTime = performance.now();
+      const maxProcessingTime = 8; // Max 8ms per frame for TBT optimization
+
       for (let i = 0; i < particles.current.length; i++) {
+        // Break if we've exceeded our time budget
+        if (performance.now() - startTime > maxProcessingTime) {
+          // Keep remaining particles for next frame
+          activeParticles.push(...particles.current.slice(i));
+          break;
+        }
         const particle = particles.current[i];
-        // Slightly faster particle death to reduce total count
-        particle.life -= 0.008 * speed;
-        
-        // Apply gravity to all particles from click effect
+
+        // Basic validation
+        if (!particle || !particle.life || particle.life <= 0) {
+          continue; // Skip invalid or dead particles
+        }
+
+        // Smoother updates for better fluidity
+        particle.life -= 0.008; // Slower fade for longer visibility
+
+        // Add back physics for smoother movement
         if (particle.gravity) {
-          // Apply gravity continuously for a natural arc
-          particle.vy += particle.gravity * speed;
-          
-          // Gradually reduce horizontal velocity for a natural curve
-          particle.vx *= 0.99; // Very gradual reduction
-          
-          // Update position based on current velocity
-          particle.x += particle.vx * speed;
-          particle.y += particle.vy * speed;
-          
-          // Gradually increase rotation as particle falls
-          particle.rotation += (particle.vx > 0 ? 0.2 : -0.2) * speed;
-        } else {
-          // Regular update for normal particles
-          // Update position based on velocity
-          particle.x += particle.vx * speed;
-          particle.y += particle.vy * speed * 2.5; // Much faster vertical movement for falling effect
+          particle.vy += particle.gravity; // Apply gravity
         }
-        
-        // Only remove particles that are far out of bounds or have no life left
-        // This allows them to fall completely off screen
-        if (particle.life <= 0 || 
-            particle.x < -particle.size * 2 || 
-            particle.x > canvas.width + particle.size * 2 || 
-            particle.y > canvas.height + particle.size * 10) { // Allow them to fall far below the screen
-          return false;
+        particle.x += particle.vx || 0;
+        particle.y += particle.vy || 1.5; // Smoother falling speed
+
+        // Add more visible rotation animation
+        if (particle.rotation !== undefined) {
+          particle.rotation += 2; // More noticeable rotation
         }
-        
-        // Save the current context state
-        ctx.save();
-        
-        // Move to the center of where the pixel will be drawn
-        const centerX = particle.x;
-        const centerY = particle.y;
-        ctx.translate(centerX, centerY);
-        
-        // Apply rotation
-        ctx.rotate(particle.rotation * Math.PI / 180);
-        
-        // Calculate the position to draw the pixel (centered at origin after translation)
-        const halfSize = particle.size / 2;
-        
-        // Draw the black fill (inside of pixel)
-        ctx.fillStyle = 'rgba(0, 0, 0, ' + particle.life.toFixed(2) + ')';
-        ctx.fillRect(-halfSize, -halfSize, particle.size, particle.size);
-        
-        // Draw the colored border
-        const color = particle.color;
-        const opacity = particle.life.toFixed(2);
-        ctx.strokeStyle = color.replace(')', `, ${opacity})`);
-        if (!color.startsWith('rgba')) {
-          ctx.strokeStyle = color.startsWith('rgb') 
-            ? color.replace('rgb', 'rgba').replace(')', `, ${opacity})`) 
-            : `rgba(${parseInt(color.slice(1, 3), 16)}, ${parseInt(color.slice(3, 5), 16)}, ${parseInt(color.slice(5, 7), 16)}, ${opacity})`;
+
+        // Keep particles that are still alive and on screen
+        if (particle.life > 0 && particle.y < canvas.height + 100) {
+          // Restore original pixel aesthetics with stable rendering
+          const size = particle.size || 20;
+          const x = particle.x || 0;
+          const y = particle.y || 0;
+          const opacity = Math.max(0, Math.min(1, particle.life));
+
+          // Skip expensive transformations for TBT optimization
+          // Use simple rectangles for better performance
+          ctx.fillStyle = `rgba(0, 0, 0, ${opacity})`;
+          ctx.fillRect(x, y, size, size);
+
+          // Batch stroke operations for better performance
+          ctx.strokeStyle = particle.color || '#C9A13D';
+          ctx.lineWidth = borderWidth || 2;
+          ctx.strokeRect(x, y, size, size);
+
+          activeParticles.push(particle);
         }
-        
-        ctx.lineWidth = borderWidth;
-        ctx.strokeRect(-halfSize, -halfSize, particle.size, particle.size);
-        
-        // Restore the context to its original state
-        ctx.restore();
-        
-        activeParticles.push(particle);
       }
+
       particles.current = activeParticles;
 
-      animationFrameId.current = requestAnimationFrame(draw);
+      // Always continue the animation loop - FORCE it to continue
+      if (isEnabled) {
+        animationFrameId.current = requestAnimationFrame(draw);
+      } else {
+        if (animationFrameId.current) {
+          cancelAnimationFrame(animationFrameId.current);
+          animationFrameId.current = null;
+        }
+      }
+      } catch (error) {
+        console.error('PixelWave error:', error);
+        // Continue animation even on error
+        if (isEnabled) {
+          animationFrameId.current = requestAnimationFrame(draw);
+        }
+      }
     };
 
     // Initial black background
@@ -403,7 +417,19 @@ export default function PixelWave({
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('click', handleMouseClick);
-    
+
+    // Add scroll listener to ensure animation continues
+    const handleScroll = () => {
+      // Ensure animation continues during scroll
+      if (isEnabled && !animationFrameId.current) {
+        animationFrameId.current = requestAnimationFrame(draw);
+      }
+    };
+
+    // Add both scroll and resize listeners for better coverage
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('touchmove', handleScroll, { passive: true });
+
     handleResize();
     draw();
 
@@ -411,9 +437,12 @@ export default function PixelWave({
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('click', handleMouseClick);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('touchmove', handleScroll);
       if (animationFrameId.current) {
         cancelAnimationFrame(animationFrameId.current);
       }
+      isInitialized.current = false;
     };
   }, [colors, pixelSize, speed, fade, mouseTracking, direction, borderWidth, minPixelSize, maxPixelSize, explosionRadius, isEnabled]);
 
