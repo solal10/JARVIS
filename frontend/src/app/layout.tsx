@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
+import { organizationSchema, localBusinessSchema } from "@/schemas/organization";
+import { faqSchema } from "@/schemas/faq";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -57,48 +59,25 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Schema.org Organization */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "SARL JARVIS",
-              "url": "https://jarvis-mc.com",
-              "logo": "https://jarvis-mc.com/favicon.ico",
-              "description": "Solutions logicielles & installations IT sur‑mesure à Monaco et à l'international",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "2 Rue Du Gabian",
-                "addressLocality": "Monaco",
-                "postalCode": "98000",
-                "addressCountry": "MC"
-              },
-              "contactPoint": [
-                {
-                  "@type": "ContactPoint",
-                  "telephone": "+33666380514",
-                  "contactType": "customer service",
-                  "availableLanguage": ["French", "English"]
-                },
-                {
-                  "@type": "ContactPoint",
-                  "email": "info@jarvis.mc",
-                  "contactType": "customer service",
-                  "availableLanguage": ["French", "English"]
-                }
-              ],
-              "sameAs": [
-                "https://www.linkedin.com/company/sarl-jarvis"
-              ],
-              "areaServed": ["Monaco", "Côte d'Azur", "Nice", "Cannes", "Antibes", "France", "Europe"],
-              "serviceType": [
-                "Software Development",
-                "AI Consulting",
-                "Web Marketing",
-                "Technical Support"
-              ]
-            })
+            __html: JSON.stringify(organizationSchema)
+          }}
+        />
+        {/* Schema.org LocalBusiness */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessSchema)
+          }}
+        />
+        {/* Schema.org FAQ */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema)
           }}
         />
       </head>

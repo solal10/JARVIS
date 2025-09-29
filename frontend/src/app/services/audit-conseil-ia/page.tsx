@@ -45,7 +45,7 @@ const sections = [
         </li>
         <li><strong>Intégration et personnalisation :</strong> Adaptation des solutions à votre environnement :
           <ul className="list-disc pl-6 mt-2">
-            <li>Connexion avec vos systèmes existants (CRM, ERP, etc.).</li>
+            <li>Connexion avec vos systèmes existants (CRM, ERP, etc.) grâce à notre expertise en <a href="/services/developpement-logiciel" className="text-jarvisGold hover:text-jarvisGold/80 underline">développement d'applications sur-mesure</a>.</li>
             <li>Personnalisation du langage et des réponses selon votre secteur.</li>
             <li>Formation continue basée sur les interactions réelles.</li>
           </ul>

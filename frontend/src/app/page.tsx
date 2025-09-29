@@ -1,4 +1,5 @@
 import HomeSequence from "../components/HomeSequence";
+import { websiteSchema, breadcrumbSchema, serviceAggregateSchema } from "@/schemas/website";
 
 export const metadata = {
   title: "JARVIS - Création Sites Internet & Développement | Audit IA Entreprises France",
@@ -107,17 +108,33 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-black">
-      <HomeSequence
-        heroContent={heroContent}
-        servicesItems={servicesItems}
-        teamMembers={teamMembers}
-        faqItems={faqItems}
+    <>
+      {/* Schema.org JSON-LD pour la page d'accueil */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
-     
-      
-      {/* Footer separator */}
-      <div className="w-full h-1 bg-gradient-to-r from-transparent via-monacoBlue/30 to-transparent"></div>
-    </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceAggregateSchema) }}
+      />
+
+      <div className="bg-black">
+        <HomeSequence
+          heroContent={heroContent}
+          servicesItems={servicesItems}
+          teamMembers={teamMembers}
+          faqItems={faqItems}
+        />
+
+
+        {/* Footer separator */}
+        <div className="w-full h-1 bg-gradient-to-r from-transparent via-monacoBlue/30 to-transparent"></div>
+      </div>
+    </>
   );
 }

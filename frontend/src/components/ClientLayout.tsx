@@ -5,6 +5,7 @@ import Link from "next/link";
 import StickyContactBtn from "@/components/StickyContactBtn";
 import EffectControls from "@/components/EffectControls";
 import MobileMenu from '@/components/MobileMenu';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default function ClientLayout({
   children,
@@ -45,6 +46,8 @@ export default function ClientLayout({
       </header>
 
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
+
+      <Breadcrumbs />
 
       <main className="flex-grow" id="main-content">
         {children}

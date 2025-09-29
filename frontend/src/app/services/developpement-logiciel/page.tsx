@@ -21,7 +21,7 @@ const sections = [
           <strong>Spécifications fonctionnelles :</strong> À partir des informations recueillies, nous rédigeons un cahier des charges détaillé (backlog) qui liste les user stories, les parcours utilisateurs prioritaires et les critères d'acceptation associés. Cette base de travail sert de référentiel tout au long du projet.
         </li>
         <li>
-          <strong>Expertise technologique :</strong> Nous vous conseillons sur le choix des technologies (framework front-end, langage back-end, bases de données, services cloud) en fonction de vos objectifs de performance, de montée en charge et d'évolutivité.
+          <strong>Expertise technologique :</strong> Nous vous conseillons sur le choix des technologies (framework front-end, langage back-end, bases de données, services cloud) en fonction de vos objectifs de performance, de montée en charge et d'évolutivité. Cette expertise technique se complète parfaitement avec nos <a href="/services/audit-conseil-ia" className="text-jarvisGold hover:text-jarvisGold/80 underline">services d'audit IA</a> pour intégrer l'intelligence artificielle dans vos applications.
         </li>
       </ul>
     )
@@ -35,7 +35,7 @@ const sections = [
           <strong>Conception de sites internet :</strong> Notre équipe UX/UI conçoit l'architecture et l'identité visuelle de votre site internet (vitrine, e-commerce, institutionnel). Nous créons des maquettes interactives pour valider l'ergonomie, la navigation et les parcours utilisateurs avant développement.
         </li>
         <li>
-          <strong>Identité visuelle web :</strong> Nous développons un design system complet (couleurs, typographies, composants) pour votre site internet, en parfaite harmonie avec votre charte graphique existante. L'objectif est d'offrir une expérience utilisateur fluide, moderne et alignée avec votre image de marque.
+          <strong>Identité visuelle web :</strong> Nous développons un design system complet (couleurs, typographies, composants) pour votre site internet, en parfaite harmonie avec votre charte graphique existante. L'objectif est d'offrir une expérience utilisateur fluide, moderne et alignée avec votre image de marque. Cette approche UX se complète idéalement avec nos <a href="/services/solutions-web-marketing" className="text-jarvisGold hover:text-jarvisGold/80 underline">stratégies de web-marketing</a> pour maximiser la conversion et la visibilité.
         </li>
       </ul>
     )
@@ -66,7 +66,7 @@ const sections = [
           <strong>Sprints de développement :</strong> JARVIS travaille en cycles courts (1 à 2 semaines), avec des réunions quotidiennes (stand-up) pour suivre l'avancement. À la fin de chaque sprint, nous présentons une version incrémentale de l'application, testable et potentiellement déployable en production.
         </li>
         <li>
-          <strong>Revue de code et qualité logicielle :</strong> Chaque ligne de code fait l'objet d'une revue par un pair (code review) pour s'assurer qu'elle respecte nos standards (principes SOLID, tests unitaires/d'intégration, couverture de code minimale). Nous utilisons des outils d'analyse statique (SonarQube, ESLint ou équivalents) pour détecter automatiquement les vulnérabilités et les défauts de performance.
+          <strong>Revue de code et qualité logicielle :</strong> Chaque ligne de code fait l'objet d'une revue par un pair (code review) pour s'assurer qu'elle respecte nos standards (principes SOLID, tests unitaires/d'intégration, couverture de code minimale). Nous utilisons des outils d'analyse statique (SonarQube, ESLint ou équivalents) pour détecter automatiquement les vulnérabilités et les défauts de performance. Cette rigueur assure une transition fluide vers nos <a href="/services/support-maintenance" className="text-jarvisGold hover:text-jarvisGold/80 underline">services de maintenance continue</a>.
         </li>
         <li>
           <strong>Intégration et déploiement continus (CI/CD) :</strong> Selon les besoins, JARVIS met en place des déploiements progressifs (blue-green, canary releases) pour réduire les risques et pouvoir revenir en arrière rapidement en cas d'anomalie.
