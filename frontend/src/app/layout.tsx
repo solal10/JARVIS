@@ -14,23 +14,23 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://jarvis-mc.com'),
   title: {
-    default: "SARL JARVIS – Solutions IT sur‑mesure",
-    template: "%s | JARVIS"
+    default: "JARVIS - Expert Développement Logiciel & Audit IA | Solutions Entreprises France",
+    template: "%s | JARVIS Expert IT"
   },
-  description: "Solutions IT sur-mesure à Monaco et Côte d'Azur : développement logiciel, audit IA, SEO, support 24/7. Expertise Nice, Cannes, Antibes.",
-  keywords: ["JARVIS", "Monaco", "Côte d'Azur", "Nice", "Cannes", "IT", "développement logiciel", "audit IA", "SEO", "support"],
+  description: "Expert développement logiciel et audit IA. Solutions sur-mesure : applications web/mobile, IA, automation. Interventions France depuis Monaco.",
+  keywords: ["JARVIS", "développement logiciel", "audit IA", "France", "entreprises", "applications web", "intelligence artificielle", "automation", "start-ups", "Monaco"],
   openGraph: {
-    title: "SARL JARVIS – Solutions IT sur‑mesure",
-    description: "Solutions IT sur-mesure à Monaco et Côte d'Azur : développement, IA, SEO, support 24/7",
+    title: "JARVIS - Expert Développement Logiciel & Audit IA France",
+    description: "Expert développement logiciel et audit IA pour entreprises France. Solutions sur-mesure : applications web/mobile, intelligence artificielle, automation.",
     url: "https://jarvis-mc.com",
-    siteName: "JARVIS",
+    siteName: "JARVIS Expert IT",
     locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SARL JARVIS – Solutions IT sur‑mesure",
-    description: "Solutions IT sur-mesure à Monaco et Côte d'Azur : développement, IA, SEO, support 24/7",
+    title: "JARVIS - Expert Développement Logiciel & Audit IA France",
+    description: "Expert développement logiciel et audit IA pour entreprises France. Solutions sur-mesure : applications web/mobile, intelligence artificielle, automation.",
   },
 };
 
@@ -42,8 +42,8 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
-        {/* Google Search Console Verification - À remplacer par votre code */}
-        <meta name="google-site-verification" content="REMPLACER_PAR_VOTRE_CODE_GOOGLE_SEARCH_CONSOLE" />
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="google-site-verification-jarvis-monaco" />
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -103,6 +103,12 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} antialiased bg-black flex flex-col min-h-screen`}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-jarvisGold text-black px-4 py-2 rounded-md font-semibold z-50 focus:ring-2 focus:ring-jarvisGold focus:ring-opacity-50"
+        >
+          Aller au contenu principal
+        </a>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KFJWHM5G"

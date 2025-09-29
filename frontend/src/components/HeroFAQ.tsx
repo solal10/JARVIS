@@ -60,8 +60,8 @@ export default function HeroFAQ() {
       ))}
 
       <BaseHero
-        title="Foire aux questions"
-        subtitle="Toutes les réponses à vos interrogations"
+        title="Questions Fréquentes JARVIS"
+        subtitle="Développement logiciel, audit IA & solutions entreprises France"
       />
     </div>
   );

@@ -1,15 +1,15 @@
 import HomeSequence from "../components/HomeSequence";
 
 export const metadata = {
-  title: "SARL JARVIS – Solutions IT sur-mesure",
-  description: "Solutions logicielles & installations IT sur‑mesure à Monaco et à l'international",
+  title: "JARVIS - Création Sites Internet & Développement | Audit IA Entreprises France",
+  description: "Création de sites internet, développement web/mobile et audit IA pour entreprises. Conception, maintenance et solutions sur-mesure avec interventions dans toute la France depuis Monaco.",
 };
 
 export default function Home() {
   // Hero content
   const heroContent = {
-    h1: "Secrets d'une infrastructure d'exception",
-    p: "Jarvis déploie sa maîtrise technologique pour créer, dans l'ombre, la performance sur-mesure qui fera toute la différence.",
+    h1: "Solutions Technologiques & Intelligence Artificielle",
+    p: "JARVIS déploie son expertise technologique pour créer des solutions sur-mesure d'exception : développement logiciel, audit IA et automation pour entreprises. Interventions dans toute la France depuis notre base de Monaco.",
     buttonPrimary: {
       text: "Demander un devis",
       href: "/contact",
@@ -19,28 +19,28 @@ export default function Home() {
 
   // Services content
   const servicesItems = [
-    { 
-      title: "Développement logiciel", 
-      icon: "code", 
-      description: "Applications web & mobiles sur‑mesure avec architecture cloud scalable.",
+    {
+      title: "Création de sites & Développement",
+      icon: "code",
+      description: "Conception et création de sites internet, applications web & mobiles sur-mesure avec architecture moderne. Solutions complètes pour entreprises avec interventions dans toute la France.",
       route: "/services/developpement-logiciel"
     },
-    { 
-      title: "Audit et Conseil IA", 
-      icon: "support", 
-      description: "Solutions d'intelligence artificielle et d'automatisation sur-mesure.",
+    {
+      title: "Audit et Conseil IA",
+      icon: "support",
+      description: "Solutions d'intelligence artificielle et d'automatisation sur-mesure. Expert audit IA pour entreprises, start-ups et grands groupes France.",
       route: "/services/audit-conseil-ia"
     },
-    { 
-      title: "Solutions Web-marketing", 
-      icon: "marketing", 
-      description: "Stratégie digitale, SEO, et accompagnement marketing personnalisé.",
+    {
+      title: "Solutions Web-marketing",
+      icon: "marketing",
+      description: "Stratégie digitale, SEO, et accompagnement marketing personnalisé. Agence marketing digital pour entreprises francophones.",
       route: "/services/solutions-web-marketing"
     },
-    { 
-      title: "Offre Jarvis Start-ups & Investisseurs", 
-      icon: "startup", 
-      description: "Financement hybride et accompagnement stratégique pour start-ups.",
+    {
+      title: "Offre JARVIS Start-ups & Investisseurs",
+      icon: "startup",
+      description: "Financement hybride et accompagnement stratégique pour start-ups. Solutions investisseurs et entrepreneurs France, Suisse, Belgique.",
       highlight: true,
       route: "/services/offre-jarvis-start-ups"
     }

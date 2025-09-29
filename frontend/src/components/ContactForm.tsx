@@ -46,8 +46,8 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-12 px-6">
-      <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
+    <section className="py-12 px-6" aria-label="Formulaire de contact">
+      <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6" noValidate>
         <div className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-white mb-2">Nom *</label>
@@ -107,13 +107,13 @@ export default function ContactForm() {
         </div>
 
         {submitStatus === 'success' && (
-          <div className="p-4 bg-green-500/20 border border-green-500/50 rounded-md text-green-200">
+          <div className="p-4 bg-green-500/20 border border-green-500/50 rounded-md text-green-200" role="alert" aria-live="polite">
             Message envoyé avec succès ! Nous vous recontacterons dans les plus brefs délais.
           </div>
         )}
 
         {submitStatus === 'error' && (
-          <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-md text-red-200">
+          <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-md text-red-200" role="alert" aria-live="assertive">
             Une erreur est survenue. Veuillez réessayer ultérieurement.
           </div>
         )}
@@ -122,7 +122,8 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-            className="bg-white hover:bg-jarvisGold text-black font-bold py-4 px-10 rounded-md transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(201,161,61,0.6)] text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none mx-auto"
+          aria-describedby={submitStatus !== 'idle' ? 'form-status' : undefined}
+          className="bg-white hover:bg-jarvisGold text-black font-bold py-4 px-10 rounded-md transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:shadow-[0_0_30px_rgba(201,161,61,0.6)] text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none mx-auto focus:ring-2 focus:ring-jarvisGold focus:ring-opacity-50"
         >
           {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
         </button>

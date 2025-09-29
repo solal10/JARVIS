@@ -1,9 +1,12 @@
-"use client";
-
 import React from 'react';
 import PixelWave from '@/components/PixelWave';
-import { motion } from 'framer-motion';
+import ClientMotionDiv from '@/components/ClientMotionDiv';
 import { serviceSchema } from './schema';
+
+export const metadata = {
+  title: "Support & Maintenance Logicielle | Services Techniques Entreprises | JARVIS",
+  description: "Support technique France : maintenance logicielle, monitoring, sauvegardes automatisées. Service support IT professionnel entreprises, interventions à distance, basé Monaco.",
+};
 
 const sections = [
   {
@@ -16,10 +19,10 @@ const sections = [
           <ul className="list-disc pl-6 mt-2">
             <li>Critique (indisponibilité totale ou blocage complet) : prise en charge sous 2 heures ouvrées.</li>
             <li>Majeure (fonctionnalité dégradée impactant plusieurs utilisateurs) : prise en charge sous 4 heures ouvrées.</li>
-            <li>Mineure (anomalie non bloquante ou question d&apos;usage) : prise en charge sous 1 jour ouvré, correction dans le prochain cycle de maintenance planifié.</li>
+            <li>Mineure (anomalie non bloquante ou question d'usage) : prise en charge sous 1 jour ouvré, correction dans le prochain cycle de maintenance planifié.</li>
           </ul>
         </li>
-        <li><strong>Processus d&apos;escalade :</strong> En cas de bug critique non résolu dans les délais, nous faisons remonter immédiatement l&apos;incident à un référent technique senior. Un rapport d&apos;incident vous est communiqué à l&apos;issue de la résolution pour expliquer la cause et les corrections apportées.</li>
+        <li><strong>Processus d'escalade :</strong> En cas de bug critique non résolu dans les délais, nous faisons remonter immédiatement l'incident à un référent technique senior. Un rapport d'incident vous est communiqué à l'issue de la résolution pour expliquer la cause et les corrections apportées.</li>
       </ul>
     )
   },
@@ -28,9 +31,9 @@ const sections = [
     title: "Monitoring proactif et alerting",
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
-        <li><strong>Surveillance en continu des indicateurs clés :</strong> Nous mettons en place un système de monitoring (Datadog, Grafana ou solution cloud native) pour vérifier la disponibilité de vos services, les temps de réponse critiques, le taux d&apos;erreurs (4xx/5xx) et l&apos;utilisation des ressources (CPU, mémoire, stockage).</li>
-        <li><strong>Alertes automatiques dans les heures ouvrées :</strong> Les seuils d&apos;alerte sont configurés pour déclencher une notification par e-mail ou SMS à l&apos;équipe d&apos;astreinte dès qu&apos;un indicateur dépasse la norme. Les alertes sont traitées durant nos plages de support (9 h – 18 h, du lundi au vendredi).</li>
-        <li><strong>Rapport de suivi mensuel :</strong> Vous recevez chaque mois un résumé consolidé des indicateurs (taux de disponibilité, temps de réponse moyen, incidents majeurs) accompagné de recommandations d&apos;optimisation (scaling, ajustement de configuration, nettoyage de logs).</li>
+        <li><strong>Surveillance en continu des indicateurs clés :</strong> Nous mettons en place un système de monitoring (Datadog, Grafana ou solution cloud native) pour vérifier la disponibilité de vos services, les temps de réponse critiques, le taux d'erreurs (4xx/5xx) et l'utilisation des ressources (CPU, mémoire, stockage).</li>
+        <li><strong>Alertes automatiques dans les heures ouvrées :</strong> Les seuils d'alerte sont configurés pour déclencher une notification par e-mail ou SMS à l'équipe d'astreinte dès qu'un indicateur dépasse la norme. Les alertes sont traitées durant nos plages de support (9 h – 18 h, du lundi au vendredi).</li>
+        <li><strong>Rapport de suivi mensuel :</strong> Vous recevez chaque mois un résumé consolidé des indicateurs (taux de disponibilité, temps de réponse moyen, incidents majeurs) accompagné de recommandations d'optimisation (scaling, ajustement de configuration, nettoyage de logs).</li>
       </ul>
     )
   },
@@ -39,24 +42,24 @@ const sections = [
     title: "Maintenance évolutive",
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
-        <li><strong>Gestion du backlog d&apos;améliorations :</strong> Nous constituons et priorisons un backlog des évolutions fonctionnelles (nouvelles fonctionnalités, optimisations UX, mises à jour technologiques). Les demandes sont classées selon leur valeur métier et leur criticité.</li>
-        <li><strong>Cycles de maintenance programmés :</strong> Les évolutions sont intégrées via des sprints de 2 semaines. Vous pouvez suivre l&apos;avancement des tâches dans notre outil de gestion de projet (Jira, Trello, ou équivalent), commenter, et valider chaque livrable avant passage en production.</li>
-        <li><strong>Veille technologique et mises à jour planifiées :</strong> JARVIS effectue une veille régulière sur les frameworks et librairies utilisés. Lorsqu&apos;une mise à jour de sécurité ou une évolution majeure apparaît, nous planifions son intégration dans le prochain cycle de maintenance, en testant d&apos;abord en préproduction avant déploiement.</li>
+        <li><strong>Gestion du backlog d'améliorations :</strong> Nous constituons et priorisons un backlog des évolutions fonctionnelles (nouvelles fonctionnalités, optimisations UX, mises à jour technologiques). Les demandes sont classées selon leur valeur métier et leur criticité.</li>
+        <li><strong>Cycles de maintenance programmés :</strong> Les évolutions sont intégrées via des sprints de 2 semaines. Vous pouvez suivre l'avancement des tâches dans notre outil de gestion de projet (Jira, Trello, ou équivalent), commenter, et valider chaque livrable avant passage en production.</li>
+        <li><strong>Veille technologique et mises à jour planifiées :</strong> JARVIS effectue une veille régulière sur les frameworks et librairies utilisés. Lorsqu'une mise à jour de sécurité ou une évolution majeure apparaît, nous planifions son intégration dans le prochain cycle de maintenance, en testant d'abord en préproduction avant déploiement.</li>
       </ul>
     )
   },
   {
     number: 4,
-    title: "Sauvegardes sécurisées et plan de reprise d&apos;activité (PRA)",
+    title: "Sauvegardes sécurisées et plan de reprise d'activité (PRA)",
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
         <li><strong>Politique de backup :</strong> Vos données (bases, fichiers) sont sauvegardées quotidiennement avec une rétention adaptée (hebdomadaire, mensuelle). Les sauvegardes sont chiffrées et stockées sur un espace de stockage cloud distinct pour éviter toute perte.</li>
         <li><strong>Tests trimestriels de restauration :</strong> Tous les trois mois, nous vérifions la qualité des sauvegardes en restaurant un environnement de staging, afin de garantir la fiabilité des procédures et estimer le temps de rétablissement.</li>
-        <li><strong>Plan de reprise d&apos;activité simplifié :</strong> En cas de sinistre majeur (panne d&apos;infrastructure, incident critique), notre PRA définit :
+        <li><strong>Plan de reprise d'activité simplifié :</strong> En cas de sinistre majeur (panne d'infrastructure, incident critique), notre PRA définit :
           <ul className="list-disc pl-6 mt-2">
             <li>Les rôles et responsabilités (équipe JARVIS, contact client).</li>
             <li>Les étapes de bascule vers un environnement de secours (failover) en cloud ou serveur externe.</li>
-            <li>Les scénarios de communication (informations clés à transmettre selon l&apos;audience).</li>
+            <li>Les scénarios de communication (informations clés à transmettre selon l'audience).</li>
             <li>Les objectifs de temps de restauration (RTO) et de perte de données acceptable (RPO).</li>
           </ul>
         </li>
@@ -68,23 +71,23 @@ const sections = [
     title: "Documentation technique et transfert de compétences",
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
-        <li><strong>Documentation à jour :</strong> Chaque modification (correction de bug, évolution, mise à jour d&apos;infrastructure) est systématiquement documentée :
+        <li><strong>Documentation à jour :</strong> Chaque modification (correction de bug, évolution, mise à jour d'infrastructure) est systématiquement documentée :
           <ul className="list-disc pl-6 mt-2">
             <li>Architecture logicielle (diagrammes, composants, dépendances).</li>
-            <li>Procédures de déploiement (CI/CD) et d&apos;administration (scripts, configurations).</li>
-            <li>Guides de reprise d&apos;activité et fiches d&apos;intervention pour incidents majeurs.</li>
+            <li>Procédures de déploiement (CI/CD) et d'administration (scripts, configurations).</li>
+            <li>Guides de reprise d'activité et fiches d'intervention pour incidents majeurs.</li>
           </ul>
         </li>
         <li><strong>Formations ponctuelles :</strong> Si vous souhaitez prendre en charge une partie du support, nous animons des sessions de transfert de connaissances :
           <ul className="list-disc pl-6 mt-2">
-            <li>Utilisation des outils de monitoring et d&apos;analyse de logs.</li>
+            <li>Utilisation des outils de monitoring et d'analyse de logs.</li>
             <li>Procédures de diagnostic rapide et gestion des incidents courants.</li>
             <li>Processus de mises à jour (développement → préproduction → production).</li>
           </ul>
         </li>
         <li><strong>Portail client :</strong> Un espace en ligne centralise :
           <ul className="list-disc pl-6 mt-2">
-            <li>L&apos;historique des tickets et leur statut.</li>
+            <li>L'historique des tickets et leur statut.</li>
             <li>Des guides pas-à-pas pour les opérations récurrentes (restauration de backup, redémarrage de services, contrôle des ressources).</li>
             <li>Des tutoriels vidéo pour faciliter la prise en main des outils.</li>
           </ul>
@@ -125,16 +128,16 @@ export default function SupportService() {
       <div className="max-w-screen-md mx-auto">
             {/* Hero Section */}
             <div className="w-full pt-24 pb-16 px-6 text-center mb-32">
-              <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-white">Support & Maintenance</h1>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-white/80">Notre approche du Support & Maintenance chez JARVIS</h2>
+              <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-white">Support & Maintenance Logicielle</h1>
+              <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-white/80">Maintenance logicielle & support IT - Interventions à distance</h2>
               <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
-                Chez JARVIS, nous assurons la continuité et la pérennité de vos applications grâce à un service de support et de maintenance adapté à vos besoins. Plutôt que de prétendre être joignables 24 h/24 et 7 j/7, nous privilégions une organisation claire, des engagements réalistes et une communication transparente.
+                Chez JARVIS, nous assurons la continuité et la pérennité de vos applications grâce à un service de support et de maintenance adapté à vos besoins. Plutôt que de prétendre être joignables 24 h/24 et 7 j/7, nous privilégions une organisation claire, des engagements réalistes et une communication transparente. Interventions à distance dans toute la France, basé Monaco.
           </p>
         </div>
             {/* Main Content */}
             <div className="space-y-16">
               {sections.map((section, idx) => (
-                <motion.div
+                <ClientMotionDiv
                   key={section.number}
                   className="group backdrop-blur-sm border border-jarvisGold/40 rounded-lg p-6 shadow-xl h-full flex flex-col relative overflow-hidden"
                   initial={{ opacity: 0, y: 40 }}
@@ -152,8 +155,29 @@ export default function SupportService() {
                     <h3 className="text-xl font-bold mb-2">{section.title}</h3>
                     {section.content}
                   </div>
-                </motion.div>
+                </ClientMotionDiv>
               ))}
+            </div>
+
+            {/* Section Services Complémentaires */}
+            <div className="max-w-screen-md mx-auto mt-20 pt-12 border-t border-jarvisGold/30">
+              <h3 className="text-2xl font-bold mb-8 text-center text-jarvisGold">Services Complémentaires</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <a
+                  href="/services/developpement-logiciel"
+                  className="block p-6 bg-black/30 border border-jarvisGold/40 rounded-lg hover:border-jarvisGold/70 transition-all duration-300 hover:bg-black/40"
+                >
+                  <h4 className="text-xl font-semibold mb-3 text-white">Développement Logiciel</h4>
+                  <p className="text-white/80">Évolutions et nouvelles fonctionnalités pour vos applications existantes.</p>
+                </a>
+                <a
+                  href="/services/solutions-web-marketing"
+                  className="block p-6 bg-black/30 border border-jarvisGold/40 rounded-lg hover:border-jarvisGold/70 transition-all duration-300 hover:bg-black/40"
+                >
+                  <h4 className="text-xl font-semibold mb-3 text-white">Marketing Digital</h4>
+                  <p className="text-white/80">Optimisation SEO et stratégie digitale pour maximiser votre visibilité en ligne.</p>
+                </a>
+              </div>
             </div>
           </div>
         </section>

@@ -132,7 +132,7 @@ export default function ServiceCards() {
       description: "Déploiement et configuration de matériel informatique professionnel.",
       features: [
         "Installation de caméras de surveillance",
-        "Configuration d&apos;écrans et systèmes d&apos;affichage",
+        "Configuration d'écrans et systèmes d'affichage",
         "Mise en place de postes de travail",
         "Configuration réseau et sécurité",
         "Solutions domotiques et IoT"
@@ -163,7 +163,7 @@ export default function ServiceCards() {
         {/* Section heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-white mb-4">Nos expertises</h2>
-          <p className="text-white/70 max-w-2xl mx-auto">Des solutions complètes, du développement logiciel à l&apos;installation matérielle, avec un support continu pour garantir la pérennité de vos systèmes.</p>
+          <p className="text-white/70 max-w-2xl mx-auto">Des solutions complètes, du développement logiciel à l'installation matérielle, avec un support continu pour garantir la pérennité de vos systèmes.</p>
         </div>
         
         {/* Service cards */}

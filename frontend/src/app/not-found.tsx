@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "Page non trouvée | JARVIS",
-  description: "La page que vous cherchez n&apos;existe pas ou a été déplacée.",
+  description: "La page que vous cherchez n'existe pas ou a été déplacée.",
 }
 
 export default function NotFound() {
@@ -18,7 +18,7 @@ export default function NotFound() {
             Page non trouvée
           </h2>
           <p className="text-lg text-white/80 mb-8 max-w-md mx-auto">
-            La page que vous recherchez n&apos;existe pas ou a été déplacée.
+            La page que vous recherchez n'existe pas ou a été déplacée.
           </p>
         </div>
 
@@ -27,7 +27,7 @@ export default function NotFound() {
             href="/"
             className="inline-block bg-jarvisGold hover:bg-jarvisGold/80 text-black font-bold py-3 px-8 rounded-md transition-all duration-300 transform hover:scale-105"
           >
-            Retour à l&apos;accueil
+            Retour à l'accueil
           </Link>
 
           <div className="text-white/60">

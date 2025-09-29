@@ -7,8 +7,8 @@ import { Metadata } from 'next';
 import { faqSchema } from './faq-schema';
 
 export const metadata: Metadata = {
-  title: 'FAQ — SARL JARVIS',
-  description: 'Foire aux questions - Toutes les réponses à vos interrogations sur les services de la SARL JARVIS',
+  title: 'FAQ Développement Logiciel & Audit IA France | Questions Fréquentes JARVIS',
+  description: 'FAQ JARVIS : questions fréquentes développement logiciel, audit IA, web-marketing, start-ups. Réponses expert IT France, interventions distance, basé Monaco.',
 };
 
 export default function FAQPage() {

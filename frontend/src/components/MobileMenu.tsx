@@ -32,6 +32,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
             onClick={onClose}
+            aria-label="Fermer le menu"
           />
           <motion.div
             initial={{ x: '100%' }}
@@ -39,17 +40,21 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
             className="fixed right-0 top-0 h-full w-64 bg-black/90 backdrop-blur-md z-50 shadow-xl"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu de navigation mobile"
           >
             <div className="flex flex-col p-6">
               <button
                 onClick={onClose}
                 className="self-end text-white hover:text-jarvisGold transition-colors mb-8"
+                aria-label="Fermer le menu mobile"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-              <nav className="flex flex-col space-y-4">
+              <nav className="flex flex-col space-y-4" role="navigation" aria-label="Navigation principale mobile">
                 {links.map((link) => (
                   <Link
                     key={link.href}

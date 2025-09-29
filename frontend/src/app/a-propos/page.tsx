@@ -7,8 +7,8 @@ import CTAAbout from '../../components/CTAAbout';
 import PixelWave from '../../components/PixelWave';
 
 export const metadata = {
-  title: "À-propos — SARL JARVIS",
-  description: "Découvrez l'histoire, l'équipe et la vision de SARL JARVIS, entreprise monégasque spécialisée dans le développement logiciel et l'installation matérielle.",
+  title: "À-propos JARVIS Monaco | Équipe Expert IT Côte d'Azur",
+  description: "Découvrez l'équipe JARVIS Monaco : experts développement logiciel, audit IA et web-marketing. Entreprise IT de référence Monaco, spécialisée solutions sur-mesure Côte d'Azur.",
 };
 
 const teamMembers = [

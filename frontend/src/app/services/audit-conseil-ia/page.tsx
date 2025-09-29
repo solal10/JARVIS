@@ -1,9 +1,12 @@
-"use client";
-
 import React from 'react';
 import PixelWave from '@/components/PixelWave';
 import { serviceSchema } from './schema';
-import { motion } from 'framer-motion';
+import ClientMotionDiv from '@/components/ClientMotionDiv';
+
+export const metadata = {
+  title: "Audit & Conseil IA | Expert Intelligence Artificielle Entreprises France | JARVIS",
+  description: "Expert audit IA pour entreprises : évaluation maturité IA, agents conversationnels, automatisation de processus. Conseil en intelligence artificielle sur-mesure avec interventions à distance.",
+};
 
 const sections = [
   {
@@ -13,12 +16,12 @@ const sections = [
       <ul className="list-disc pl-6 mt-2 space-y-4">
         <li><strong>Analyse de maturité IA :</strong> Évaluation complète de votre infrastructure actuelle et de vos besoins en IA :
           <ul className="list-disc pl-6 mt-2">
-            <li>Audit des systèmes existants et identification des opportunités d&apos;automatisation.</li>
+            <li>Audit des systèmes existants et identification des opportunités d'automatisation.</li>
             <li>Évaluation de la qualité et de la disponibilité des données.</li>
-            <li>Analyse des processus métier pour identifier les cas d&apos;usage prioritaires.</li>
+            <li>Analyse des processus métier pour identifier les cas d'usage prioritaires.</li>
           </ul>
         </li>
-        <li><strong>Recommandations stratégiques :</strong> Plan d&apos;action détaillé pour l&apos;implémentation de l&apos;IA :
+        <li><strong>Recommandations stratégiques :</strong> Plan d'action détaillé pour l'implémentation de l'IA :
           <ul className="list-disc pl-6 mt-2">
             <li>Priorisation des projets selon leur ROI et leur complexité.</li>
             <li>Recommandations techniques et choix technologiques.</li>
@@ -33,11 +36,11 @@ const sections = [
     title: "Agents IA et Chatbots",
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
-        <li><strong>Conception d&apos;agents IA :</strong> Développement d&apos;assistants virtuels intelligents :
+        <li><strong>Conception d'agents IA :</strong> Développement d'assistants virtuels intelligents :
           <ul className="list-disc pl-6 mt-2">
             <li>Agents conversationnels pour le service client et le support.</li>
             <li>Assistants virtuels pour la gestion des tâches administratives.</li>
-            <li>Agents spécialisés pour l&apos;analyse et la prise de décision.</li>
+            <li>Agents spécialisés pour l'analyse et la prise de décision.</li>
           </ul>
         </li>
         <li><strong>Intégration et personnalisation :</strong> Adaptation des solutions à votre environnement :
@@ -55,17 +58,17 @@ const sections = [
     title: "Automatisation des processus",
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
-        <li><strong>Automatisation intelligente :</strong> Optimisation des workflows avec l&apos;IA :
+        <li><strong>Automatisation intelligente :</strong> Optimisation des workflows avec l'IA :
           <ul className="list-disc pl-6 mt-2">
             <li>Automatisation des tâches répétitives et des processus métier.</li>
-            <li>Intégration de l&apos;IA dans les flux de travail existants.</li>
+            <li>Intégration de l'IA dans les flux de travail existants.</li>
             <li>Surveillance et optimisation continue des performances.</li>
           </ul>
         </li>
-        <li><strong>Solutions sur-mesure :</strong> Développement d&apos;outils d&apos;automatisation adaptés :
+        <li><strong>Solutions sur-mesure :</strong> Développement d'outils d'automatisation adaptés :
           <ul className="list-disc pl-6 mt-2">
             <li>Création de workflows intelligents avec prise de décision automatisée.</li>
-            <li>Intégration de la reconnaissance de documents et de l&apos;extraction de données.</li>
+            <li>Intégration de la reconnaissance de documents et de l'extraction de données.</li>
             <li>Mise en place de tableaux de bord de suivi en temps réel.</li>
           </ul>
         </li>
@@ -77,10 +80,10 @@ const sections = [
     title: "Formation et accompagnement",
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
-        <li><strong>Formation des équipes :</strong> Accompagnement dans l&apos;adoption des solutions IA :
+        <li><strong>Formation des équipes :</strong> Accompagnement dans l'adoption des solutions IA :
           <ul className="list-disc pl-6 mt-2">
-            <li>Formation à l&apos;utilisation des nouveaux outils et processus.</li>
-            <li>Ateliers pratiques sur l&apos;interaction avec les agents IA.</li>
+            <li>Formation à l'utilisation des nouveaux outils et processus.</li>
+            <li>Ateliers pratiques sur l'interaction avec les agents IA.</li>
             <li>Documentation complète et support continu.</li>
           </ul>
         </li>
@@ -128,17 +131,17 @@ export default function AIConsultingService() {
           <div className="max-w-screen-md mx-auto">
             {/* Hero Section */}
             <div className="w-full pt-24 pb-16 px-6 text-center mb-32">
-              <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-white">Audit et Conseil IA</h1>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-white/80">Solutions d&apos;intelligence artificielle sur-mesure</h2>
+              <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-white">Audit & Conseil IA</h1>
+              <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-white/80">Expert conseil IA - Interventions dans toute la France</h2>
               <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
-                Chez JARVIS, nous accompagnons votre transformation numérique avec des solutions d&apos;IA innovantes. De l&apos;audit initial à l&apos;implémentation d&apos;agents IA et l&apos;automatisation de vos processus, nous vous guidons vers une adoption réussie de l&apos;intelligence artificielle.
+                JARVIS accompagne votre transformation numérique avec des solutions d'IA innovantes. De l'audit initial à l'implémentation d'agents IA et l'automatisation de vos processus, nous guidons votre adoption réussie de l'intelligence artificielle partout en France depuis notre base de Monaco.
               </p>
             </div>
 
             {/* Numbered Cards */}
             <div className="space-y-16">
               {sections.map((section, idx) => (
-                <motion.div
+                <ClientMotionDiv
                   key={section.number}
                   className="group backdrop-blur-sm border border-jarvisGold/40 rounded-lg p-6 shadow-xl h-full flex flex-col relative overflow-hidden"
                   initial={{ opacity: 0, y: 40 }}
@@ -156,8 +159,29 @@ export default function AIConsultingService() {
                     <h3 className="text-xl font-bold mb-2">{section.title}</h3>
                     {section.content}
                   </div>
-                </motion.div>
+                </ClientMotionDiv>
               ))}
+            </div>
+
+            {/* Section Services Complémentaires */}
+            <div className="max-w-screen-md mx-auto mt-20 pt-12 border-t border-jarvisGold/30">
+              <h3 className="text-2xl font-bold mb-8 text-center text-jarvisGold">Services Complémentaires</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <a
+                  href="/services/developpement-logiciel"
+                  className="block p-6 bg-black/30 border border-jarvisGold/40 rounded-lg hover:border-jarvisGold/70 transition-all duration-300 hover:bg-black/40"
+                >
+                  <h4 className="text-xl font-semibold mb-3 text-white">Développement Logiciel</h4>
+                  <p className="text-white/80">Développement d'applications intégrant l'IA pour concrétiser vos recommandations d'audit.</p>
+                </a>
+                <a
+                  href="/services/offre-jarvis-start-ups"
+                  className="block p-6 bg-black/30 border border-jarvisGold/40 rounded-lg hover:border-jarvisGold/70 transition-all duration-300 hover:bg-black/40"
+                >
+                  <h4 className="text-xl font-semibold mb-3 text-white">Offre Start-ups</h4>
+                  <p className="text-white/80">Financement et accompagnement stratégique pour intégrer l'IA dans votre start-up innovante.</p>
+                </a>
+              </div>
             </div>
           </div>
         </section>
