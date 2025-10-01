@@ -69,49 +69,11 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ customItems }) => {
 
   return (
     <>
-      {/* Schema.org JSON-LD pour les breadcrumbs */}
+      {/* Schema.org JSON-LD pour les breadcrumbs - SEO uniquement */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-
-      {/* Composant visuel */}
-      <nav aria-label="Fil d'Ariane" className="py-4 px-6 border-b border-jarvisGold/20">
-        <div className="max-w-screen-xl mx-auto">
-          <ol className="flex items-center space-x-2 text-sm">
-            {breadcrumbs.map((item, index) => (
-              <li key={item.href} className="flex items-center">
-                {index > 0 && (
-                  <svg
-                    className="w-4 h-4 mx-2 text-jarvisGold/60"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                )}
-                {index === breadcrumbs.length - 1 ? (
-                  <span className="text-white font-semibold" aria-current="page">
-                    {item.label}
-                  </span>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="text-jarvisGold hover:text-jarvisGold/80 transition-colors duration-200"
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ol>
-        </div>
-      </nav>
     </>
   );
 };
