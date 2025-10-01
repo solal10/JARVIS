@@ -148,11 +148,16 @@ export class NaturalContentGenerator {
   }
 
   private static generateUniqueTitle(topic: string, style: ContentStyle): string {
-    const titlePatterns = {
+    const titlePatterns: Record<string, string[]> = {
       'analytical': [
         `${topic} : analyse de l'impact économique européen 2024-2025`,
         `Marché européen ${topic.toLowerCase()} : données exclusives et perspectives`,
         `${topic} en Europe : chiffres clés et tendances émergentes`
+      ],
+      'conversational': [
+        `${topic} : parlons-en franchement`,
+        `${topic} : ce que personne ne vous dit`,
+        `${topic} : démêlons le vrai du faux`
       ],
       'investigative': [
         `${topic} : enquête sur les dessous du marché européen`,

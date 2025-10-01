@@ -126,7 +126,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Vérifier si l'article existe déjà (éviter doublons)
-        const existingSlug = existingArticles.find(a => a.slug === article.slug);
+        const existingSlug = existingArticles.find((a: any) => a.slug === article.slug);
         if (!existingSlug) {
           // Ajouter le nouvel article en première position
           existingArticles.unshift(article);

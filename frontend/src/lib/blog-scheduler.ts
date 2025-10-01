@@ -1,4 +1,4 @@
-import cron from 'node-cron';
+import * as cron from 'node-cron';
 
 class BlogScheduler {
   private static instance: BlogScheduler;
@@ -42,7 +42,6 @@ class BlogScheduler {
         console.error('❌ Erreur lors de la génération programmée:', error);
       }
     }, {
-      scheduled: false, // On démarre manuellement
       timezone: "Europe/Paris"
     });
 
@@ -76,7 +75,6 @@ class BlogScheduler {
         console.error('❌ Erreur lors de la vérification des tendances:', error);
       }
     }, {
-      scheduled: false,
       timezone: "Europe/Paris"
     });
 
@@ -93,7 +91,6 @@ class BlogScheduler {
         console.error('❌ Erreur lors de la maintenance:', error);
       }
     }, {
-      scheduled: false,
       timezone: "Europe/Paris"
     });
 
@@ -185,7 +182,6 @@ class BlogScheduler {
       this.jobs.delete(uniqueId);
       console.log(`✅ Tâche unique "${description}" terminée et supprimée`);
     }, {
-      scheduled: true,
       timezone: "Europe/Paris"
     });
 

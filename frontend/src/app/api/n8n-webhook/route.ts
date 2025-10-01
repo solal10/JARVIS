@@ -36,8 +36,8 @@ export async function POST(request: NextRequest) {
     const payload: N8NArticlePayload = await request.json();
 
     // 📋 Validation des données requises
-    const requiredFields = ['title', 'content', 'excerpt', 'category'];
-    const missingFields = requiredFields.filter(field => !payload[field]);
+    const requiredFields = ['title', 'content', 'excerpt', 'category'] as const;
+    const missingFields = requiredFields.filter(field => !payload[field as keyof N8NArticlePayload]);
 
     if (missingFields.length > 0) {
       return NextResponse.json({

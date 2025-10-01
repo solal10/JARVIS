@@ -232,8 +232,8 @@ export class SmartEditorialSelector {
       if (relatedSEO || relatedTrend) {
         const recommendation = this.evaluateTopicCandidate(
           actuality,
-          relatedSEO,
-          relatedTrend
+          relatedSEO || null,
+          relatedTrend || null
         );
         candidates.push(recommendation);
       }
@@ -454,9 +454,9 @@ export class SmartEditorialSelector {
         );
 
         const recommendation = this.evaluateTopicCandidate(
-          relatedActuality,
-          relatedSEO,
-          relatedTrend
+          relatedActuality || null,
+          relatedSEO || null,
+          relatedTrend || null
         );
 
         // Éviter les doublons

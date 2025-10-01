@@ -32,6 +32,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ customItems }) => {
 
   const generateBreadcrumbs = (): BreadcrumbItem[] => {
     if (customItems) return customItems;
+    if (!pathname) return [{ label: 'Accueil', href: '/' }];
 
     const pathSegments = pathname.split('/').filter(segment => segment !== '');
     const breadcrumbs: BreadcrumbItem[] = [

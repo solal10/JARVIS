@@ -22,7 +22,7 @@ const sections = [
             <li>Mineure (anomalie non bloquante ou question d'usage) : prise en charge sous 1 jour ouvré, correction dans le prochain cycle de maintenance planifié.</li>
           </ul>
         </li>
-        <li><strong>Processus d'escalade :</strong> En cas de bug critique non résolu dans les délais, nous faisons remonter immédiatement l'incident à un référent technique senior. Un rapport d'incident vous est communiqué à l'issue de la résolution pour expliquer la cause et les corrections apportées.</li>
+        <li><strong>Processus d&apos;escalade :</strong> En cas de bug critique non résolu dans les délais, nous faisons remonter immédiatement l&apos;incident à un référent technique senior. Un rapport d&apos;incident vous est communiqué à l&apos;issue de la résolution pour expliquer la cause et les corrections apportées.</li>
       </ul>
     )
   },
@@ -42,9 +42,9 @@ const sections = [
     title: "Maintenance évolutive",
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
-        <li><strong>Gestion du backlog d'améliorations :</strong> Nous constituons et priorisons un backlog des évolutions fonctionnelles (nouvelles fonctionnalités, optimisations UX, mises à jour technologiques). Les demandes sont classées selon leur valeur métier et leur criticité.</li>
-        <li><strong>Cycles de maintenance programmés :</strong> Les évolutions sont intégrées via des sprints de 2 semaines. Vous pouvez suivre l'avancement des tâches dans notre outil de gestion de projet (Jira, Trello, ou équivalent), commenter, et valider chaque livrable avant passage en production.</li>
-        <li><strong>Veille technologique et mises à jour planifiées :</strong> JARVIS effectue une veille régulière sur les frameworks et librairies utilisés. Lorsqu'une mise à jour de sécurité ou une évolution majeure apparaît, nous planifions son intégration dans le prochain cycle de maintenance, en testant d'abord en préproduction avant déploiement.</li>
+        <li><strong>Gestion du backlog d&apos;améliorations :</strong> Nous constituons et priorisons un backlog des évolutions fonctionnelles (nouvelles fonctionnalités, optimisations UX, mises à jour technologiques). Les demandes sont classées selon leur valeur métier et leur criticité.</li>
+        <li><strong>Cycles de maintenance programmés :</strong> Les évolutions sont intégrées via des sprints de 2 semaines. Vous pouvez suivre l&apos;avancement des tâches dans notre outil de gestion de projet (Jira, Trello, ou équivalent), commenter, et valider chaque livrable avant passage en production.</li>
+        <li><strong>Veille technologique et mises à jour planifiées :</strong> JARVIS effectue une veille régulière sur les frameworks et librairies utilisés. Lorsqu&apos;une mise à jour de sécurité ou une évolution majeure apparaît, nous planifions son intégration dans le prochain cycle de maintenance, en testant d&apos;abord en préproduction avant déploiement.</li>
       </ul>
     )
   },
@@ -55,11 +55,11 @@ const sections = [
       <ul className="list-disc pl-6 mt-2 space-y-4">
         <li><strong>Politique de backup :</strong> Vos données (bases, fichiers) sont sauvegardées quotidiennement avec une rétention adaptée (hebdomadaire, mensuelle). Les sauvegardes sont chiffrées et stockées sur un espace de stockage cloud distinct pour éviter toute perte.</li>
         <li><strong>Tests trimestriels de restauration :</strong> Tous les trois mois, nous vérifions la qualité des sauvegardes en restaurant un environnement de staging, afin de garantir la fiabilité des procédures et estimer le temps de rétablissement.</li>
-        <li><strong>Plan de reprise d'activité simplifié :</strong> En cas de sinistre majeur (panne d'infrastructure, incident critique), notre PRA définit :
+        <li><strong>Plan de reprise d&apos;activité simplifié :</strong> En cas de sinistre majeur (panne d&apos;infrastructure, incident critique), notre PRA définit :
           <ul className="list-disc pl-6 mt-2">
             <li>Les rôles et responsabilités (équipe JARVIS, contact client).</li>
             <li>Les étapes de bascule vers un environnement de secours (failover) en cloud ou serveur externe.</li>
-            <li>Les scénarios de communication (informations clés à transmettre selon l'audience).</li>
+            <li>Les scénarios de communication (informations clés à transmettre selon l&apos;audience).</li>
             <li>Les objectifs de temps de restauration (RTO) et de perte de données acceptable (RPO).</li>
           </ul>
         </li>

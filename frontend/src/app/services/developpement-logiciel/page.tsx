@@ -11,17 +11,17 @@ export const metadata = {
 const sections = [
   {
     number: 1,
-    title: "Phase de cadrage et d'analyse des besoins",
+    title: "Phase de cadrage et d&apos;analyse des besoins",
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
         <li>
-          <strong>Atelier de découverte :</strong> Nous organisons une première réunion avec vos équipes pour comprendre vos enjeux, vos processus internes et vos objectifs à court et long terme. L'idée est de cerner précisément les cas d'usage, les fonctionnalités clés et les contraintes (budgétaires, réglementaires, techniques).
+          <strong>Atelier de découverte :</strong> Nous organisons une première réunion avec vos équipes pour comprendre vos enjeux, vos processus internes et vos objectifs à court et long terme. L&apos;idée est de cerner précisément les cas d&apos;usage, les fonctionnalités clés et les contraintes (budgétaires, réglementaires, techniques).
         </li>
         <li>
-          <strong>Spécifications fonctionnelles :</strong> À partir des informations recueillies, nous rédigeons un cahier des charges détaillé (backlog) qui liste les user stories, les parcours utilisateurs prioritaires et les critères d'acceptation associés. Cette base de travail sert de référentiel tout au long du projet.
+          <strong>Spécifications fonctionnelles :</strong> À partir des informations recueillies, nous rédigeons un cahier des charges détaillé (backlog) qui liste les user stories, les parcours utilisateurs prioritaires et les critères d&apos;acceptation associés. Cette base de travail sert de référentiel tout au long du projet.
         </li>
         <li>
-          <strong>Expertise technologique :</strong> Nous vous conseillons sur le choix des technologies (framework front-end, langage back-end, bases de données, services cloud) en fonction de vos objectifs de performance, de montée en charge et d'évolutivité. Cette expertise technique se complète parfaitement avec nos <a href="/services/audit-conseil-ia" className="text-jarvisGold hover:text-jarvisGold/80 underline">services d'audit IA</a> pour intégrer l'intelligence artificielle dans vos applications.
+          <strong>Expertise technologique :</strong> Nous vous conseillons sur le choix des technologies (framework front-end, langage back-end, bases de données, services cloud) en fonction de vos objectifs de performance, de montée en charge et d&apos;évolutivité. Cette expertise technique se complète parfaitement avec nos <a href="/services/audit-conseil-ia" className="text-jarvisGold hover:text-jarvisGold/80 underline">services d&apos;audit IA</a> pour intégrer l&apos;intelligence artificielle dans vos applications.
         </li>
       </ul>
     )
@@ -32,10 +32,10 @@ const sections = [
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
         <li>
-          <strong>Conception de sites internet :</strong> Notre équipe UX/UI conçoit l'architecture et l'identité visuelle de votre site internet (vitrine, e-commerce, institutionnel). Nous créons des maquettes interactives pour valider l'ergonomie, la navigation et les parcours utilisateurs avant développement.
+          <strong>Conception de sites internet :</strong> Notre équipe UX/UI conçoit l&apos;architecture et l&apos;identité visuelle de votre site internet (vitrine, e-commerce, institutionnel). Nous créons des maquettes interactives pour valider l&apos;ergonomie, la navigation et les parcours utilisateurs avant développement.
         </li>
         <li>
-          <strong>Identité visuelle web :</strong> Nous développons un design system complet (couleurs, typographies, composants) pour votre site internet, en parfaite harmonie avec votre charte graphique existante. L'objectif est d'offrir une expérience utilisateur fluide, moderne et alignée avec votre image de marque. Cette approche UX se complète idéalement avec nos <a href="/services/solutions-web-marketing" className="text-jarvisGold hover:text-jarvisGold/80 underline">stratégies de web-marketing</a> pour maximiser la conversion et la visibilité.
+          <strong>Identité visuelle web :</strong> Nous développons un design system complet (couleurs, typographies, composants) pour votre site internet, en parfaite harmonie avec votre charte graphique existante. L&apos;objectif est d&apos;offrir une expérience utilisateur fluide, moderne et alignée avec votre image de marque. Cette approche UX se complète idéalement avec nos <a href="/services/solutions-web-marketing" className="text-jarvisGold hover:text-jarvisGold/80 underline">stratégies de web-marketing</a> pour maximiser la conversion et la visibilité.
         </li>
       </ul>
     )
@@ -46,10 +46,10 @@ const sections = [
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
         <li>
-          <strong>Infrastructure as Code :</strong> Chez JARVIS, nous définissons toute l'infrastructure (serveurs, bases de données, API, stockage d'objets) via des scripts (Terraform, CloudFormation ou équivalents) pour garantir une mise en place reproductible et évolutive.
+          <strong>Infrastructure as Code :</strong> Chez JARVIS, nous définissons toute l&apos;infrastructure (serveurs, bases de données, API, stockage d&apos;objets) via des scripts (Terraform, CloudFormation ou équivalents) pour garantir une mise en place reproductible et évolutive.
         </li>
         <li>
-          <strong>Microservices et conteneurisation :</strong> Pour les projets nécessitant une forte montée en charge, nous privilégions une architecture microservices orchestrée (Docker/Kubernetes). Cela permet de découpler les fonctionnalités, d'améliorer la résilience et de faciliter les déploiements continus.
+          <strong>Microservices et conteneurisation :</strong> Pour les projets nécessitant une forte montée en charge, nous privilégions une architecture microservices orchestrée (Docker/Kubernetes). Cela permet de découpler les fonctionnalités, d&apos;améliorer la résilience et de faciliter les déploiements continus.
         </li>
         <li>
           <strong>Haute disponibilité et autoscaling :</strong> Grâce aux services cloud (AWS, Azure, GCP, ou votre environnement privé), nous configurons des règles d'autoscaling pour ajuster automatiquement la capacité des serveurs en fonction du trafic. Les sauvegardes automatisées et la redondance garantissent la continuité de service.
@@ -63,13 +63,13 @@ const sections = [
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
         <li>
-          <strong>Sprints de développement :</strong> JARVIS travaille en cycles courts (1 à 2 semaines), avec des réunions quotidiennes (stand-up) pour suivre l'avancement. À la fin de chaque sprint, nous présentons une version incrémentale de l'application, testable et potentiellement déployable en production.
+          <strong>Sprints de développement :</strong> JARVIS travaille en cycles courts (1 à 2 semaines), avec des réunions quotidiennes (stand-up) pour suivre l&apos;avancement. À la fin de chaque sprint, nous présentons une version incrémentale de l&apos;application, testable et potentiellement déployable en production.
         </li>
         <li>
-          <strong>Revue de code et qualité logicielle :</strong> Chaque ligne de code fait l'objet d'une revue par un pair (code review) pour s'assurer qu'elle respecte nos standards (principes SOLID, tests unitaires/d'intégration, couverture de code minimale). Nous utilisons des outils d'analyse statique (SonarQube, ESLint ou équivalents) pour détecter automatiquement les vulnérabilités et les défauts de performance. Cette rigueur assure une transition fluide vers nos <a href="/services/support-maintenance" className="text-jarvisGold hover:text-jarvisGold/80 underline">services de maintenance continue</a>.
+          <strong>Revue de code et qualité logicielle :</strong> Chaque ligne de code fait l&apos;objet d&apos;une revue par un pair (code review) pour s&apos;assurer qu&apos;elle respecte nos standards (principes SOLID, tests unitaires/d&apos;intégration, couverture de code minimale). Nous utilisons des outils d&apos;analyse statique (SonarQube, ESLint ou équivalents) pour détecter automatiquement les vulnérabilités et les défauts de performance. Cette rigueur assure une transition fluide vers nos <a href="/services/support-maintenance" className="text-jarvisGold hover:text-jarvisGold/80 underline">services de maintenance continue</a>.
         </li>
         <li>
-          <strong>Intégration et déploiement continus (CI/CD) :</strong> Selon les besoins, JARVIS met en place des déploiements progressifs (blue-green, canary releases) pour réduire les risques et pouvoir revenir en arrière rapidement en cas d'anomalie.
+          <strong>Intégration et déploiement continus (CI/CD) :</strong> Selon les besoins, JARVIS met en place des déploiements progressifs (blue-green, canary releases) pour réduire les risques et pouvoir revenir en arrière rapidement en cas d&apos;anomalie.
         </li>
       </ul>
     )
@@ -80,13 +80,13 @@ const sections = [
     content: (
       <ul className="list-disc pl-6 mt-2 space-y-4">
         <li>
-          <strong>Meilleures pratiques de sécurité :</strong> Chez JARVIS, nous appliquons strictement les principes de sécurité dès la conception (Secure by Design), en chiffrant les données sensibles, en implémentant des mécanismes d'authentification robustes (OAuth 2.0, JWT, gestion des rôles) et en protégeant les API (rate limiting, validation des entrées, whitelist/blacklist).
+          <strong>Meilleures pratiques de sécurité :</strong> Chez JARVIS, nous appliquons strictement les principes de sécurité dès la conception (Secure by Design), en chiffrant les données sensibles, en implémentant des mécanismes d&apos;authentification robustes (OAuth 2.0, JWT, gestion des rôles) et en protégeant les API (rate limiting, validation des entrées, whitelist/blacklist).
         </li>
         <li>
-          <strong>Conformité RGPD et protection des données :</strong> Nous veillons à respecter la réglementation européenne pour le traitement des données personnelles, en mettant en place des processus d'anonymisation, de consentement explicite et de droit à l'oubli.
+          <strong>Conformité RGPD et protection des données :</strong> Nous veillons à respecter la réglementation européenne pour le traitement des données personnelles, en mettant en place des processus d&apos;anonymisation, de consentement explicite et de droit à l&apos;oubli.
         </li>
         <li>
-          <strong>Audits réguliers :</strong> Tous les six mois (ou à la fréquence souhaitée), JARVIS réalise un audit de sécurité incluant analyse de code source, tests d'injection SQL, contrôle des politiques CORS/CSP et revue des droits d'accès aux services cloud.
+          <strong>Audits réguliers :</strong> Tous les six mois (ou à la fréquence souhaitée), JARVIS réalise un audit de sécurité incluant analyse de code source, tests d&apos;injection SQL, contrôle des politiques CORS/CSP et revue des droits d&apos;accès aux services cloud.
         </li>
       </ul>
     )
@@ -127,7 +127,7 @@ export default function DevelopmentService() {
               <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-white">Création Sites Internet & Développement</h1>
               <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-white/80">Sites web, applications & solutions sur-mesure - Interventions dans toute la France</h2>
               <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
-                JARVIS place la rigueur, la transparence et la performance au cœur de chaque projet digital. Qu'il s'agisse de création de sites internet, d'applications web ou mobiles sur-mesure, notre objectif est de livrer des solutions parfaitement adaptées à vos besoins métier, avec une architecture moderne et une expérience utilisateur optimale. Nous intervenons dans toute la France depuis notre base de Monaco. Voici notre approche :
+                JARVIS place la rigueur, la transparence et la performance au cœur de chaque projet digital. Qu&apos;il s&apos;agisse de création de sites internet, d&apos;applications web ou mobiles sur-mesure, notre objectif est de livrer des solutions parfaitement adaptées à vos besoins métier, avec une architecture moderne et une expérience utilisateur optimale. Nous intervenons dans toute la France depuis notre base de Monaco. Voici notre approche :
               </p>
             </div>
             {/* Numbered Cards */}

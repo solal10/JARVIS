@@ -14,14 +14,14 @@ export default function CompanyStory() {
           <div className="space-y-6 text-white/80">
             <p className="text-lg leading-relaxed">
               Fondée à Monaco le 13 mai 2024, la SARL JARVIS développe des solutions logicielles sur-mesure et
-              assure l'installation de matériel high-tech partout dans le monde. Notre mission : fournir à
+              assure l&apos;installation de matériel high-tech partout dans le monde. Notre mission : fournir à
               nos clients des outils performants, fiables et évolutifs pour les aider à atteindre leurs objectifs.
             </p>
             
             <p className="text-lg leading-relaxed">
               Notre équipe combine expertise technique et créativité pour concevoir des solutions innovantes
-              qui répondent précisément aux besoins de nos clients. Qu'il s'agisse de développement web,
-              d'applications mobiles ou d'installations matérielles complexes, nous mettons notre savoir-faire
+              qui répondent précisément aux besoins de nos clients. Qu&apos;il s&apos;agisse de développement web,
+              d&apos;applications mobiles ou d&apos;installations matérielles complexes, nous mettons notre savoir-faire
               au service de votre réussite.
             </p>
             

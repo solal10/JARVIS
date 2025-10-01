@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!article) {
     return {
       title: 'Article non trouvé | JARVIS',
-      description: 'Cet article n\'existe pas ou a été supprimé.'
+      description: 'Cet article n&apos;existe pas ou a été supprimé.'
     };
   }
 
