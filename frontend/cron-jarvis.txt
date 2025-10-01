@@ -1,0 +1,31 @@
+# 🤖 CRON JARVIS - PUBLICATION AUTOMATIQUE SEO AGRESSIVE
+# 2 articles par jour aux horaires optimaux pour maximiser le trafic
+
+# HORAIRES SEMAINE (Lundi-Vendredi) :
+# 8h00  - Morning Insights (business opening)
+# 18h00 - Evening Deep Dive (after work)
+
+# HORAIRES WEEKEND :
+# 10h00 - Weekend Morning (leisure reading)
+# 16h00 - Weekend Afternoon (pre-evening)
+
+# Publication matin - Jours ouvrables (Lundi-Vendredi à 8h00)
+0 8 * * 1-5 /Users/thomasbenichou/Desktop/JARVIS/frontend/scripts/auto-publish.sh
+
+# Publication soir - Jours ouvrables (Lundi-Vendredi à 18h00)
+0 18 * * 1-5 /Users/thomasbenichou/Desktop/JARVIS/frontend/scripts/auto-publish.sh
+
+# Publication weekend matin - Samedi-Dimanche à 10h00
+0 10 * * 0,6 /Users/thomasbenichou/Desktop/JARVIS/frontend/scripts/auto-publish.sh
+
+# Publication weekend après-midi - Samedi-Dimanche à 16h00
+0 16 * * 0,6 /Users/thomasbenichou/Desktop/JARVIS/frontend/scripts/auto-publish.sh
+
+# 📊 MONITORING : Vérification status tous les jours à 9h00
+0 9 * * * curl -s http://localhost:3000/api/auto-publish >> /tmp/jarvis-status.log 2>&1
+
+# 🧹 NETTOYAGE : Purge des logs anciens chaque dimanche à 2h00
+0 2 * * 0 find /tmp -name "*jarvis*log" -mtime +7 -delete
+
+# ACTIVATION : Pour activer ce cron, exécuter :
+# crontab /Users/thomasbenichou/Desktop/JARVIS/frontend/cron-jarvis.txt

@@ -27,6 +27,7 @@ export default function ClientLayout({
               <Link href="/services/offre-jarvis-start-ups" className="font-medium text-white hover:text-jarvisGold transition-colors">Startup</Link>
               <Link href="/services/solutions-web-marketing" className="font-medium text-white hover:text-jarvisGold transition-colors">Marketing</Link>
               <Link href="/services/support-maintenance" className="font-medium text-white hover:text-jarvisGold transition-colors">Support</Link>
+              <Link href="/blog" className="font-medium text-white hover:text-jarvisGold transition-colors">Blog</Link>
               <Link href="/a-propos" className="font-medium text-white hover:text-jarvisGold transition-colors">À propos</Link>
               <Link href="/faq" className="font-medium text-white hover:text-jarvisGold transition-colors">FAQ</Link>
               <Link href="/contact" className="font-medium text-white hover:text-jarvisGold transition-colors">Contact</Link>
@@ -79,6 +80,7 @@ export default function ClientLayout({
                 <li><Link href="/services/offre-jarvis-start-ups" className="hover:text-jarvisGold transition-colors">Startup</Link></li>
                 <li><Link href="/services/solutions-web-marketing" className="hover:text-jarvisGold transition-colors">Marketing</Link></li>
                 <li><Link href="/services/support-maintenance" className="hover:text-jarvisGold transition-colors">Support</Link></li>
+                <li><Link href="/blog" className="hover:text-jarvisGold transition-colors">Blog</Link></li>
                 <li><Link href="/a-propos" className="hover:text-jarvisGold transition-colors">À propos</Link></li>
                 <li><Link href="/faq" className="hover:text-jarvisGold transition-colors">FAQ</Link></li>
                 <li><Link href="/contact" className="hover:text-jarvisGold transition-colors">Contact</Link></li>
