@@ -1,0 +1,26 @@
+{
+  "../components/HomeSequence.tsx -> ./CubeWaveIntro": {
+    "id": 9519,
+    "files": []
+  },
+  "../components/HomeSequence.tsx -> ./FAQTeaser": {
+    "id": 8756,
+    "files": []
+  },
+  "../components/HomeSequence.tsx -> ./PixelWave": {
+    "id": 548,
+    "files": []
+  },
+  "../components/HomeSequence.tsx -> ./ProjectsShowcase": {
+    "id": 1015,
+    "files": []
+  },
+  "../components/HomeSequence.tsx -> ./ServicesGrid": {
+    "id": 3206,
+    "files": []
+  },
+  "../components/HomeSequence.tsx -> ./TeamSection": {
+    "id": 6290,
+    "files": []
+  }
+}
