@@ -5,6 +5,9 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import { blogSchema } from './schema';
 import { loadPublishedArticles, incrementArticleViews } from '@/lib/blog-storage';
 
+// Force dynamic rendering to load articles at runtime
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: "Blog Expert IA & Développement | Actualités Tech Entreprises | JARVIS",
   description: "Blog expert JARVIS : actualités intelligence artificielle, développement web, conseils tech pour entreprises. Articles optimisés SEO sur les dernières tendances IT.",
