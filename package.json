@@ -1,0 +1,9 @@
+{
+  "name": "jarvis",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cd frontend && npm start",
+    "build": "echo 'Build fait localement'"
+  }
+}
