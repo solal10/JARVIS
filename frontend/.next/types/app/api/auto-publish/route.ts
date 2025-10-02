@@ -1,4 +1,4 @@
-// File: /Users/JARVIS/Desktop/JARVIS/frontend/src/app/api/auto-publish/route.ts
+// File: /Users/thomasbenichou/Desktop/JARVIS/frontend/src/app/api/auto-publish/route.ts
 import * as entry from '../../../../../src/app/api/auto-publish/route.js'
 import type { NextRequest } from 'next/server.js'
 

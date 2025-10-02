@@ -1,4 +1,4 @@
-// File: /Users/JARVIS/Desktop/JARVIS/frontend/src/app/api/smart-recommendations/route.ts
+// File: /Users/thomasbenichou/Desktop/JARVIS/frontend/src/app/api/smart-recommendations/route.ts
 import * as entry from '../../../../../src/app/api/smart-recommendations/route.js'
 import type { NextRequest } from 'next/server.js'
 
