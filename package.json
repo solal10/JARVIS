@@ -4,6 +4,6 @@
   "private": true,
   "scripts": {
     "start": "cd frontend && npm start",
-    "build": "echo 'Build fait localement'"
+    "build": "cd frontend && npm install"
   }
 }
