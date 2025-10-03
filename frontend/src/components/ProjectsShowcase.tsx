@@ -12,13 +12,13 @@ const projects: Project[] = [
   {
     name: 'Brikka',
     description: 'Plateforme intelligente qui transforme la gestion immobilière en une expérience fluide et performante. Grâce à l\'IA, elle simplifie le suivi des biens, locataires et loyers.',
-    imagePath: '/images/brikka.png',
+    imagePath: '/images/brikka.jpg',
     url: 'https://brikka.app',
   },
   {
     name: 'AVA',
     description: 'Coach santé intelligent qui analyse vos données de bien-être grâce à l\'IA. AVA s\'adapte à vos habitudes pour offrir des recommandations personnalisées et proactives.',
-    imagePath: '/images/Ava.png',
+    imagePath: '/images/Ava.jpg',
     url: 'https://myava.health',
   },
   {

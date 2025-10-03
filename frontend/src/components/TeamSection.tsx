@@ -82,6 +82,7 @@ export default function TeamSection({ members }: TeamSectionProps) {
                       src={member.image}
                       alt={`Photo de ${member.name}, ${member.role} chez SARL JARVIS`}
                       fill
+                      sizes="(max-width: 768px) 100vw, 144px"
                       className={`object-cover ${member.image.includes('team1') || member.name.includes('Thomas') ? 'object-top' : 'object-center'}`}
                       style={member.image.includes('team1') || member.name.includes('Thomas') ? { objectPosition: '50% 20%' } : {}}
                       loading="lazy"
