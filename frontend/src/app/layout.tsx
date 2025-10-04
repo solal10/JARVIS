@@ -48,7 +48,7 @@ export default function RootLayout({
         <meta name="google-site-verification" content="google-site-verification-jarvis-monaco" />
         <Script
           id="gtm-script"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
