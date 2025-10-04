@@ -1,4 +1,4 @@
-// File: /Users/thomasbenichou/Desktop/JARVIS/frontend/src/app/services/support-maintenance/page.tsx
+// File: /Users/JARVIS/Desktop/JARVIS/frontend/src/app/services/support-maintenance/page.tsx
 import * as entry from '../../../../../src/app/services/support-maintenance/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

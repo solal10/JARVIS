@@ -1,4 +1,4 @@
-// File: /Users/thomasbenichou/Desktop/JARVIS/frontend/src/app/api/trends/route.ts
+// File: /Users/JARVIS/Desktop/JARVIS/frontend/src/app/api/trends/route.ts
 import * as entry from '../../../../../src/app/api/trends/route.js'
 import type { NextRequest } from 'next/server.js'
 

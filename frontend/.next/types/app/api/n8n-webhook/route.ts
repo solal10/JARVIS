@@ -1,4 +1,4 @@
-// File: /Users/thomasbenichou/Desktop/JARVIS/frontend/src/app/api/n8n-webhook/route.ts
+// File: /Users/JARVIS/Desktop/JARVIS/frontend/src/app/api/n8n-webhook/route.ts
 import * as entry from '../../../../../src/app/api/n8n-webhook/route.js'
 import type { NextRequest } from 'next/server.js'
 
