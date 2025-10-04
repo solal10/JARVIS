@@ -7,6 +7,12 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ['framer-motion'], // Optimize heavy packages
+    workerThreads: false, // Disable worker threads for Infomaniak
+    cpus: 1, // Limit CPU usage
+  },
+  // Reduce memory usage for Infomaniak hosting
+  generateBuildId: async () => {
+    return 'build-id'
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production', // Remove console logs in production
