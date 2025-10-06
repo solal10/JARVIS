@@ -45,7 +45,7 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         {/* Google Search Console Verification */}
-        <meta name="google-site-verification" content="google-site-verification-jarvis-monaco" />
+        <meta name="google-site-verification" content="GN1AnoAQ62lvrzkpCE3WRt5IYnVZSAdRODggMLxUme0" />
         <Script
           id="gtm-script"
           strategy="afterInteractive"
