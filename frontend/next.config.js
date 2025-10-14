@@ -67,6 +67,7 @@ const nextConfig = {
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https: http:",
               "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com",
+              "frame-src https://www.googletagmanager.com",
               "frame-ancestors 'none'",
               "form-action 'self'",
               "base-uri 'self'"
