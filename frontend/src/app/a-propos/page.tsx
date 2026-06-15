@@ -22,24 +22,14 @@ const teamMembers = [
       linkedin: "https://www.linkedin.com/in/thomas-benichou-479816172?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
     }
   },
-  { 
-    image: "/images/team2.jpg", 
-    name: "Sacha Benichou", 
+  {
+    image: "/images/team2.jpg",
+    name: "Sacha Benichou",
     role: "Gérant associé",
     quote: "La finance, c'est mon terrain de jeu : je transforme vos bilans en moteur de croissance",
     bio: "Expert en gestion financière, Sacha élabore des plans de financement sur-mesure et supervise la trésorerie pour assurer la stabilité et la rentabilité de nos opérations. Son sens aigu de l'analyse et sa maîtrise des outils financiers permettent d'anticiper les risques et de saisir les leviers de croissance.",
     social: {
       linkedin: "https://www.linkedin.com/in/sacha-benichou-19b140225?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-    }
-  },
-  { 
-    image: "/images/team3.jpg", 
-    name: "Solal Ohana", 
-    role: "Directeur Technique",
-    quote: "L'innovation technique est au cœur de chaque solution que nous créons",
-    bio: "En tant que Directeur Technique, Solal dirige l'ensemble des développements logiciels et l'architecture technique de nos solutions. Son expertise en développement full-stack et sa vision stratégique permettent de concevoir des systèmes robustes, évolutifs et performants qui répondent aux besoins les plus exigeants de nos clients.",
-    social: {
-      linkedin: "https://www.linkedin.com/in/solal-ohana?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
     }
   }
 ];

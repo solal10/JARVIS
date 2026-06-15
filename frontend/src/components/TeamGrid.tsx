@@ -19,8 +19,7 @@ export default function TeamGrid({ members }: TeamGridProps) {
   // Utiliser les membres fournis ou des membres par défaut
   const teamMembers = members || [
     { photo: "/img/thomas.jpg", name: "Thomas Benichou", role: "Associé" },
-    { photo: "/img/sacha.jpg", name: "Sacha Benichou", role: "Gérant associé" },
-    { photo: "/img/solal.jpg", name: "Solal Ohana", role: "Directeur Technique" }
+    { photo: "/img/sacha.jpg", name: "Sacha Benichou", role: "Gérant associé" }
   ];
 
   return (
